@@ -1,6 +1,6 @@
 @import "../main.css";
 
-.registerArea{
+.registerArea, .loginArea{
     display: flex;
 flex-direction: row;
 flex-wrap: wrap;
