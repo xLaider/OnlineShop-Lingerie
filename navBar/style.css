@@ -1,6 +1,5 @@
-a{
-    text-decoration: none;
-}
+@import "../main.css";
+
 
 nav{
     display: flex;
@@ -24,8 +23,6 @@ font-size: 48px;
 line-height: 58px;
 display: flex;
 align-items: center;
-
-color: #000000;
 }
 
 .text{
@@ -40,7 +37,6 @@ text-align: right;
 letter-spacing: 0.16em;
 padding: 0.25em;
 
-color: #000000;
 }
 
 .menu-icon{

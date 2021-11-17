@@ -9,14 +9,14 @@
 </head>
 <body>
     <nav>
-    <img class="menu-icon" src="./images/menu.png" alt="Menu">
+    <img class="menu-icon" src="./images/menu.svg" alt="Menu">
         <div class="logo">
             <a href="index.php">MAJTECZKI W KROPECZKI</a>
         </div>
         <div class="text">
             <a href="index.php?redirectToLogin">Zaloguj</a>
             |
-            <img class="" src="./images/cart.png" alt="Menu">
+            <img class="" src="./images/cart.svg" alt="Menu">
         </div>
         
     </nav>
