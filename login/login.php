@@ -12,16 +12,26 @@
     <h1>
         MAJTECZKI W KROPECZKI
     </h1>
-    <h2>Zaloguj się na swoje konto</h2>
-    
-    <form class ="login" action="" method="post">
+    <h2><?php
+            if (isset($_GET['registerSuccessful'])) 
+            echo 'Rejestracja przebiegła pomyślnie!<br>'
+        ?>
+        Zaloguj sie na swoje konto!
+    </h2>
+    <form class ="login" action="login_form_handling.php" method="post">
+
         <input type="email" id="email" name="email" placeholder="E-mail"><br>
         <input type="password" id="password" name="password" placeholder="Hasło"><br>
-        <button type="submit">Zaloguj</button>
+        <input type="submit" value="Zaloguj">
     </form>
-    <div class="seperator"></div>
+    <div class="seperator">
+    Jeśli nie masz jeszcze założoneg konta<br>
+    <a href="index.php?redirectToRegister">kliknij tutaj</a>
+    
+    </div>
     </div>
     
+    <?php session_start();unset($_SESSION['bad_attempt']);?>
     
 </body>
 </html>

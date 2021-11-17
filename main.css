@@ -40,6 +40,7 @@ input, input:focus, input:focus-visible{
     border-left: 0;
     border-right: 0;
     outline: none;
+    
 }
 input:focus, input:focus-visible{
     border-bottom: 3px black solid;

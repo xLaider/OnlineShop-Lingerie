@@ -16,8 +16,11 @@
         <input type="email" id="email" name="email" placeholder="E-mail"><br>
         <input type="password" id="password" name="password" placeholder="Hasło"><br>
         <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Powtórz hasło"><br>
+        <input type="submit" value="Zarejestruj">
     </form>
     <div class="seperator"></div>
+    Jeśli masz już założone konto<br>
+    <a href="index.php?redirectToRegister">kliknij tutaj</a>
     </div>
     
     
