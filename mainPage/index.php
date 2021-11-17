@@ -1,3 +1,7 @@
+<?php
+ session_start();
+?>
+
 <html>
 
 <head>
@@ -18,7 +22,21 @@
         <div class="header">
             <nav>
                 <a href="#contact"><i class="material-icons">shopping_cart</i></a>
-                <a href="#about">ZALOGUJ</a>
+                <?php
+                if(!isset($_SESSION['logged_email']))
+                {
+                    ?>
+                        <a href="../login.php">ZALOGUJ</a>
+                    <?php
+                }
+                else
+                {
+                    ?>
+                        <a href="../logout.php">WYLOGUJ</a>
+                    <?php
+                }
+                ?>
+                
                 <span onclick="openNav()"><i class="material-icons">menu</i></span>
                 <h1 class="text-center">MAJTECZKI W KROPECZKI</h1>
             </nav>

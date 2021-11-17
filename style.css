@@ -37,3 +37,10 @@ text-align: center;
     margin: 1em;
     border: 1px solid var(--main-text-color);
 }
+
+.error{
+    padding: 10px;
+    border: 1px solid red;
+    background: #ffdcdc;
+    font-weight: bold;
+}
