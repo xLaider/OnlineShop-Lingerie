@@ -40,6 +40,7 @@ input, input:focus, input:focus-visible{
     border-left: 0;
     border-right: 0;
     outline: none;
+    
 }
 input:focus, input:focus-visible{
     border-bottom: 3px black solid;
@@ -54,4 +55,36 @@ input:focus, input:focus-visible{
     font-weight: normal;
     font-style: normal;
 
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: 
+         url('./assets/fonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: 
+         url('./assets/fonts/Montserrat-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: 
+         url('./assets/fonts/Montserrat-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: 
+         url('./assets/fonts/Montserrat-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
 }

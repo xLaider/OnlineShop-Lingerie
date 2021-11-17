@@ -43,8 +43,8 @@ CREATE TABLE `user` (
 -- Zrzut danych tabeli `user`
 --
 
-INSERT INTO `user` (`e-mail`, `FirstName`, `LastName`, `PhoneNumber`, `Password`, `DateOfBirth`, `DateOfRegistration`, `DateOfLastLogin`, `AddressId`) VALUES
-('lokomotywatomek@wp.pl', 'Tomasz', 'Nowak', '123456789', 'qwerty123', '1999-06-21', '2021-11-16 23:18:23', '2021-11-16 23:18:23', NULL);
+INSERT INTO `user` (`e-mail`, `FirstName`, `LastName`, `PhoneNumber`, `Password`, `DateOfBirth`, `DateOfRegistration`, `DateOfLastLogin`, `AddressId`) 
+VALUES ('lokomotywatomek@wp.pl', 'Tomasz', 'Nowak', '123456789', 'qwerty123', '1999-06-21', '2021-11-16 23:18:23', '2021-11-16 23:18:23', NULL);
 
 --
 -- Indeksy dla zrzutów tabel

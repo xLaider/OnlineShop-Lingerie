@@ -22,8 +22,13 @@
     <div class="loginArea">
         <h1>
             MAJTECZKI W KROPECZKI
-        </h1>
-        <h2>Zaloguj się na swoje konto</h2>
+            </h1>
+    <h2><?php
+            if (isset($_GET['registerSuccessful'])) 
+            echo 'Rejestracja przebiegła pomyślnie!<br>'
+        ?>
+        Zaloguj sie na swoje konto!
+        </h2>
         <?php
         if (isset($_SESSION['bad_attempt'])) {
         ?>
@@ -38,6 +43,7 @@
             <button type="submit">Zaloguj</button>
         </form>
         <div class="seperator"></div>
+  
     </div>
 
 </body>
