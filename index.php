@@ -22,7 +22,6 @@
     <div class="seperator"></div>
     </div>
     
-    <?php session_start();unset($_SESSION['bad_attempt']);?>
     
 </body>
 </html>
