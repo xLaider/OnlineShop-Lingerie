@@ -1,39 +1,74 @@
+<?php
+ session_start();
+?>
+
 <html>
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="description" content="Strona Główna" />
-    <meta name="keywords" content="Strona Główna" />
-    <title>Strona Główna</title>
     <link rel="stylesheet" href="./style/style.css" /></head>
 
+<<<<<<< HEAD
+    <div>
+=======
 <body>
 
     <main>
+<<<<<<< HEAD
+        <div class="header">
+            <nav>
+                <a href="#contact"><i class="material-icons">shopping_cart</i></a>
+                <?php
+                if(!isset($_SESSION['logged_email']))
+                {
+                    ?>
+                        <a href="../login.php">ZALOGUJ</a>
+                    <?php
+                }
+                else
+                {
+                    ?>
+                        <a href="../logout.php">WYLOGUJ</a>
+                    <?php
+                }
+                ?>
+                
+                <span onclick="openNav()"><i class="material-icons">menu</i></span>
+                <h1 class="text-center">MAJTECZKI W KROPECZKI</h1>
+            </nav>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#">Kobieta</a>
+                <a href="#">Mężczyzna</a>
+                <a href="#">Dzieci</a>
+            </div>
+
+        </div>
+=======
+>>>>>>> c7322df8382f0288ddd575100984b6f2ce50d2f2
        
+>>>>>>> e8406114567494243e178a6549588ec4b24e8893
         <section>
             <article id="banner">
                
                 <div class="slideshow-container">
-                <a class="prev" onclick="plusSlides(-1)"><img src="../assets/images/arrowleft.svg"></a>
+                <a class="prev" onclick="plusSlides(-1)"><img src="./assets/images/arrowleft.svg"></a>
                     <div class="slideshow-container">
 
 
                         <div class="mySlides fade">
-                            <img src="../assets/images/img.svg" style="width:100%">
+                            <img src="./assets/images/img.svg" style="width:100%">
                         </div>
 
                         <div class="mySlides fade">
-                            <img src="../assets/images/img.svg" style="width:100%">
+                            <img src="./assets/images/img.svg" style="width:100%">
                         </div>
 
                         <div class="mySlides fade">
-                            <img src="../assets/images/img.svg" style="width:100%">
+                            <img src="./assets/images/img.svg" style="width:100%">
                         </div>
 
                     </div>
                     
-                    <a class="next" onclick="plusSlides(1)"><img src="../assets/images/arrowright.svg"></a>
+                    <a class="next" onclick="plusSlides(1)"><img src="./assets/images/arrowright.svg"></a>
                 </div>
                
 
@@ -43,7 +78,7 @@
                     <span class="dot" onclick="currentSlide(3)"></span>
                 </div>
                 <div id="arrowdown">
-                    <img src="../assets/images/arrowdown.svg" style="width:100%">
+                    <img src="./assets/images/arrowdown.svg" style="width:100%">
                 </div>
 
 
@@ -51,20 +86,20 @@
             <article id="products">
                 <div class="filter">
                     <div>FILTRUJ</div>
-                    <div onclick="openNav()"><img src="../assets/images/filter.svg" style="width:100%"></div>
+                    <div onclick="openNav()"><img src="./assets/images/filter.svg" style="width:100%"></div>
                 </div>
                 <div class="container">
                     <div >
                         Wszystko
                     </div>
-                    <div class="product"><img src="../assets/images/kobieta.svg" ></div>
-                    <div class="product"><img src="../assets/images/mezczyzna.svg" ></div>
-                    <div class="product"><img src="../assets/images/kobieta.svg" ></div>
-                    <div class="product"><img src="../assets/images/kobieta.svg" ></div>
-                    <div class="product"><img src="../assets/images/kobieta.svg" ></div>
-                    <div class="product"><img src="../assets/images/kobieta.svg" ></div>
-                    <div class="product"><img src="../assets/images/kobieta.svg" ></div>
-                    <div class="product"><img src="../assets/images/kobieta.svg" ></div>
+                    <div class="product"><img src="./assets/images/kobieta.svg" ></div>
+                    <div class="product"><img src="./assets/images/mezczyzna.svg" ></div>
+                    <div class="product"><img src="./assets/images/kobieta.svg" ></div>
+                    <div class="product"><img src="./assets/images/kobieta.svg" ></div>
+                    <div class="product"><img src="./assets/images/kobieta.svg" ></div>
+                    <div class="product"><img src="./assets/images/kobieta.svg" ></div>
+                    <div class="product"><img src="./assets/images/kobieta.svg" ></div>
+                    <div class="product"><img src="./assets/images/kobieta.svg" ></div>
                     
                     <div>
                         Made by Us
@@ -76,7 +111,7 @@
             </article>
 
         </section>
-    </main>
+    </div>
 
     <script>
        
@@ -112,6 +147,3 @@
             dots[slideIndex - 1].className += " active";
         }
     </script>
-</body>
-
-</html>

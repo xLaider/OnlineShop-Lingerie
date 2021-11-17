@@ -3,6 +3,8 @@
 </style>
 
 <?php
+
+
 $dsn = "localhost";
 $username = "root";
 $password = "";
@@ -11,10 +13,11 @@ $conn = new mysqli($dsn, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
   }
-$request = $_SERVER['REQUEST_URI'];
-//var_dump($_SERVER);
+$arr = explode("/projekt",$_SERVER['REQUEST_URI']);
+array_shift($arr);
+$request = implode('/',$arr);
 switch ($request ) {
-    case'/index.php':
+    case '/index.php':
     case '/' :
         require __DIR__ . '/navBar/navBar.php';
         ?>
