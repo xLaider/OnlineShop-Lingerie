@@ -1,8 +1,51 @@
+<?php
+ session_start();
+?>
+
+<html>
 
     <link rel="stylesheet" href="./style/style.css" /></head>
 
+<<<<<<< HEAD
     <div>
+=======
+<body>
+
+    <main>
+<<<<<<< HEAD
+        <div class="header">
+            <nav>
+                <a href="#contact"><i class="material-icons">shopping_cart</i></a>
+                <?php
+                if(!isset($_SESSION['logged_email']))
+                {
+                    ?>
+                        <a href="../login.php">ZALOGUJ</a>
+                    <?php
+                }
+                else
+                {
+                    ?>
+                        <a href="../logout.php">WYLOGUJ</a>
+                    <?php
+                }
+                ?>
+                
+                <span onclick="openNav()"><i class="material-icons">menu</i></span>
+                <h1 class="text-center">MAJTECZKI W KROPECZKI</h1>
+            </nav>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#">Kobieta</a>
+                <a href="#">Mężczyzna</a>
+                <a href="#">Dzieci</a>
+            </div>
+
+        </div>
+=======
+>>>>>>> c7322df8382f0288ddd575100984b6f2ce50d2f2
        
+>>>>>>> e8406114567494243e178a6549588ec4b24e8893
         <section>
             <article id="banner">
                

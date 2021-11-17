@@ -4,7 +4,7 @@ session_start();
 
 if(isset($_SESSION['logged_email']))
 {
-    header('Location: stronaglowna.php');
+    header('Location: mainPage');
     exit();
 }
 
@@ -34,7 +34,7 @@ if (!isset($_SESSION['logged_email'])) {
         if ($user && password_verify($password, $user['Password'])) {
             $_SESSION['logged_email'] = $user['E-mail'];
             unset($_SESSION['bad_attempt']);
-            header('Location: stronaglowna.php');
+            header('Location: mainPage');
         } else {
             $_SESSION['bad_attempt'] = "pass or user doesnt exist";
             header('Location: login.php');

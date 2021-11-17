@@ -1,4 +1,4 @@
-@import "../main.css";
+@import "./main.css";
 
 .registerArea, .loginArea{
     display: flex;
@@ -36,4 +36,11 @@ text-align: center;
     top: 755px;
     margin: 1em;
     border: 1px solid var(--main-text-color);
+}
+
+.error{
+    padding: 10px;
+    border: 1px solid red;
+    background: #ffdcdc;
+    font-weight: bold;
 }
