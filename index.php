@@ -12,8 +12,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
   }
 $request = $_SERVER['REQUEST_URI'];
-
+//var_dump($_SERVER);
 switch ($request ) {
+    case'/index.php':
     case '/' :
         require __DIR__ . '/navBar/navBar.php';
         ?>
