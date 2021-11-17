@@ -14,9 +14,14 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
   }
 $arr = explode("/projekt",$_SERVER['REQUEST_URI']);
-array_shift($arr);
+var_dump($arr);
+if (sizeof($arr)>1){
+    array_shift($arr);
+}
 $request = implode('/',$arr);
+var_dump($request);
 switch ($request ) {
+    case '':
     case '/index.php':
     case '/' :
         require __DIR__ . '/navBar/navBar.php';
