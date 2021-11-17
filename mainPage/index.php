@@ -15,7 +15,7 @@
 <body>
 
     <main>
-        <div class="header">
+        <!-- <div class="header">
             <nav>
                 <a href="#contact"><i class="material-icons">shopping_cart</i></a>
                 <a href="#about">ZALOGUJ</a>
@@ -29,7 +29,7 @@
                 <a href="#">Dzieci</a>
             </div>
 
-        </div>
+        </div> -->
         <section>
             <article id="banner">
                
