@@ -18,7 +18,8 @@
         ?>
         Zaloguj sie na swoje konto!
     </h2>
-    <form class ="login" action="" method="post">
+    <form class ="login" action="login_form_handling.php" method="post">
+
         <input type="email" id="email" name="email" placeholder="E-mail"><br>
         <input type="password" id="password" name="password" placeholder="Hasło"><br>
         <input type="submit" value="Zaloguj">
@@ -30,6 +31,7 @@
     </div>
     </div>
     
+    <?php session_start();unset($_SESSION['bad_attempt']);?>
     
 </body>
 </html>
