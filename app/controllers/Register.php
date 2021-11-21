@@ -5,7 +5,7 @@ class Register extends Controller {
     {
         $this->userModel = $this->model('User');
         $this->authorizeModel = $this->model('Authorize');
-        $this->view('register');
+        
     }
     public function registerUser(){
         if (!isset($_POST['password']) or !isset($_POST['email']) or !isset($_POST['confirmPassword'])){
@@ -28,7 +28,7 @@ class Register extends Controller {
         exit();
     }
     public function index(){
-        
+        $this->view('register');
     }
 }
 

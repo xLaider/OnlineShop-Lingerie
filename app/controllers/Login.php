@@ -5,12 +5,10 @@ class Login extends Controller {
     {
         $this->authorizeModel = $this->model('Authorize');
         $this->userModel = $this->model('User');
-        $this->view('login');
     }
     public function index(){
-        
+        $this->view('login');
     }
-
     public function tryToLogin(){
         if (!isset($_POST['email']) or !isset($_POST['password'])){
             $_SESSION['errorEmptyLogin']="Uzupelnij wszystkie dane!";
@@ -26,7 +24,7 @@ class Login extends Controller {
                 exit();
             }
         }
-        /*header("Location: ".URLROOT."/login");
-                exit();*/
+        header("Location: ".URLROOT."/login");
+                exit();
     }
 }
