@@ -19,7 +19,7 @@ class Product extends Controller {
         $_SESSION['imageArray']=$arr;
 
         echo $_SESSION['imageArray'][0];
-        //header("Location: ".URLROOT."/product");
-                //exit();
+        header("Location: ".URLROOT."/product");
+                exit();
     }
 }
