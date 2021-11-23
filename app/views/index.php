@@ -30,6 +30,9 @@
         document.getElementById("mySidenav").style.width = "0";
     }
     </script>
+    
+    <!-- End of navbar -->
+
     <section>
         <article id="banner">
             <div class="slideshow-container">
@@ -74,7 +77,6 @@
                 <div class="product"><img src="./assets/images/kobieta.svg" ></div>
                 <div class="product"><img src="./assets/images/kobieta.svg" ></div>
                 <div class="product"><img src="./assets/images/kobieta.svg" ></div>
-                
                 <div>
                     Made by Us
                 </div>

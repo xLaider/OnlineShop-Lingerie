@@ -12,7 +12,7 @@
         }
         public function createUser(){
             $query="INSERT INTO user (email, FirstName, LastName, PhoneNumber, Password, DateOfBirth, DateOfRegistration, DateOfLastLogin, AddressId) 
-            VALUES (:email, null, null, null, :password, null, :registerDate, null, NULL);";
+            VALUES (:email, null, null, null, :password, null, :registerDate, null,null);";
             $this->db->query($query);
             $this->db->bind(':email',$_POST['email']);
             $hashedPassword=password_hash($_POST['password'],PASSWORD_DEFAULT);
