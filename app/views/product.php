@@ -1,3 +1,7 @@
+<?php 
+    $product = unserialize($_SESSION['currentProduct']);
+?>
+
 <link rel="stylesheet" href="./css/navBar.css" />
 <link rel="stylesheet" href="./css/product.css" /></head>
 <nav class="header">
@@ -54,23 +58,24 @@
             <img src="./assets/images/arrowdown.svg" style="width:50%">
         </div>
         <div>
+        
             <div class="productHero"><img src="<?php echo $_SESSION['imageArray'][1]?>" ></div>
         </div>
         <div class="info">
             <div class="name">
-                Calvin Klein Modern Cotton<br>
-                Majtki
+            <?php echo $product->Name ?><br>
+            <?php echo $product->Category ?>
             </div>
             <div class="description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget enim porta lorem finibus mattis in sed dolor. Ut augue felis, mattis eget massa ac, tristique elementum sapien. Fusce id nibh id lectus aliquet tempus nec ut nunc. Duis elit tortor, fermentum nec porta vel, blandit sed sapien. Aenean non urna non eros feugiat pellentesque faucibus vitae enim. Suspendisse suscipit arcu ac metus venenatis, vel suscipit sapien pellentesque. Integer elementum mi in sagittis ornare. In elit urna, dignissim in blandit a, volutpat eu lacus.
+                <?php echo $product->Description ?>
             </div>
             <div class="orderOptions">
                 <div>
-                    Cena<span> 45 zł</span>
+                    Cena <span> <?php echo $product->Price ?></span>
                 </div> 
                 <div class="finalize">
                     <div>
-                        Rozmiar<span> XXL</span>
+                        Rozmiar<span> <?php echo $product->Sizes ?></span>
                     </div>
                     <div>
                         <a href="<?php echo URLROOT."/cart/addToCart"?>"></a>

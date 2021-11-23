@@ -7,6 +7,7 @@ class Product extends Controller {
     }
     public function index(){
         $this->view('product');
+        
     }
     public function initProduct(){
         $product = $this->productModel->getProductByID($_GET['productID']);
