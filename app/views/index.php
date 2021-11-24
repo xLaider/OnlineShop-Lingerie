@@ -176,21 +176,18 @@
                     Wszystko
                 </div>
                 <?php
-                    $arrayOfProducts=array();
-                    foreach($_SESSION['products'] as $product){
-                        array_push($arrayOfProducts,unserialize($product));
-                    }
-                    foreach ($arrayOfProducts as $product){
+                   
+                    foreach ($products as $product){
                         echo 
                         "<div class='product'>
+                        <a href='".URLROOT."/product/initProduct?productID=".$product->productID."'>
+                        </a>
                         <img src='".$product->link."'>
 
-                        <a href='".URLROOT."/product/initProduct?productID=".$product->productID."'>
                         <div class='hidden'>
-                                <p style='font-size:xx-large;'>".$product->Name."<p>
-                                <p style='font-size: large;'>Cena: ".$product->Price."</p>
+                                <span style='font-size:xx-large;'>".$product->Name."</span>
+                                <span style='font-size: large;'>Cena: ".$product->Price."</span>
                             </div>
-                            </a>
                             </div>";
                     }
                     

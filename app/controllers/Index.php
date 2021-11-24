@@ -9,12 +9,8 @@ class Index extends Controller {
     public function index(){
         
         $products=$this->productModel->getAllProducts();
-        $arrayOfProducts=array();
-        foreach($products as $product){
-            array_push($arrayOfProducts,serialize($product));
-        }
-        $_SESSION['products']=$arrayOfProducts;
-        $this->view('index');
+        
+        $this->view('index',compact('products', $products));
 
     }
     public function logout(){
@@ -22,5 +18,6 @@ class Index extends Controller {
         header("Location: ".URLROOT);
         exit();
     }
+
 }
 ?>

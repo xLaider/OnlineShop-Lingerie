@@ -51,7 +51,7 @@ input:focus, input:focus-visible{
 @font-face {
     font-family: 'Gant';
     src: 
-         url('./assets/fonts/gant-regular-webfont.ttf') format('truetype');
+         url('../assets/fonts/gant-regular-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 
@@ -60,7 +60,7 @@ input:focus, input:focus-visible{
 @font-face {
     font-family: 'Montserrat';
     src: 
-         url('./assets/fonts/Montserrat-Regular.ttf') format('truetype');
+         url('../assets/fonts/Montserrat-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -68,7 +68,7 @@ input:focus, input:focus-visible{
 @font-face {
     font-family: 'Montserrat';
     src: 
-         url('./assets/fonts/Montserrat-Bold.ttf') format('truetype');
+         url('../assets/fonts/Montserrat-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }

@@ -1,3 +1,4 @@
+@import "main.css";
 
 * {
   font-family: Montserrat;
@@ -14,6 +15,7 @@ main {
 }
 
 .container {
+  width: -webkit-fill-available;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: 150px;
@@ -27,13 +29,20 @@ main {
 .product {
   grid-row: span 4;
 }
+.product > a {
+  width: 100%;
+  height: 100%;
+  position:absolute;
+}
 .product:hover .hidden {
   opacity:1;
 }
 
 .hidden {
-  background-color: rgb(255, 255, 255);
-  color: white;
+  height: 150px;
+  background: linear-gradient(
+    0deg
+    , rgba(0,0,0,1) -20%, rgba(14,14,14,0.5382528011204482) 45%, rgba(0,212,255,0) 97%, rgba(0,212,255,0) 100%);
   position:absolute;
   left:0;
   bottom:0;
@@ -47,6 +56,11 @@ main {
   align-items: flex-start;
   justify-content:center;
   text-align:center;
+}
+
+.hidden *{
+  color:white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 .container > div {
@@ -66,9 +80,9 @@ main {
   position: relative;
 }
 
-.product img {
-  height: 100%;
-  width: 100%;
+.product img {    
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .text-center {
