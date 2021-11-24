@@ -5,8 +5,7 @@
 <link rel="stylesheet" href="./css/navBar.css" />
 <link rel="stylesheet" href="./css/product.css" /></head>
 <nav class="header">
-    <img class="menu-icon" src="./assets/images/menu.svg" alt="Menu"  onclick="openNav()">
-                
+    <img class="menu-icon" src="./assets/images/menu.svg" alt="Menu"  onclick="openNav()">       
     <h1 class="logo">
         <a href="<?php echo URLROOT?>">MAJTECZKI W KROPECZKI</a>
     </h1>
@@ -52,14 +51,16 @@
     </div>
     <div class="hero">
         <div class="column">
-            <div class="productRow"><img src="<?php echo $_SESSION['imageArray'][0]?>" ></div>
-            <div class="productRow"><img src="<?php echo $_SESSION['imageArray'][1]?>" ></div>
-            <div class="productRow"><img src="<?php echo $_SESSION['imageArray'][1]?>" ></div>
-            <img src="./assets/images/arrowdown.svg" style="width:50%">
+            <?php 
+                foreach($_SESSION['imageArray'] as $image){
+                    echo "<div class='productRow'><img src='".$image."' ></div>";
+                }
+                echo "<img src='./assets/images/arrowdown.svg' style='width:50%'>";
+            ?>       
         </div>
         <div>
         
-            <div class="productHero"><img src="<?php echo $_SESSION['imageArray'][1]?>" ></div>
+            <div class="productHero"><img src="<?php echo $_SESSION['imageArray'][0]?>" ></div>
         </div>
         <div class="info">
             <div class="name">
@@ -78,8 +79,7 @@
                         Rozmiar<span> <?php echo $product->Sizes ?></span>
                     </div>
                     <div>
-                        <a href="<?php echo URLROOT."/cart/addToCart"?>"></a>
-                        Dodaj do koszyka +
+                        <a href="<?php echo URLROOT."/cart/addToCart"?>">Dodaj do koszyka +</a>
                     </div>
                 </div> 
                 

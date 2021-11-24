@@ -1,3 +1,4 @@
+@import "main.css";
 
 * {
   font-family: Montserrat;
@@ -14,6 +15,7 @@ main {
 }
 
 .container {
+  width: -webkit-fill-available;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: 150px;
@@ -22,9 +24,43 @@ main {
   height: auto;
   margin-left: 10%;
   margin-right: 5%;
+  cursor: pointer;
 }
 .product {
   grid-row: span 4;
+}
+.product > a {
+  width: 100%;
+  height: 100%;
+  position:absolute;
+}
+.product:hover .hidden {
+  opacity:1;
+}
+
+.hidden {
+  height: 150px;
+  background: linear-gradient(
+    0deg
+    , rgba(0,0,0,1) -20%, rgba(14,14,14,0.5382528011204482) 45%, rgba(0,212,255,0) 97%, rgba(0,212,255,0) 100%);
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  padding:1rem;
+  box-sizing:border-box;
+  transition:.8s ease;
+  opacity:0;
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content:center;
+  text-align:center;
+}
+
+.hidden *{
+  color:white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 .container > div {
@@ -44,16 +80,16 @@ main {
   position: relative;
 }
 
-.product img {
-  height: 100%;
-  width: 100%;
+.product img {    
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .text-center {
   text-align: center;
 }
 
-.filter {
+.filterButton {
   align-self: flex-start;
   position: sticky;
   top: 50%;
@@ -65,7 +101,7 @@ main {
   cursor: pointer;
 }
 
-.filter {
+.filterButton {
   font-size: larger;
   writing-mode: vertical-rl;
   text-orientation: mixed;
@@ -188,3 +224,162 @@ img {
     opacity: 1;
   }
 }
+
+  /* The side navigation menu */
+  .filterSidenav { 
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 85px; /* Stay at the top */
+    left: 0;
+    height: 100%;
+    background-color: rgb(255, 255, 255); /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    
+  }
+  
+  /* The navigation menu links */
+  .filterSidenav h3 {
+    padding: 8px 8px 8px 32px;
+    font-size: 20px;
+    color: #000000;
+    
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .filterSidenav a:hover {
+    color: #adadad;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .filterSidenav .closebtn {
+    position: absolute;
+    top: 45%;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  
+  
+  @media screen and (max-height: 450px) {
+    .filterSidenav {
+      padding-top: 15px;
+    }
+    .filterSidenav a {
+      font-size: 18px;
+    }
+  }
+
+
+  /*FILTER KATEGORIE*/
+  .price0 {
+    margin-left: 10px;
+    display: inline-flex;
+
+  }
+.price {
+  width: 70px;
+  height: 30px;
+  display: inline-flex;
+  font-size: medium;
+}
+
+.buttonFiltr {
+  padding: 10px 0;
+}
+.buttonFiltr input[type=submit] {
+  width: 200px;
+  height: 60px;
+  background-color: #000000;
+  color: white;
+  padding: 14px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.buttonFiltr input[type=submit]:hover {
+  background-color: #ccc;
+  color: black;
+}
+
+  /* Customize the label (the container) */
+.box {
+  display: block;
+  position: relative;
+  width: 100px;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  margin-right: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-left: 10px;
+}
+
+/* Hide the browser's default checkbox */
+.box input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: rgb(231, 227, 227);
+}
+
+/* On mouse-over, add a grey background color */
+.box:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.box input:checked ~ .checkmark {
+  background-color: #000000;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.box input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.box .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+  
