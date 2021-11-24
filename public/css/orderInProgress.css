@@ -1,0 +1,56 @@
+main{
+    flex-direction: row;
+}
+
+img{
+    max-width: 200px;
+    max-height: 200px;
+}
+table{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    text-align: Left;
+    padding: 5%;
+}
+table td, th{
+    padding: 0 10px;
+}
+
+.leftSide{
+    float:left;
+
+}
+
+.rightSide{
+    float:right;
+    width: 1000px;
+   margin-right: 50px;
+
+}
+.DaneOsobowe{
+    flex-direction: row;
+
+}
+
+.box{
+    column-count: 2;
+    padding: 5px 0;
+
+}
+
+.kategoria{
+    font-weight: bold;
+    width: 45%;
+}
+
+.opis{
+    border-bottom: 1px solid black;
+    width: 50%;
+}
+
+
