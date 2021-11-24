@@ -43,7 +43,11 @@
             <th>Cena</th>
         </tr>
         <?php 
-        foreach ($_SESSION['cartItem'] as $item){
+
+var_dump($cartProducts);
+        foreach ($cartProducts as $product){
+
+
             echo "<tr>
             <div class='tableLeft'>
                 <td><div class='product'><img src='./assets/images/kobieta.svg' ></div></td>
