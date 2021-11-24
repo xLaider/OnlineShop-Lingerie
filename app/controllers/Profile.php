@@ -6,7 +6,7 @@ class Profile extends Controller {
         $this->userModel = $this->model('User');
     }
     public function index(){
-        $this->view('login');
+        $this->view('profile');
     }
 
 }
