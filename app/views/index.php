@@ -181,11 +181,16 @@
                         array_push($arrayOfProducts,unserialize($product));
                     }
                     foreach ($arrayOfProducts as $product){
-                        echo "<div class='product'><img src='".$product->link."'>
-                            <div class='hidden'>
+                        echo 
+                        "<div class='product'>
+                        <img src='".$product->link."'>
+
+                        <a href='".URLROOT."/product/initProduct?productID=".$product->productID."'>
+                        <div class='hidden'>
                                 <p style='font-size:xx-large;'>".$product->Name."<p>
-                                <p style='font-size: large;'>Cena: ".$product->Price."</p>     
+                                <p style='font-size: large;'>Cena: ".$product->Price."</p>
                             </div>
+                            </a>
                             </div>";
                     }
                     

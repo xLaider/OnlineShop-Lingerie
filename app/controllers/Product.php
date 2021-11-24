@@ -18,7 +18,7 @@ class Product extends Controller {
             array_push($arr,$image->link);
         }
         $_SESSION['imageArray']=$arr;
-
+        
         echo $_SESSION['imageArray'][0];
         header("Location: ".URLROOT."/product");
                 exit();

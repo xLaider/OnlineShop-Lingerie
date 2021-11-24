@@ -52,10 +52,12 @@
     </div>
     <div class="hero">
         <div class="column">
-            <div class="productRow"><img src="<?php echo $_SESSION['imageArray'][0]?>" ></div>
-            <div class="productRow"><img src="<?php echo $_SESSION['imageArray'][1]?>" ></div>
-            <div class="productRow"><img src="<?php echo $_SESSION['imageArray'][1]?>" ></div>
-            <img src="./assets/images/arrowdown.svg" style="width:50%">
+            <?php 
+                foreach($_SESSION['imageArray'] as $image){
+                    echo "<div class='productRow'><img src='".$image."' ></div>";
+                }
+                echo "<img src='./assets/images/arrowdown.svg' style='width:50%'>";
+            ?>       
         </div>
         <div>
         
@@ -78,8 +80,7 @@
                         Rozmiar<span> <?php echo $product->Sizes ?></span>
                     </div>
                     <div>
-                        <a href="<?php echo URLROOT."/cart/addToCart"?>"></a>
-                        Dodaj do koszyka +
+                        <a href="<?php echo URLROOT."/cart/addToCart"?>">Dodaj do koszyka +</a>
                     </div>
                 </div> 
                 
