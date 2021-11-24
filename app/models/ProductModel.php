@@ -20,5 +20,12 @@
             $result=$this->db->resultSet();
             return $result;
         }
+
+        public function getAllProducts(){
+            $query='SELECT productID, Name, Price FROM product';
+            $this->db->query($query);
+            $result=$this->db->resultSet();
+            return $result;
+        }
     }
 ?>
