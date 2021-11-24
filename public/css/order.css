@@ -1,0 +1,71 @@
+h2{
+    width: 291px;
+height: 71px;
+left: 146px;
+top: 109px;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 32px;
+line-height: 39px;
+display: flex;
+align-items: center;
+
+}
+.arrowLeft{
+    margin: 1em;
+}
+
+.personalData{
+    display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+align-content: center;
+font-size: 22px;
+}
+
+label{
+    margin: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+    gap: 1em;
+}
+
+input{
+    height:30px;
+    width: 300px;
+}
+table{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    text-align: Left;
+    padding: 5%;
+    font-size: 20px;
+
+}
+table td, th{
+    padding: 0 10px;
+}
+label{
+    font-weight: bold;
+}
+.hero{
+    display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: flex-start;
+align-content: center;
+}
+.gap{
+    margin-top: 4em;
+}

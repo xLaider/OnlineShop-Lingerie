@@ -5,8 +5,7 @@
 <link rel="stylesheet" href="./css/navBar.css" />
 <link rel="stylesheet" href="./css/product.css" /></head>
 <nav class="header">
-    <img class="menu-icon" src="./assets/images/menu.svg" alt="Menu"  onclick="openNav()">
-                
+    <img class="menu-icon" src="./assets/images/menu.svg" alt="Menu"  onclick="openNav()">       
     <h1 class="logo">
         <a href="<?php echo URLROOT?>">MAJTECZKI W KROPECZKI</a>
     </h1>
