@@ -179,16 +179,15 @@
                    
                     foreach ($products as $product){
                         echo 
-                        "<div class='product'>
-                        <a href='".URLROOT."/product/initProduct?productID=".$product->productID."'>
-                        </a>
+                        "
+                        <a class='product' href='".URLROOT."/product/initProduct?productID=".$product->productID."'>
+                        
                         <img src='".$product->link."'>
 
                         <div class='hidden'>
                                 <span style='font-size:xx-large;'>".$product->Name."</span>
                                 <span style='font-size: large;'>Cena: ".$product->Price."</span>
-                            </div>
-                            </div>";
+                            </div></a>";
                     }
                     
                 ?>
