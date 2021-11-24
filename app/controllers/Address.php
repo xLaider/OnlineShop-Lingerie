@@ -31,6 +31,9 @@ class Address extends Controller
            
             if ($address == null) {//jeśli adresu nie ma to utworzenie go
                 $this->shipmentModel->createAddress($_POST['country'], $_POST['city'], $_POST['street'], $_POST['number'], $_POST['postCode'], $_SESSION['userData']->email);
+                $_SESSION['updateAddress']="Poprawnie zmieniono dane adresowe";
+                header("Location: " . URLROOT . "/address");
+                exit();
 
             } else {
                 //jak jest to go updateuje

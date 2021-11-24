@@ -27,12 +27,11 @@
             //pobieranie id z tego nowo wstawionego i ustawienie w tabeli user pola IdAddress
             
             $lastId=$this->db->lastInsertId();
-            echo $lastId."<-lastid";
+            
 
              $query2="UPDATE user SET AddressId=:AddressId WHERE email=:email;";
              $this->db->query($query2);
              $this->db->bind(':AddressId',$lastId);
-             //$this->db->bind(':AddressId',3);
              $this->db->bind(':email',$email);
              $this->db->execute();
 
