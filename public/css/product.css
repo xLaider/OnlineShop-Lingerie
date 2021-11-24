@@ -46,23 +46,28 @@ gap: 1em;
 .hero{
     display: flex;
 flex-direction: row;
-flex-wrap: wrap;
-justify-content: space-between;
-align-items: center;
+gap: 1rem;
+margin-top: 3em;
+justify-content: space-evenly;
+align-items: start;
 align-content: center;
+margin-right: 1em;
 }
 .productHero{
     border: 2px solid rgb(0, 0, 0);
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 600px;
+    height: 600px;
 }
-
+.info{
+    height: 600px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
 .name{
-    width: 719px;
-height: 63px;
-left: 1150px;
-top: 224px;
 
 font-family: Montserrat;
 font-style: normal;
@@ -77,10 +82,7 @@ color: #000000;
 
 }
 .description{
-    width: 682px;
-height: 550px;
-left: 1155px;
-top: 335px;
+
 
 font-family: Open Sans;
 font-style: normal;
@@ -92,14 +94,7 @@ letter-spacing: 0.03em;
 color: #000000;
 }
 
-.orderOptions{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
-}
+
 .finalize{
     display: flex;
 flex-direction: row;
@@ -107,4 +102,29 @@ flex-wrap: wrap;
 justify-content: space-between;
 align-items: center;
 align-content: center;
+}
+.flex-row, .flex-column{
+    
+    justify-content: space-between;
+    gap: 1rem;
+}
+.flex-column > div{
+    font-weight: bold;
+}
+.flex-column > div> span{
+    border-bottom: 1px solid black;
+}
+
+@media screen and (max-width: 1280px) {
+    .hero{
+        flex-direction: column;
+        margin-bottom: 2em;
+    }
+    .info{
+        width: 100%;
+        align-items: center;
+        height: auto;
+        gap: 3rem;
+        
+    }
 }

@@ -1,17 +1,42 @@
 <link rel="stylesheet" href="./css/register.css">
+<link rel="stylesheet" href="./css/address.css">
 </head>
 <body>
     <div class="registerArea">
     <h1>
         Dane do wysyłki
     </h1>
-    
-   <form class ="register" action="<?php echo URLROOT."/Address/AddressHandler"?>" method="post">
-        <input type="text" id="country" name="country" placeholder="Kraj"><br>
-        <input type="text" id="city" name="city" placeholder="Miasto"><br>
-        <input type="text" id="street" name="street" placeholder="Ulica"><br>
-        <input type="text" id="number" name="number" placeholder="Nr budynku/nr mieszkania"><br>
-        <input type="text" id="postCode" name="postCode" placeholder="Kod pocztowy"><br>
+      <form class ="register" action="<?php echo URLROOT."/Address/AddressHandler"?>" method="post">
+        <input type="text" id="country" name="country" value="<?php
+			if (isset($_SESSION['address']->Country))
+			{
+				echo $_SESSION['address']->Country;
+			}
+		?>" placeholder = "Kraj"><br>
+        <input type="text" id="city" name="city" value="<?php
+			if (isset($_SESSION['address']->City))
+			{
+				echo $_SESSION['address']->City;
+			}
+		?>" placeholder = "Miasto"><br>
+        <input type="text" id="street" name="street" value="<?php
+			if (isset($_SESSION['address']->Street))
+			{
+				echo $_SESSION['address']->Street;
+			}?>" placeholder="Ulica"><br>
+        <input type="text" id="number" name="number" value="<?php
+			if (isset($_SESSION['address']->{"BuildingNumber/ApartmentNumber"}))
+			{
+				echo $_SESSION['address']->{"BuildingNumber/ApartmentNumber"};
+			}
+		?>" placeholder = "Nr budynku/ nr mieszkania"><br>
+        <input type="text" id="postCode" name="postCode" value="<?php
+			if (isset($_SESSION['address']->PostCode))
+			{
+				echo $_SESSION['address']->PostCode;
+			}
+            else echo "Kod pocztowy";
+		?>" placeholder = "Kod pocztowy"><br>
         <input type="submit" value="Zapisz">
 
     </form>
@@ -23,8 +48,8 @@
     }
     ?>
     <div class="seperator"></div>
-    Cofnij<br>
-    <a href="<?php echo URLROOT."/profile"?>"></a>
+    <br>
+    <a href="<?php echo URLROOT."/profile"?>">Powrót</a>
     </div>
     
     

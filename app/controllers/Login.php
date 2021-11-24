@@ -7,6 +7,11 @@ class Login extends Controller {
         $this->userModel = $this->model('User');
     }
     public function index(){
+        if(isset($_SESSION['userData']))
+        {
+            header("Location: ".URLROOT);
+            exit();
+        }
         $this->view('login');
     }
     public function tryToLogin(){

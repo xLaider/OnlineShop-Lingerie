@@ -180,7 +180,7 @@
                     foreach ($products as $product){
                         echo 
                         "
-                        <a class='product' href='".URLROOT."/product/initProduct?productID=".$product->productID."'>
+                        <a class='product' href='".URLROOT."/product?productID=".$product->productID."'>
                         
                         <img src='".$product->link."'>
 

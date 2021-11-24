@@ -50,6 +50,10 @@
             return $this->statement->execute();
         }
 
+        public function lastInsertId(){
+            return $this->dbHandler->lastInsertId();
+        }
+
         public function resultSet(){
             $this->execute();
             return $this->statement->fetchAll(PDO::FETCH_OBJ);
