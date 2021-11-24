@@ -1,5 +1,15 @@
 @import "./variables.css";
 
+.flex-row{
+    display:flex;
+    flex-direction: row;
+    
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
 *{
     box-sizing: border-box;
     color: var(--main-text-color);
@@ -35,7 +45,7 @@ input{
     transition : background-color 500ms ease-out;
 }
 
-input, input:focus, input:focus-visible{
+input, input:focus, input:focus-visible, select{
     border-top: 0;
     border-left: 0;
     border-right: 0;
