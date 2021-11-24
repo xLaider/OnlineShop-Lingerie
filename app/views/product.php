@@ -59,7 +59,7 @@
         </div>
         <div>
         
-            <div class="productHero"><img src="<?php echo $_SESSION['imageArray'][1]?>" ></div>
+            <div class="productHero"><img src="<?php echo $_SESSION['imageArray'][0]?>" ></div>
         </div>
         <div class="info">
             <div class="name">

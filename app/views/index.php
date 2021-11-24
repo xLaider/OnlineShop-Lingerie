@@ -1,5 +1,6 @@
 
 
+
 <link rel="stylesheet" href="./css/navBar.css" />
 <link rel="stylesheet" href="./css/index.css" />
 
@@ -174,20 +175,21 @@
                 <div>
                     Wszystko
                 </div>
-                <div class="product"><img src="./assets/images/kobieta.svg">
-                <div class="hidden">
-                    <p style="font-size:xx-large;">Nazwa produktu<p>
-                            <p style="font-size: large;">Cena: 100zł</p>
-                            
-                        </div>
-            </div>
-                <div class="product"><img src="./assets/images/mezczyzna.svg"></div>
-                <div class="product"><img src="./assets/images/kobieta.svg"></div>
-                <div class="product"><img src="./assets/images/kobieta.svg"></div>
-                <div class="product"><img src="./assets/images/kobieta.svg"></div>
-                <div class="product"><img src="./assets/images/kobieta.svg"></div>
-                <div class="product"><img src="./assets/images/kobieta.svg"></div>
-                <div class="product"><img src="./assets/images/kobieta.svg"></div>
+                <?php
+                    $arrayOfProducts=array();
+                    foreach($_SESSION['products'] as $product){
+                        array_push($arrayOfProducts,unserialize($product));
+                    }
+                    foreach ($arrayOfProducts as $product){
+                        echo "<div class='product'><img src='".$product->link."'>
+                            <div class='hidden'>
+                                <p style='font-size:xx-large;'>".$product->Name."<p>
+                                <p style='font-size: large;'>Cena: ".$product->Price."</p>     
+                            </div>
+                            </div>";
+                    }
+                    
+                ?>
 
                 <div>
                     Made by Us

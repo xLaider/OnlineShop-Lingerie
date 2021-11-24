@@ -23,4 +23,13 @@ class Product extends Controller {
         header("Location: ".URLROOT."/product");
                 exit();
     }
+    public function addToCart(){
+        if (isset($_SESSION['cartItems'])){
+            $arr=array();
+            $_SESSION['cartItems']=$arr;
+        }
+        
+        array_push($_SESSION['cartItems'],$_SESSION['currentProduct']);
+        
+    }
 }
