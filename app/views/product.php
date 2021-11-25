@@ -79,7 +79,7 @@
                         Rozmiar<span> <?php echo $product->Sizes ?></span>
                     </div>
                     <div>
-                        <a href="<?php echo URLROOT."/cart/addToCart?id=".$product->productID; ?>">Dodaj do koszyka +</a>
+                        <a href="<?php echo URLROOT."/cart/addToCart/".$product->productID; ?>">Dodaj do koszyka +</a>
                     </div>
                 </div> 
                 

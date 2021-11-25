@@ -11,7 +11,29 @@ align-items: center;
 flex-direction: column;
 align-content: center;
 text-align: Left;
+
 }
 .tableLeft{
     float: Left;
 }
+main{
+    flex-direction: row;
+}
+
+table td, th{
+    padding: 0 10px;
+}
+
+section.boxed{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cartSum{
+    float: right;
+    font-size: 20px;
+}
+a.cartbox {
+    font-size: 16px;
+    margin: 2px 6px;

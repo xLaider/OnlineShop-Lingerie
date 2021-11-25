@@ -9,32 +9,46 @@ class Cart extends Controller
     }
     public function index()
     {
-
-        var_dump($_SESSION['cartItemsId']);
+        $cartItemsId = unserialize($_SESSION['cartItemsId']);
+        $cartSum=0;
         $cartProducts = [];
         if (isset($_SESSION['cartItemsId'])) {
-            foreach ($_SESSION['cartItemsId'] as $cartItemId) {
-                var_dump($cartItemId);
+            foreach (unserialize($_SESSION['cartItemsId']) as $cartItemId  => $quantity) {
                 $product = $this->productModel->getProductByID($cartItemId);
-                var_dump($product);
-                $images = $this->productModel->getImageByID($cartItemId);
-                if (isset($images[0]))
-                    $product->image = $images[0];
-                else
-                    $product->image = NULL;
-                array_push($cartProducts, $product);
+                if($product){
+                    $product->quantity = $quantity;
+                    $cartSum+=$product->Price*$quantity;
+                    $images = $this->productModel->getImageByID($cartItemId);
+                    if (isset($images[0]))
+                        $product->image = $images[0];
+                    else
+                        $product->image = NULL;
+                    array_push($cartProducts, $product);
+                }
+                
             }
         }
-        $this->view('cart');
+        $this->view('cart',array("cartProducts" => $cartProducts,"cartSum"=>$cartSum));
     }
 
-    public function addToCart($args)
+    public function addToCart($itemId,$quantity=1)
     {
-        $cartItemsId = [];
+     
         if (isset($_SESSION['cartItemsId'])) {
             $cartItemsId = unserialize($_SESSION['cartItemsId']);
         }
-        $cartItemsId[$args] = 1;
+        if (isset($cartItemsId[$itemId]))
+            $cartItemsId[$itemId] = $cartItemsId[$itemId] + $quantity;
+        else
+            $cartItemsId[$itemId] = $quantity;
+
+        if($cartItemsId[$itemId]<1)
+        unset($cartItemsId[$itemId]);
+
         $_SESSION['cartItemsId'] = serialize($cartItemsId);
+
+        //var_dump(unserialize($_SESSION['cartItemsId']));
+        header("Location: ".URLROOT."/cart");
+        exit();
     }
 }
