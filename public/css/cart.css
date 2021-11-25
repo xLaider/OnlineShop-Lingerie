@@ -38,3 +38,13 @@ a.cartbox {
     font-size: 16px;
     margin: 2px 6px;
 }
+.right{
+    float:right;
+}
+.proceedButton a {
+    padding: 4px 20px;
+    border: 1px solid black;
+    background: #81c784;
+    font-weight: bold;
+    font-size: 20px;
+}

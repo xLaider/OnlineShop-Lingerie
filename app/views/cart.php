@@ -53,8 +53,10 @@
                 echo '<a href="'.URLROOT,'/product/initProduct?productID='.$item->productID.'">'.$item->Name."</a><br>".$item->Category."</td>
             </div>    
             <td>".$item->quantity."</br>";
-            echo '<a href="'.URLROOT.'/cart/addToCart/'.$item->productID.'/1/" title="Zwiększ" class="cartbox plus">+</a>';
+            
             echo '<a href="'.URLROOT.'/cart/addToCart/'.$item->productID.'/-1/" title="Zmniejsz" class="cartbox plus">-</a>';
+            echo '<a href="'.URLROOT.'/cart/addToCart/'.$item->productID.'/1/" title="Zwiększ" class="cartbox plus">+</a>';
+            
             echo '</br>';
             echo '<a href="'.URLROOT.'/cart/addToCart/'.$item->productID.'/'.-1*$item->quantity.'/">Usuń</a>';
             echo "</td>
@@ -66,8 +68,9 @@
 
    </table> 
 
-   <div>
+   <div class="right">
        <p class="cartSum">Suma: <?php echo $cartSum;?></p>
+       <p class="proceedButton"><a href="#">Dalej</a></p>
    </div>
    <?php else:?>
 <div class="emptyCart">
