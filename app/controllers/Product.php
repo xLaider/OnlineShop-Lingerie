@@ -6,8 +6,11 @@ class Product extends Controller {
         $this->productModel = $this->model('ProductModel');
     }
     public function index(){
-        $this->view('product');
-        
+        $product = $this->productModel->getProductByID($_GET['productID']);
+        $images = $this->productModel->getImageByID($_GET['productID']);
+        $arr = array();
+
+        $this->view('product',compact('product',$product,'images',$images));
     }
     public function initProduct(){
         $product = $this->productModel->getProductByID($_GET['productID']);

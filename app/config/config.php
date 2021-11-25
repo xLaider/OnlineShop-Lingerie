@@ -6,7 +6,7 @@
     define('DB_NAME', 'majteczki');
     
     define('APPROOT',dirname(dirname(__FILE__)));
-    define('URLROOT','http://localhost/OnlineShop-Lingerie');
+    define('URLROOT','http://localhost/OnlineShop-lingerie');
     define('SITENAME','Majteczki w Kropeczki');
 
 ?>

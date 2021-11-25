@@ -28,6 +28,8 @@ main {
 }
 .product {
   grid-row: span 4;
+  display: flex;
+    justify-content: center;
 }
 .product > a {
   width: 100%;

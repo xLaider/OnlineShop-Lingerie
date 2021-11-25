@@ -1,6 +1,4 @@
-<?php 
-    $product = unserialize($_SESSION['currentProduct']);
-?>
+
 
 <link rel="stylesheet" href="./css/navBar.css" />
 <link rel="stylesheet" href="./css/product.css" /></head>
@@ -45,23 +43,28 @@
         echo $currentProduct -> Name;
         -->
 
-    <div class="getBackDiv">
-        <a class="prev" onclick="plusSlides(-1)"><img src="./assets/images/arrowleft.svg"></a>
+
+        <a class="getBackDiv" href="<?php echo URLROOT ?>">
+        <img src="./assets/images/arrowleft.svg">
         <h1 class="getBack">Powrót</h1>
-    </div>
+    </a>
     <div class="hero">
+        <div class="flex-row">
         <div class="column">
+            
             <?php 
-                foreach($_SESSION['imageArray'] as $image){
-                    echo "<div class='productRow'><img src='".$image."' ></div>";
+                foreach($images as $image){
+                    echo "<div class='productRow'><img src='".$image->link."' ></div>";
                 }
                 echo "<img src='./assets/images/arrowdown.svg' style='width:50%'>";
             ?>       
         </div>
         <div>
         
-            <div class="productHero"><img src="<?php echo $_SESSION['imageArray'][0]?>" ></div>
+            <div class="productHero"><img src="<?php echo $images[0]->link ?>" ></div>
         </div>
+        </div>
+        
         <div class="info">
             <div class="name">
             <?php echo $product->Name ?><br>
@@ -70,13 +73,22 @@
             <div class="description">
                 <?php echo $product->Description ?>
             </div>
-            <div class="orderOptions">
-                <div>
-                    Cena <span> <?php echo $product->Price ?></span>
+            <div class=" flex-row">
+                <div class="flex-column">
+                    <div>
+                        Cena <span> <?php echo $product->Price ?></span>
+                    </div> 
+                    <div>
+                    Rozmiar<span> <select name="" id="">
+                            <option value="M">M</option>
+                            <option value="M">M</option>
+                            <option value="M">M</option>
+                        </select> <?php $product->Sizes ?></span>
+                    </div>
                 </div> 
                 <div class="finalize">
                     <div>
-                        Rozmiar<span> <?php echo $product->Sizes ?></span>
+                        
                     </div>
                     <div>
                         <a href="<?php echo URLROOT."/cart/addToCart/".$product->productID; ?>">Dodaj do koszyka +</a>
