@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 24 Lis 2021, 20:45
+-- Czas generowania: 25 Lis 2021, 01:24
 -- Wersja serwera: 10.4.21-MariaDB
 -- Wersja PHP: 8.0.12
 
@@ -28,12 +28,21 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `address` (
-  `Country` varchar(255) COLLATE utf8_polish_ci NOT NULL,
+  `AddressId` int(11) NOT NULL,
+  `Country` varchar(255) COLLATE utf8_polish_ci DEFAULT NULL,
   `City` varchar(255) COLLATE utf8_polish_ci DEFAULT NULL,
   `Street` varchar(255) COLLATE utf8_polish_ci DEFAULT NULL,
   `BuildingNumber/ApartmentNumber` varchar(45) COLLATE utf8_polish_ci DEFAULT NULL,
   `PostCode` varchar(45) COLLATE utf8_polish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
+
+--
+-- Zrzut danych tabeli `address`
+--
+
+INSERT INTO `address` (`AddressId`, `Country`, `City`, `Street`, `BuildingNumber/ApartmentNumber`, `PostCode`) VALUES
+(1, 'Polska', 'Warszawa', 'Rębkowska', '11', '03-375'),
+(2, 'Polska', 'Jaworze', 'Jaworna', '5', '43-300');
 
 -- --------------------------------------------------------
 
@@ -102,11 +111,18 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`email`, `FirstName`, `LastName`, `PhoneNumber`, `Password`, `DateOfBirth`, `DateOfRegistration`, `DateOfLastLogin`, `AddressId`) VALUES
-('mateuszblazkow1@gmail.com', NULL, NULL, NULL, '$2y$10$KR98N8N./XxZudICvv7tzeqaLLZr9NkZWF5qCIMdJXWfE0LjdhriW', NULL, '2021-11-23 06:44:17', NULL, NULL);
+('mateuszblazkow1@gmail.com', NULL, NULL, NULL, '$2y$10$KR98N8N./XxZudICvv7tzeqaLLZr9NkZWF5qCIMdJXWfE0LjdhriW', NULL, '2021-11-23 06:44:17', NULL, NULL),
+('ewa@wp.pl', NULL, NULL, NULL, '$2y$10$s7.htAjjqgWP1zYvr6BrReJxVl0ZrHPuuuBU//IrkYoLnskWcU9Q.', NULL, '2021-11-24 11:30:21', NULL, 2);
 
 --
 -- Indeksy dla zrzutów tabel
 --
+
+--
+-- Indeksy dla tabeli `address`
+--
+ALTER TABLE `address`
+  ADD PRIMARY KEY (`AddressId`);
 
 --
 -- Indeksy dla tabeli `images`
@@ -123,6 +139,12 @@ ALTER TABLE `product`
 --
 -- AUTO_INCREMENT dla zrzuconych tabel
 --
+
+--
+-- AUTO_INCREMENT dla tabeli `address`
+--
+ALTER TABLE `address`
+  MODIFY `AddressId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `images`
