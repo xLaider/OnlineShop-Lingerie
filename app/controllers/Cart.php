@@ -9,11 +9,11 @@ class Cart extends Controller
     }
     public function index()
     {
-        $cartItemsId = unserialize($_SESSION['cartItemsId']);
         $cartSum=0;
         $cartProducts = [];
         if (isset($_SESSION['cartItemsId'])) {
-            foreach (unserialize($_SESSION['cartItemsId']) as $cartItemId  => $quantity) {
+            $cartItemsId = unserialize($_SESSION['cartItemsId']);
+            foreach ($cartItemsId as $cartItemId  => $quantity) {
                 $product = $this->productModel->getProductByID($cartItemId);
                 if($product){
                     $product->quantity = $quantity;
