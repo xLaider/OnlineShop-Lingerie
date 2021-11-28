@@ -11,6 +11,7 @@ class Cart extends Controller
     {
         $cartSum=0;
         $cartProducts = [];
+
         if (isset($_SESSION['cartItemsId'])) {
             $cartItemsId = unserialize($_SESSION['cartItemsId']);
             foreach ($cartItemsId as $cartItemId  => $quantity) {
@@ -20,9 +21,9 @@ class Cart extends Controller
                     $cartSum+=$product->Price*$quantity;
                     $images = $this->productModel->getImageByID($cartItemId);
                     if (isset($images[0]))
-                        $product->image = $images[0];
+                        $product->imageLink = $images[0]->link;
                     else
-                        $product->image = NULL;
+                        $product->imageLink = NULL;
                     array_push($cartProducts, $product);
                 }
                 
@@ -33,12 +34,11 @@ class Cart extends Controller
 
     public function addToCart($itemId,$quantity=1)
     {
-     
         if (isset($_SESSION['cartItemsId'])) {
             $cartItemsId = unserialize($_SESSION['cartItemsId']);
         }
         if (isset($cartItemsId[$itemId]))
-            $cartItemsId[$itemId] = $cartItemsId[$itemId] + $quantity;
+            $cartItemsId[$itemId] += $quantity;
         else
             $cartItemsId[$itemId] = $quantity;
 

@@ -47,10 +47,11 @@
 
         foreach ($cartProducts as $item){
             echo "<tr id=\"product-".$item->productID."\">
-            <div class='tableLeft'>
-                <td><div class='product'><img src='./assets/images/kobieta.svg' ></div></td>
+            <div class=\"tableLeft\">
+                <td><div class='product'><img src=\"$item->imageLink\" ></div></td>
                 <td>";
-                echo '<a href="'.URLROOT,'/product/initProduct?productID='.$item->productID.'">'.$item->Name."</a><br>".$item->Category."</td>
+                echo '<a href="'.URLROOT,'/product/initProduct?productID='.$item->productID.'">'.$item->Name."</a>
+                <br>".$item->Category."</td>
             </div>    
             <td>".$item->quantity."</br>";
             
