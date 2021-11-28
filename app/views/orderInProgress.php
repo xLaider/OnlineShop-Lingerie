@@ -17,7 +17,7 @@
 </script>
 
 <div class="getBackDiv">
-        <a class="prev"><img src="./assets/images/arrowleft.svg"></a>
+        <a class="prev" href="<?php echo URLROOT."/profile"?>"><img src="./assets/images/arrowleft.svg"></a>
         <h1 class="getBack">Zamówienie nr 2000123</h1>
     </div>
 
