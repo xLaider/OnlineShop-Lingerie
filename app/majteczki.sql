@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 25 Lis 2021, 01:24
+-- Czas generowania: 28 Lis 2021, 22:17
 -- Wersja serwera: 10.4.21-MariaDB
 -- Wersja PHP: 8.0.12
 
@@ -42,7 +42,7 @@ CREATE TABLE `address` (
 
 INSERT INTO `address` (`AddressId`, `Country`, `City`, `Street`, `BuildingNumber/ApartmentNumber`, `PostCode`) VALUES
 (1, 'Polska', 'Warszawa', 'Rębkowska', '11', '03-375'),
-(2, 'Polska', 'Jaworze', 'Jaworna', '5', '43-300');
+(2, 'Polska', 'Krzyś', 'Sienkiewicza', '10', '42-400');
 
 -- --------------------------------------------------------
 
@@ -64,6 +64,50 @@ INSERT INTO `images` (`ImageID`, `link`, `ProductID`) VALUES
 (1, './assets/images/kobieta.svg', 1),
 (2, './assets/images/mezczyzna.svg', 1),
 (3, './assets/images/balkonetka.jpg', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `orderproduct`
+--
+
+CREATE TABLE `orderproduct` (
+  `OrderProductId` int(11) NOT NULL,
+  `Quantity` tinyint(4) NOT NULL,
+  `Size` varchar(45) COLLATE utf8mb4_general_nopad_ci NOT NULL,
+  `ProductId` int(11) NOT NULL,
+  `OrderNumber` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_nopad_ci;
+
+--
+-- Zrzut danych tabeli `orderproduct`
+--
+
+INSERT INTO `orderproduct` (`OrderProductId`, `Quantity`, `Size`, `ProductId`, `OrderNumber`) VALUES
+(1, 2, '', 1, 1),
+(2, 4, '', 2, 1),
+(3, 5, '', 1, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `orders`
+--
+
+CREATE TABLE `orders` (
+  `OrderNumber` int(11) NOT NULL,
+  `DateOfOrder` date NOT NULL,
+  `Status` tinyint(4) NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_general_nopad_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_nopad_ci;
+
+--
+-- Zrzut danych tabeli `orders`
+--
+
+INSERT INTO `orders` (`OrderNumber`, `DateOfOrder`, `Status`, `email`) VALUES
+(1, '2021-11-28', 0, 'ewa@wp.pl'),
+(2, '2021-11-15', 1, 'ewa@wp.pl');
 
 -- --------------------------------------------------------
 
@@ -131,6 +175,18 @@ ALTER TABLE `images`
   ADD PRIMARY KEY (`ImageID`);
 
 --
+-- Indeksy dla tabeli `orderproduct`
+--
+ALTER TABLE `orderproduct`
+  ADD PRIMARY KEY (`OrderProductId`);
+
+--
+-- Indeksy dla tabeli `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`OrderNumber`);
+
+--
 -- Indeksy dla tabeli `product`
 --
 ALTER TABLE `product`
@@ -151,6 +207,18 @@ ALTER TABLE `address`
 --
 ALTER TABLE `images`
   MODIFY `ImageID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT dla tabeli `orderproduct`
+--
+ALTER TABLE `orderproduct`
+  MODIFY `OrderProductId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT dla tabeli `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `product`
