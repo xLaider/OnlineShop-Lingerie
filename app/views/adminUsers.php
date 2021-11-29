@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="./css/navBar.css" />
+<link rel="stylesheet" href="./css/adminProduct.css" /></head>
+<?php
+    include "header.php";
+?>
+
+<section class="boxed">
+    <?php if(count($users)>0):?>
+   <table>
+        <tr>
+            <th>Email</th>
+            <th>Imie</th>
+            <th>Nazwisko</th>
+            <th>Numer Telefonu</th>
+            <th>Data Rejestracji</th>
+            <th>Poziom</th>
+        </tr>
+        <?php 
+
+        foreach ($users as $user){
+            $formEmail=str_replace('@','',$user->email);
+            $formEmail=str_replace('.','',$formEmail);
+            echo "<tr><td>".$user->email."</td>";
+            echo "<td>".$user->FirstName."</td>";
+            echo "<td>".$user->LastName."</td>";
+            echo "<td>".$user->PhoneNumber."</td>";   
+            echo "<td>".$user->DateOfRegistration."</td>"; 
+            echo "<td>
+            <form id='".$formEmail."' method='post' action='".URLROOT."/adminUsers/updatePermission'>
+                <select name='permission' onchange='change".$formEmail."()'>
+                    <option value='admin'";
+                    if ($user->permission=='admin') echo "selected";
+                    echo ">Admin</option>
+                    <option value='user'";
+                    if ($user->permission=='user') echo "selected";
+                    echo ">Uzytkownik</option>
+                </select></td>
+                <input type='hidden' name='email' value='".$user->email."'>
+                </form>";
+
+           echo "</tr>";
+           echo "<script>
+           function change".$formEmail."(){
+               document.getElementById('".$formEmail."').submit();
+           }
+           </script>";
+        }
+        ?>
+        
+   </table> 
+   
+
+    <?php endif;?>
+</section>

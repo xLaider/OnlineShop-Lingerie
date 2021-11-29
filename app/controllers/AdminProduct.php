@@ -17,6 +17,6 @@ class AdminProduct extends Controller
         //$this->view('adminProduct',array("products" => $products));
         $this->view('adminProduct',compact('products', $products));
 
-   
+
     }
 }
