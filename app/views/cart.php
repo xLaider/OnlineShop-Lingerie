@@ -5,7 +5,7 @@
 ?>
 
 <section class="boxed">
-    <?php //if(count($cartProducts)>0):?>
+    <?php if(count($cartProducts)>0):?>
    <table>
         <tr>
             <div class="tableLeft">
@@ -43,17 +43,17 @@
 
    </table> 
 
-   <!-- <div class="right">
+   <div class="right">
        <p class="cartSum">Suma: <?php echo $cartSum;?></p>
        <p class="proceedButton"><a href="#">Dalej</a></p>
-   </div> -->
+   </div>
    <?php
-   // else:
+   else:
    ?>
-<!-- <div class="emptyCart">
+<div class="emptyCart">
     <h2>Twój koszyk jest pusty.</br>Sprawdź nasze produkty i wybierz coś dla siebie!</h2>
-</div> -->
+</div>
 
-    <?php //endif;?>
+    <?php endif;?>
 </section>
 

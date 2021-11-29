@@ -4,7 +4,6 @@ class Cart extends Controller
 {
     public function __construct()
     {
-        $this->userModel = $this->model('User');
         $this->productModel = $this->model('ProductModel');
     }
     public function index()

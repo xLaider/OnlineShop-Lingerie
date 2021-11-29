@@ -3,7 +3,6 @@
 class Profile extends Controller {
     public function __construct()
     {
-        $this->userModel = $this->model('User');
         $this->productModel = $this->model('ProductModel');
         $this->orderModel = $this->model('OrderModel');
     }

@@ -29,7 +29,7 @@
             echo "<td>".$order->OrderAmount."</td>";
             echo "<td>";
             switch ($order->Status) {
-               case 0:
+            case 0:
                   echo "oczekujace";
                   break;
 
