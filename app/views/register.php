@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="./css/register.css">
+<link rel="stylesheet" href="<?php echo URLROOT;?>/css/register.css">
 </head>
 <body>
     <div class="registerArea">

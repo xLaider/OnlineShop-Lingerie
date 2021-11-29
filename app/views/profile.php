@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="./css/navBar.css" />
-<link rel="stylesheet" href="./css/profile.css" /></head>
+<link rel="stylesheet" href="<?php echo URLROOT;?>/css/navBar.css" />
+<link rel="stylesheet" href="<?php echo URLROOT;?>/css/profile.css" /></head>
 </head>
 <?php
    include "header.php";
@@ -8,7 +8,7 @@
 <section class="boxed">
    <h1> Moje zamówienia </h1>
         <a class="prev  AddressDiv" href="<?php echo URLROOT . "/address" ?>">
-            <img height=18px src="./assets/images/options_icon.svg"> Ustawienia konta
+            <img height=18px src="<?php echo URLROOT;?>/assets/images/options_icon.svg"> Ustawienia konta
         </a>
     <?php if(count($orders)>0):?>
    <table>
