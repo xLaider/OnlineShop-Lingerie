@@ -4,6 +4,7 @@ class AddProduct extends Controller {
     public function __construct()
     {
         $this->productModel = $this->model('ProductModel');
+        $this->adminModel = $this->model('AdminModel');
     }
     public function index(){
         if($_GET['productID']!=null){
@@ -15,7 +16,7 @@ class AddProduct extends Controller {
         }else
         $this->view('addProduct');
     }
-    public function AddProduct($productID=null)
+    public function AddProduct($productID)
     {
         $blad=false;
 
@@ -72,6 +73,58 @@ class AddProduct extends Controller {
             $frProduct->Category="";
         }
 
+        if(isset($_POST['Category']))
+        {
+            $frProduct->Category=$_POST['Category'];
+        }
+        else
+        {
+            $blad=true;
+            $frProduct->Category="";
+        }
+
+        if(isset($_FILES['1Img']))
+        {
+            $uploads_dir = './assets/images';
+            $tmp_name = $_FILES["1Img"]["tmp_name"];
+		    $name = basename($_FILES["1Img"]["name"]);
+		    move_uploaded_file($tmp_name,  "$uploads_dir/$name");
+            $link="./assets/images/$name";
+            $this->productModel->addImageByID($link,$productID);
+        }
+        else
+        {
+            $blad=true;
+        }
+        if(isset($_FILES['2Img']))
+        {
+            $tmp_name = $_FILES["2Img"]["tmp_name"];
+		    $name = basename($_FILES["2Img"]["name"]);
+		    move_uploaded_file($tmp_name,  "./assets/images/$name");
+        }
+        
+        if(isset($_FILES['3Img']))
+        {
+            $tmp_name = $_FILES["3Img"]["tmp_name"];
+		    $name = basename($_FILES["3Img"]["name"]);
+		    move_uploaded_file($tmp_name,  "./assets/images/$name");
+        }
+        
+        if(isset($_FILES['4Img']))
+        {
+            $tmp_name = $_FILES["4Img"]["tmp_name"];
+		    $name = basename($_FILES["4Img"]["name"]);
+		    move_uploaded_file($tmp_name,  "./assets/images/$name");
+        }
+        
+        if(isset($_FILES['5Img']))
+        {
+            $tmp_name = $_FILES["5Img"]["tmp_name"];
+		    $name = basename($_FILES["5Img"]["name"]);
+		    move_uploaded_file($tmp_name,  "./assets/images/$name");
+        }
+        
+
         if(!$blad)//ustawiono wszystkie pola
         {
            
@@ -94,7 +147,7 @@ class AddProduct extends Controller {
         }
 
 
-        $this->view('addProduct',array('product'=>$product,'blad'=>$blad));
+        $this->view('adminProduct' );
     }
     
 }

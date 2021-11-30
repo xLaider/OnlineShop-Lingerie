@@ -11,7 +11,7 @@ include "header.php";
     <h1 class="getBack">Powrót</h1>
 </div>
 
-<form action="<?php echo URLROOT."/addProduct/AddProduct"?>" method="post">
+<form action="<?php echo URLROOT."/addProduct/AddProduct/".$_GET['productID'].""?>" method="post" enctype="multipart/form-data">
     <main>
 
         <div class="daneProduktu">
@@ -60,28 +60,52 @@ include "header.php";
         <div class="zdjeciaProduktu">
             <h1>Zdjęcia</h1>
             <div class="container">
-           
+                
+            <?php 
+                $i=1;
+                if($product){
+                foreach($images as $image){
+                    echo "<div>
+                    <label for='".$i."Img'>
+                    <img src='".$image->link."'>
+                    </label>
+                    <input type='file' id='".$i."Img' name='".$i."Img' accept='mage/x-png,image/gif,image/jpeg'  >
+                </div>";
+                $i++;
+            }
+                for($i;$i<=5;$i++){
+                    echo "<div>
+                    <label for='".$i."Img'><img src='". URLROOT."/assets/images/plus.svg'></label>
+                    <input type='file' id='".$i."Img' name='".$i."Img' accept='image/x-png,image/gif,image/jpeg'  >
+                </div>";
+                }
+
+                
+                }else{
+            ?>
+
+                                                    
                 <div>
-                    <label for="firstImg"><img src="<?php echo URLROOT; ?>/assets/images/plus.svg"></label>
-                    <input type="file" id="firstImg" accept="image/x-png,image/gif,image/jpeg"  required>
+                    <label for="1Img"><img src="<?php echo URLROOT; ?>/assets/images/plus.svg"></label>
+                    <input type="file" id="1Img" name="1Img"accept="image/x-png,image/gif,image/jpeg"  >
                 </div>
                 <div>
-                    <label for="firstImg"><img src="<?php echo URLROOT; ?>/assets/images/plus.svg"></label>
-                    <input type="file" id="firstImg" accept="image/x-png,image/gif,image/jpeg"  required>
+                    <label for="2Img"><img src="<?php echo URLROOT; ?>/assets/images/plus.svg"></label>
+                    <input type="file" id="2Img" name="2Img" accept="image/x-png,image/gif,image/jpeg"  >
                 </div>
                 <div>
-                    <label for="firstImg"><img src="<?php echo URLROOT; ?>/assets/images/plus.svg"></label>
-                    <input type="file" id="firstImg" accept="image/x-png,image/gif,image/jpeg"  required>
+                    <label for="3Img"><img src="<?php echo URLROOT; ?>/assets/images/plus.svg"></label>
+                    <input type="file" id="3Img" name="3Img" accept="image/x-png,image/gif,image/jpeg"  >
                 </div>
                 <div>
-                    <label for="firstImg"><img src="<?php echo URLROOT; ?>/assets/images/plus.svg"></label>
-                    <input type="file" id="firstImg" accept="image/x-png,image/gif,image/jpeg"  required>
+                    <label for="4Img"><img src="<?php echo URLROOT; ?>/assets/images/plus.svg"></label>
+                    <input type="file" id="4Img" name="4Img" accept="image/x-png,image/gif,image/jpeg"  >
                 </div>
                 <div>
-                    <label for="firstImg"><img src="<?php echo URLROOT; ?>/assets/images/plus.svg"></label>
-                    <input type="file" id="firstImg" accept="image/x-png,image/gif,image/jpeg"  required>
+                    <label for="5Img"><img src="<?php echo URLROOT; ?>/assets/images/plus.svg"></label>
+                    <input type="file" id="5Img" name="5Img" accept="image/x-png,image/gif,image/jpeg"  >
                 </div>
-               
+               <?php } ?>
 
             </div>
 
