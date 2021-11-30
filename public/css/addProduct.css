@@ -1,0 +1,153 @@
+input[type=text], input[type=password], input[type=number] {
+    height: 30px;
+    width: 250px;
+    font-size: small;
+    padding: 5px 20px;
+    margin: 2px 0;
+    display: inline-block;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    box-sizing: border-box;
+    float: right;
+  }
+
+  input[type="file"] {
+    display: none;
+    visibility: none;
+}
+
+  .daneProduktu select{
+    height: 30px;
+    width: 250px;
+    font-size: small;
+    padding: 5px 20px;
+    margin: 2px 0;
+    display: inline-block;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    box-sizing: border-box;
+    float: right;
+}
+
+.daneProduktu textarea{
+    height: 150px;
+    width: 250px;
+    font-size: small;
+    padding: 5px 20px;
+    margin: 2px 0;
+    display: inline-block;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    box-sizing: border-box;
+    float: right;
+}
+
+.zdjeciaProduktu{
+    padding: 0 3%;
+    flex: 1 1 auto;
+}
+
+.daneProduktu{
+    padding: 0 3%;
+    flex: 1 1 auto;
+}
+
+.container {
+    width: -webkit-fill-available;
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-auto-rows: 150px;
+    gap: 15px 15px;
+    grid-auto-flow: row;
+    height: auto;
+    margin-left: 10%;
+    margin-right: 5%;
+    cursor: pointer;
+  }
+
+  .container > div {
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s; 
+  }
+  
+  .container > div:hover{
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  }
+  
+  .container > * {
+    border: 1px solid rgb(0, 0, 0);
+    position: relative;
+  }
+
+.button{
+    padding: 7px 20px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.button input[type=submit] {
+    width: 200px;
+    height: 60px;
+    background-color: #000000;
+    color: white;
+    padding: 14px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .button input[type=submit]:hover {
+    background-color: #ccc;
+    color: black;
+  }
+
+.getBackDiv{
+    padding: 7px;
+    display: flex;
+    align-items: center;
+}
+.prev{
+    margin-left: 3em;
+    margin-right: 2em;
+    cursor: pointer;
+    width: auto;
+}
+
+.prev img{
+    width: 50%;
+}
+
+.getBack{
+    font-size: 25px;
+}
+
+
+main{
+    display: flex;
+    padding: 3%;
+}
+
+img{
+    max-width: 200px;
+    max-height: 200px;
+}
+
+
+.bold{
+    font-weight: bold;
+}
+
+
+.box{
+    padding: 10px 0;
+
+}
+
+
+@media screen and (max-width: 1050px) {
+    main {
+      flex-direction: column;
+    }
+  }

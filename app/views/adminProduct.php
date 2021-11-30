@@ -21,12 +21,12 @@
             echo "<td>".$product->Name."</td>";
             echo "<td>".$product->Category."</td>";  
             echo "<td>".$product->Price."</td>"; 
-            echo '<td><a href="'.URLROOT .'/adminproduct/addProduct/'.$product->productID.'"> Edytuj </a></td>';
+            echo '<td><a href="'.URLROOT .'/addProduct?productID='.$product->productID.'"> Edytuj </a></td>';
            echo "</tr>";
         }
         
         ?>
-        <a href="<?php echo URLROOT . "/adminproduct/addProduct" ?>">+ Dodaj nowy produkt</a>
+        <a href="<?php echo URLROOT . "/addProduct?productID=null" ?>">+ Dodaj nowy produkt</a>
        
 
    </table> 
