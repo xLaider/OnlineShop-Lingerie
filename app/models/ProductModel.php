@@ -27,5 +27,13 @@
             $result=$this->db->resultSet();
             return $result;
         }
+
+        public function addImageByID($link,$productID){
+            $query='INSERT INTO images( link, ProductID) VALUES (:link,:productID)';
+            $this->db->query($query);
+            $this->db->bind(':link',$link);
+            $this->db->bind(':productID',$productID);
+            $this->db->execute();
+        }
     }
 ?>

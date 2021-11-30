@@ -69,7 +69,7 @@
                         <section>
                             <h3>ROZMIAR</h3>
                             <label class="box">XS
-                                <input type="checkbox" checked="checked">
+                                <input type="checkbox" >
                                 <span class="checkmark"></span>
                             </label>
 
@@ -95,7 +95,7 @@
                         <section>
                             <h3>RODZAJ</h3>
                             <label class="box">Biustonosze
-                                <input type="checkbox" checked="checked">
+                                <input type="checkbox" >
                                 <span class="checkmark"></span>
                             </label>
 
@@ -114,10 +114,11 @@
                                 <span class="checkmark"></span>
                             </label>
                         </section>
+                        <!--
                         <section>
                             <h3>KOLOR</h3>
                             <label class="box">Czrany
-                                <input type="checkbox" checked="checked">
+                                <input type="checkbox" >
                                 <span class="checkmark"></span>
                             </label>
 
@@ -135,7 +136,7 @@
                                 <input type="checkbox">
                                 <span class="checkmark"></span>
                             </label>
-                        </section>
+                        </section>-->
                         <div class="buttonFiltr"><input type="submit" value="FILTRUJ">
                         </div>
                     </form>
