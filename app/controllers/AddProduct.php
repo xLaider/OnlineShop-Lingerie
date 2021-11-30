@@ -147,7 +147,7 @@ class AddProduct extends Controller {
         }
 
 
-        $this->view('adminProduct' );
+        $this->view('addProduct',array('product'=>$product,'blad'=>$blad, 'productID'=>$productID) );
     }
     
 }
