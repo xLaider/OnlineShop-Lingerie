@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="./css/navBar.css" />
-<link rel="stylesheet" href="./css/adminProduct.css" /></head>
+<link rel="stylesheet" href="<?php echo URLROOT;?>/css/navBar.css" />
+<link rel="stylesheet" href="<?php echo URLROOT;?>/css/adminProduct.css" /></head>
 <?php
     include "header.php";
 ?>
@@ -21,9 +21,13 @@
             echo "<td>".$product->Name."</td>";
             echo "<td>".$product->Category."</td>";  
             echo "<td>".$product->Price."</td>"; 
+            echo '<td><a href="'.URLROOT .'/adminproduct/addProduct/'.$product->productID.'"> Edytuj </a></td>';
            echo "</tr>";
         }
+        
         ?>
+        <a href="<?php echo URLROOT . "/adminproduct/addProduct" ?>">+ Dodaj nowy produkt</a>
+       
 
    </table> 
 

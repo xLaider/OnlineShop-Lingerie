@@ -1,7 +1,7 @@
 
-<link rel="stylesheet" href="./css/navBar.css" />
+<link rel="stylesheet" href="<?php echo URLROOT;?>/css/navBar.css" />
 
-<link rel="stylesheet" href="./css/order.css" />
+<link rel="stylesheet" href="<?php echo URLROOT;?>/css/order.css" />
 
 </head>
 <main>

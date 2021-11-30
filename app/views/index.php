@@ -1,8 +1,8 @@
 
 
 
-<link rel="stylesheet" href="./css/navBar.css" />
-<link rel="stylesheet" href="./css/index.css" />
+<link rel="stylesheet" href="<?php echo URLROOT;?>/css/navBar.css" />
+<link rel="stylesheet" href="<?php echo URLROOT;?>/css/index.css" />
 
 </head>
 <main>
@@ -25,19 +25,19 @@
     <section>
         <article id="banner">
             <div class="slideshow-container">
-                <a class="prev" onclick="plusSlides(-1)"><img src="./assets/images/arrowleft.svg"></a>
+                <a class="prev" onclick="plusSlides(-1)"><img src="<?php echo URLROOT;?>/assets/images/arrowleft.svg"></a>
                 <div class="slideshow-container">
                     <div class="mySlides fade">
-                        <img src="./assets/images/img.svg" style="width:100%">
+                        <img src="<?php echo URLROOT;?>/assets/images/img.svg" style="width:100%">
                     </div>
                     <div class="mySlides fade">
-                        <img src="./assets/images/img.svg" style="width:100%">
+                        <img src="<?php echo URLROOT;?>/assets/images/img.svg" style="width:100%">
                     </div>
                     <div class="mySlides fade">
-                        <img src="./assets/images/img.svg" style="width:100%">
+                        <img src="<?php echo URLROOT;?>/assets/images/img.svg" style="width:100%">
                     </div>
                 </div>
-                <a class="next" onclick="plusSlides(1)"><img src="./assets/images/arrowright.svg"></a>
+                <a class="next" onclick="plusSlides(1)"><img src="<?php echo URLROOT;?>/assets/images/arrowright.svg"></a>
             </div>
 
             <div style="text-align:center">
@@ -46,16 +46,16 @@
                 <span class="dot" onclick="currentSlide(3)"></span>
             </div>
             <div id="arrowdown">
-                <img src="./assets/images/arrowdown.svg" style="width:100%">
+                <img src="<?php echo URLROOT;?>/assets/images/arrowdown.svg" style="width:100%">
             </div>
         </article>
         <article id="products">
             <div class="filterButton">
                 <div>FILTRUJ</div>
-                <div onclick="openFiltr()"><img src="./assets/images/filter.svg" style="width:100%"></div>
+                <div onclick="openFiltr()"><img src="<?php echo URLROOT;?>/assets/images/filter.svg" style="width:100%"></div>
             </div>
             <div id="filter" class="filterSidenav">
-                <div><a href="javascript:void(0)" class="closebtn" onclick="closeFiltr()"><img src="./assets/images/arrowleft.svg" style="width:50%"></a></div>
+                <div><a href="javascript:void(0)" class="closebtn" onclick="closeFiltr()"><img src="<?php echo URLROOT;?>/assets/images/arrowleft.svg" style="width:50%"></a></div>
                 <div>
                     <form>
                         <section>

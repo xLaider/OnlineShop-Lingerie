@@ -11,14 +11,18 @@ align-items: center;
 flex-direction: column;
 align-content: center;
 text-align: Left;
+border-collapse: collapse;
 }
 main{
     flex-direction: row;
 }
 
-table td, th{
-    padding: 0 10px;
+table td, th {
+    padding: 10px 40px;
 }
+tr {
+    border-bottom: 1pt solid black;
+    }
 
 section.boxed{
     max-width: 1200px;

@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="./css/navBar.css" />
-<link rel="stylesheet" href="./css/cart.css" /></head>
+<link rel="stylesheet" href="<?php echo URLROOT;?>/css/navBar.css" />
+<link rel="stylesheet" href="<?php echo URLROOT;?>/css/cart.css" /></head>
 <?php
     include "header.php";
 ?>

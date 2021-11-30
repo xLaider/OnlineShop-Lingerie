@@ -1,7 +1,7 @@
 
 
-<link rel="stylesheet" href="./css/navBar.css" />
-<link rel="stylesheet" href="./css/product.css" /></head>
+<link rel="stylesheet" href="<?php echo URLROOT;?>/css/navBar.css" />
+<link rel="stylesheet" href="<?php echo URLROOT;?>/css/product.css" /></head>
 <?php
     include "header.php";
 ?>
@@ -20,7 +20,7 @@
 
 
         <a class="getBackDiv" href="<?php echo URLROOT ?>">
-        <img src="./assets/images/arrowleft.svg">
+        <img src="<?php echo URLROOT;?>/assets/images/arrowleft.svg">
         <h1 class="getBack">Powrót</h1>
     </a>
     <div class="hero">
