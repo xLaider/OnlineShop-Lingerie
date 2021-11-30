@@ -1,9 +1,9 @@
-<link rel="stylesheet" href="<?php echo URLROOT;?>/css/navBar.css" />
-<link rel="stylesheet" href="<?php echo URLROOT;?>/css/orderInProgress.css" />
+<link rel="stylesheet" href="<?php echo URLROOT; ?>/css/navBar.css" />
+<link rel="stylesheet" href="<?php echo URLROOT; ?>/css/orderInProgress.css" />
 
 </head>
 <?php
-    include "header.php";
+include "header.php";
 ?>
 <script>
     //Sidebar
@@ -18,9 +18,9 @@
 
 <div class="getBackDiv">
     <!-- podmieniłam link do prfilu w cofnij -->
-        <a class="prev" href="<?php echo URLROOT."/profile"?>"><img src="<?php echo URLROOT;?>/assets/images/arrowleft.svg"></a>
-        <h1 class="getBack">Zamówienie nr 2000123</h1>
-    </div>
+    <a class="prev" href="<?php echo URLROOT . "/profile" ?>"><img src="<?php echo URLROOT; ?>/assets/images/arrowleft.svg"></a>
+    <h1 class="getBack">Zamówienie nr 2000123</h1>
+</div>
 
 <main>
     <div class="leftSide">
@@ -38,9 +38,11 @@
 
             <tr>
                 <td>
-                    <div class="product"><img src="<?php echo URLROOT;?>/assets/images/kobieta.svg"></div>
+                    <div class="product"><img src="<?php echo URLROOT; ?>/assets/images/kobieta.svg"></div>
                 </td>
-                <td><h3 class="bold">Placeholder na nazwe Przedmiotu</h3><br>Typ produktu</td>
+                <td>
+                    <h3 class="bold">Placeholder na nazwe Przedmiotu</h3><br>Typ produktu
+                </td>
 
                 <td class="border-bottom">4</td>
                 <td class="border-bottom">XXL</td>
@@ -48,9 +50,11 @@
             </tr>
             <tr>
                 <td>
-                    <div class="product"><img src="<?php echo URLROOT;?>/assets/images/kobieta.svg"></div>
+                    <div class="product"><img src="<?php echo URLROOT; ?>/assets/images/kobieta.svg"></div>
                 </td>
-                <td><h3 class="bold">Placeholder na nazwe Przedmiotu</h3><br>Typ produktu</td>
+                <td>
+                    <h3 class="bold">Placeholder na nazwe Przedmiotu</h3><br>Typ produktu
+                </td>
 
                 <td class="border-bottom">4</td>
                 <td class="border-bottom">XXL</td>
@@ -58,9 +62,11 @@
             </tr>
             <tr>
                 <td>
-                    <div class="product"><img src="<?php echo URLROOT;?>/assets/images/kobieta.svg"></div>
+                    <div class="product"><img src="<?php echo URLROOT; ?>/assets/images/kobieta.svg"></div>
                 </td>
-                <td><h3 class="bold">Placeholder na nazwe Przedmiotu</h3><br>Typ produktu</td>
+                <td>
+                    <h3 class="bold">Placeholder na nazwe Przedmiotu</h3><br>Typ produktu
+                </td>
 
                 <td class="border-bottom">4</td>
                 <td class="border-bottom">XXL</td>
@@ -68,22 +74,30 @@
             </tr>
             <tr>
                 <td>
-                    <div class="product"><img src="<?php echo URLROOT;?>/assets/images/kobieta.svg"></div>
+                    <div class="product"><img src="<?php echo URLROOT; ?>/assets/images/kobieta.svg"></div>
                 </td>
-                <td><h3 class="bold">Placeholder na nazwe Przedmiotu</h3><br>Typ produktu</td>
+                <td>
+                    <h3 class="bold">Placeholder na nazwe Przedmiotu</h3><br>Typ produktu
+                </td>
 
                 <td class="border-bottom">4</td>
                 <td class="border-bottom">XXL</td>
                 <td class="border-bottom">45zł</td>
             </tr>
             <tr>
-                <td></td><td></td> <td></td>
-                <td>Przesyłka:</td><td class="border-bottom">15zł</td>
-                
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Przesyłka:</td>
+                <td class="border-bottom">15zł</td>
+
             </tr>
             <tr>
-                <td></td><td></td> <td></td>
-                <td class="bold">Łącznie:</td><td  class="bold">155zł</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="bold">Łącznie:</td>
+                <td class="bold">155zł</td>
             </tr>
 
 
