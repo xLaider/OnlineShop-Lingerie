@@ -16,7 +16,6 @@ class adminUsers extends Controller
     {
         $permission=$_POST['permission'];
         $email=$_POST['email'];
-        var_dump($_POST);
         $this->adminModel->updatePermission($permission,$email);
         header("Location: ".URLROOT."/adminUsers");
         exit();
