@@ -12,10 +12,18 @@ class AdminProduct extends Controller
     }
     public function index()
     {
-
-        $products=$this->adminModel->getAllProducts();
+        if(isset($_GET['sortType']))
+        {
+            $sortType=$_GET['sortType'];
+        }
+        else
+        {
+            $sortType="productID";
+        }
+        $products=$this->adminModel->getAllProducts($sortType);
         $this->view('adminProduct',array('products'=> $products));
     }
+
 
     
 }

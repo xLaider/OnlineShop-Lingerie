@@ -2,6 +2,12 @@ img{
     max-width: 200px;
     max-height: 200px;
 }
+
+.productMenu
+{
+    float: left;
+}
+
 table{
     display: flex;
 flex-direction: row;

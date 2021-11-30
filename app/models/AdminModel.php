@@ -6,9 +6,12 @@
             $this->db = new Database;
         }
       
-        public function getAllProducts(){
-            $query='SELECT * FROM product ';
+        public function getAllProducts($sortType="productID"){
+            // var_dump($sortType);
+            //bindowanie sortType 
+            $query='SELECT * FROM product ORDER BY :sortType';
             $this->db->query($query);
+            $this->db->bind(':sortType',$sortType);
             $result=$this->db->resultSet();
             return $result;
         }

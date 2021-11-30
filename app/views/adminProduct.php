@@ -6,12 +6,15 @@
 
 <section class="boxed">
     <?php if(count($products)>0):?>
+
+        <a href="<?php echo URLROOT . "/addProduct?productID=null" ?>">+ Dodaj nowy produkt</a>
+        
    <table>
         <tr>
-            <th>Id Produktu</th>
-            <th>Nazwa</th>
-            <th>Kategoria</th>
-            <th>Cena</th>
+            <th> <a href="?sortType=productID">Id Produktu</a></th> 
+            <th><a href="?sortType=Name">Nazwa</a></th>
+            <th><a href="?sortType=Category">Kategoria</a></th>
+            <th><a href="?sortType=Price">Cena</a></th>
         </tr>
         <?php 
 
@@ -26,7 +29,7 @@
         }
         
         ?>
-        <a href="<?php echo URLROOT . "/addProduct?productID=null" ?>">+ Dodaj nowy produkt</a>
+        
        
 
    </table> 
