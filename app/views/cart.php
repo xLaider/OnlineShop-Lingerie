@@ -1,59 +1,68 @@
-<link rel="stylesheet" href="<?php echo URLROOT;?>/css/navBar.css" />
-<link rel="stylesheet" href="<?php echo URLROOT;?>/css/cart.css" /></head>
+<link rel="stylesheet" href="<?php echo URLROOT; ?>/css/navBar.css" />
+<link rel="stylesheet" href="<?php echo URLROOT; ?>/css/cart.css" />
+</head>
 <?php
-    include "header.php";
+include "header.php";
 ?>
 
+<div class="getBackDiv">
+    <!-- podmieniłam link do prfilu w cofnij -->
+    <a class="prev" href="<?php echo URLROOT . "/index" ?>"><img src="<?php echo URLROOT; ?>/assets/images/arrowleft.svg"></a>
+    <h1 class="getBack">Powrót</h1>
+</div>
+<div class=tytul><h2 class=bold>KOSZYK ZAKUPÓW</h2></div>
+
 <section class="boxed">
-    <?php if(count($cartProducts)>0):?>
-   <table>
-        <tr>
-            <div class="tableLeft">
+    <?php if (count($cartProducts) > 0) : ?>
+        <table>
+            <tr>
                 <th>Zdjęcie</th>
                 <th>Nazwa</th>
-            </div>
-            
-            <th>Ilość</th>
-            <th>Rozmiar</th>
-            <th>Cena</th>
-        </tr>
-        <?php 
+                <th>Ilość</th>
+                <th>Rozmiar</th>
+                <th>Cena</th>
+                <th></th>
+            </tr>
+            <?php
 
-        foreach ($cartProducts as $item){
-            echo "<tr id=\"product-".$item->productID."\">
-            <div class=\"tableLeft\">
+            foreach ($cartProducts as $item) {
+                echo "<tr id=\"product-" . $item->productID . "\">
+            
                 <td><div class='product'><img src=\"$item->imageLink\" ></div></td>
                 <td>";
-                echo '<a href="'.URLROOT,'/product/initProduct?productID='.$item->productID.'">'.$item->Name."</a>
-                <br>".$item->Category."</td>
-            </div>    
-            <td>".$item->quantity."</br>";
-            
-            echo '<a href="'.URLROOT.'/cart/addToCart/'.$item->productID.'/-1/" title="Zmniejsz" class="cartbox plus">-</a>';
-            echo '<a href="'.URLROOT.'/cart/addToCart/'.$item->productID.'/1/" title="Zwiększ" class="cartbox plus">+</a>';
-            
-            echo '</br>';
-            echo '<a href="'.URLROOT.'/cart/addToCart/'.$item->productID.'/'.-1*$item->quantity.'/">Usuń</a>';
-            echo "</td>
-            <td>".$item->Sizes."</td>
-            <td>".$item->Price."</td>
-            </tr>";
-        }
-        ?>
+                echo '<a href="' . URLROOT, '/product?productID=' . $item->productID . '"><h3 class="bold">' . $item->Name . "</h3></a>
+                <br>" . $item->Category . "</td>
+                
+            <td>";
 
-   </table> 
+                echo '<a href="' . URLROOT . '/cart/addToCart/' . $item->productID . '/-1/" title="Zmniejsz" class="cartbox plus">-</a>';
+                echo  $item->quantity;
+                echo '<a href="' . URLROOT . '/cart/addToCart/' . $item->productID . '/1/" title="Zwiększ" class="cartbox plus">+</a>';
 
-   <div class="right">
-       <p class="cartSum">Suma: <?php echo $cartSum;?></p>
-       <p class="proceedButton"><a href="#">Dalej</a></p>
-   </div>
-   <?php
-   else:
-   ?>
-<div class="emptyCart">
-    <h2>Twój koszyk jest pusty.</br>Sprawdź nasze produkty i wybierz coś dla siebie!</h2>
-</div>
+                echo "</td>
+            <td class=border-bottom>" . $item->Sizes . "</td>
+            <td class=border-bottom>" . $item->Price . "</td>
+            <td class=usun>";  echo '<a href="' . URLROOT . '/cart/addToCart/' . $item->productID . '/' . -1 * $item->quantity . '/">'; echo '<img src="' . URLROOT . '/assets/images/x.svg"</a>'; 
+            echo"</td></tr>";
+            }
+            ?>
+            <tr>
+                <td></td> <td></td> <td></td><td class=bold>Suma:</td><td class=border-bottom> <?php echo $cartSum; ?></td> 
+                <td><div class="final"><a href="#">Finalizuj <img src="<?php echo URLROOT; ?>/assets/images/arrowright.svg"> </a></div></td>
+            </tr>
 
-    <?php endif;?>
+        </table>
+
+        
+           
+           
+        
+    <?php
+    else :
+    ?>
+        <div class="emptyCart">
+            <h2>Twój koszyk jest pusty.</br>Sprawdź nasze produkty i wybierz coś dla siebie!</h2>
+        </div>
+
+    <?php endif; ?>
 </section>
-
