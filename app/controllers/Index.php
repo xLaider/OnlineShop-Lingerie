@@ -15,6 +15,7 @@ class Index extends Controller {
     }
     public function logout(){
         unset($_SESSION['userData']);
+        unset($_SESSION['cartItemsId']);
         header("Location: ".URLROOT);
         exit();
     }
