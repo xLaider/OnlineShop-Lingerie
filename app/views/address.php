@@ -1,19 +1,15 @@
-<link rel="stylesheet" href="<?php echo URLROOT; ?>/css/register.css">
-<link rel="stylesheet" href="<?php echo URLROOT; ?>/css/address.css">
-</head>
-
-<body>
-    <div class="getBackDiv">
-        <a class="prev  getBackDiv" href="<?php echo URLROOT . "/profile" ?>">
-
-            <img src="<?php echo URLROOT; ?>/assets/images/arrowleft.svg">
-            <p class="getBack">Wróć do profilu</p>
-        </a>
-    </div>
-    <div class="registerArea">
-        <h1>
+<dialog id="address-form">
+    <div class="flex-row">
+<h1>
             Dane do wysyłki
         </h1>
+        <a id="dialog-close">
+
+            <img src="<?php echo URLROOT; ?>/assets/images/x.svg">
+        </a>
+        </div>
+    <div class="registerArea">
+        
         <form class="register" action="<?php echo URLROOT . "/Address/AddressHandler" ?>" method="post">
             <input type="text" id="country" name="country" value="<?php
             if (isset($_SESSION['address']->Country)) {
@@ -57,4 +53,4 @@
     </div>
 
 
-</body>
+    </dialog>

@@ -6,10 +6,17 @@
 ?>
 
 <section class="boxed">
-   <h1> Moje zamówienia </h1>
-        <a class="prev  AddressDiv" href="<?php echo URLROOT . "/address" ?>">
+<?php
+include "address.php";
+?>
+
+   <div class="flex-row"><h1> Moje zamówienia </h1>
+        <a class="flex-row" id="show-address-form">
             <img height=18px src="<?php echo URLROOT;?>/assets/images/options_icon.svg"> Ustawienia konta
         </a>
+    </div>
+   
+        
     <?php if(count($orders)>0):?>
    <table>
         <tr>
@@ -54,3 +61,18 @@
      endif;
     ?>
 </section>
+
+<script>
+var SHOW_FORM_BUTTON = document.querySelector("#show-address-form"),
+	DIALOG = document.querySelector("#address-form"),
+	FORM_CANCEL_BUTTON = document.querySelector("#dialog-close");
+
+SHOW_FORM_BUTTON.addEventListener('click', function() {
+	DIALOG.showModal();
+});
+
+FORM_CANCEL_BUTTON.addEventListener('click', function() {
+	DIALOG.close();
+});
+
+</script>

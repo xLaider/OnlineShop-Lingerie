@@ -25,31 +25,17 @@ class Address extends Controller
 
     public function addressHandler()
     {
-        if (!isset($_POST['country']) || !isset($_POST['city']) || !isset($_POST['street']) || !isset($_POST['number']) || !isset($_POST['postCode']) || strlen($_POST['country']) == 0 || strlen($_POST['city']) == 0 || strlen($_POST['street']) == 0 || strlen($_POST['number']) == 0 || strlen($_POST['postCode']) == 0) {
-
-            $_SESSION['errorEmptyAddress'] = "Uzupełnij wszystkie pola1!";
-            header("Location: " . URLROOT . "/address");
-            exit();
-
-        } else {
-            unset($_SESSION['errorEmptyAddress']);
 
             //pobranie z bazy adresu po id address z tabeli users
             $address = $this->shipmentModel->getUserAddress($_SESSION['userData']->AddressId);
            
             if ($address == null) {//jeśli adresu nie ma to utworzenie go
                 $this->shipmentModel->createAddress($_POST['country'], $_POST['city'], $_POST['street'], $_POST['number'], $_POST['postCode'], $_SESSION['userData']->email);
-                $_SESSION['updateAddress']="Zapisano dane adresowe";
-                header("Location: " . URLROOT . "/address");
-                exit();
 
             } else {
                 //jak jest to go updateuje
                 $this->shipmentModel->updateAddress($_POST['country'], $_POST['city'], $_POST['street'], $_POST['number'], $_POST['postCode'], $_SESSION['userData']->AddressId);
                 unset($_SESSION['errorUser']);
-                header("Location: " . URLROOT . "/address");
-                $_SESSION['updateAddress']="Zmieniono dane adresowe";
-                exit();
                 //else czyli jeśli znalazł to ma być wypełnione wierszami z bazy
            
                
@@ -60,6 +46,8 @@ class Address extends Controller
                 //gdzie ma być zamknięcie sesji , wydaje mi sie ze bylo w wylogowaniu a nie ma nigdzie
     
             }
-        }
+            $address = $this->shipmentModel->getUserAddress($_SESSION['userData']->AddressId);
+            $_SESSION['address'] = $address;
+            header("Location: " . URLROOT . "/profile");
     }
 }

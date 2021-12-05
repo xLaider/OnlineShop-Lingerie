@@ -11,6 +11,15 @@ text-align: Left;
 
 }
 
+.flex-row{
+    align-items: center;
+    justify-content: space-between;
+}
+
+#show-address-form{
+    gap:1rem;
+}
+
 main{
     flex-direction: row;
 }
