@@ -2,6 +2,12 @@
     <div class="left">
         <img class="menu-icon" src="<?php echo URLROOT;?>/assets/images/menu.svg" alt="Menu"  onclick="openNav()">
     </div>
+    <h1 class="logo">
+        <a href="<?php echo URLROOT?>">MAJTECZKI W KROPECZKI</a>
+    </h1>
+    <h1 class="logo-small">
+        <a href="<?php echo URLROOT?>">MWK</a>
+    </h1>
                 <div class="right flex-row">
                     <?php if (isset($_SESSION['userData'])) :?>
                         <a href="<?php echo URLROOT."/index/logout"?>">WYLOGUJ</a>
@@ -18,9 +24,6 @@
                     </a>
                     <?php endif; ?>
                 </div>
-    <h1 class="logo">
-        <a href="<?php echo URLROOT?>">MAJTECZKI W KROPECZKI</a>
-    </h1>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="#">Kobieta</a>
