@@ -12,6 +12,11 @@ class AdminOrders extends Controller
     }
     public function index()
     {
+        if (!isset($_SESSION['userData']->Permission)||($_SESSION['userData']->Permission!="admin")) 
+        {
+            header("Location: " . URLROOT );
+            exit();
+        }
         $orders=$this->adminModel->getAllOrders();
         $this->view('adminOrders',compact('orders', $orders));
     }

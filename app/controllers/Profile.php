@@ -8,6 +8,14 @@ class Profile extends Controller {
     }
     public function index()
     {
+        
+        if (isset($_SESSION['userData']->Permission)&&($_SESSION['userData']->Permission=="admin")) 
+        {
+            header("Location: " . URLROOT . "/adminprofile");
+            exit();
+        }
+    
+
         if (isset($_SESSION['userData']->email)) 
         {
             $orders = $this->orderModel->getUserOrders($_SESSION['userData']->email);
