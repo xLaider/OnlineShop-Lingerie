@@ -1,0 +1,93 @@
+.getBackDiv{
+    padding: 7px;
+    display: flex;
+    align-items: center;
+}
+.prev{
+    margin-left: 3em;
+    margin-right: 2em;
+    cursor: pointer;
+    width: auto;
+}
+
+.prev img{
+    width: 50%;
+}
+
+.getBack{
+    font-size: 25px;
+}
+
+
+main{
+    display: flex;
+    padding: 3%;
+    justify-content: space-between;
+}
+
+img{
+    max-width: 200px;
+    max-height: 200px;
+}
+table{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    text-align: Left;
+
+}
+table td, th{
+    padding: 5px 15px;
+}
+
+td img{
+    border: 1px solid black;
+}
+
+.border-bottom {
+    text-decoration: underline;
+}
+
+.bold{
+    font-weight: bold;
+}
+th{
+    font-weight: bold;
+}
+
+.DaneOsobowe{
+    flex-direction: row;
+
+}
+
+.box{
+    column-count: 2;
+    padding: 10px 0;
+
+}
+
+.kategoria{
+    font-weight: bold;
+
+}
+
+.opis{
+    border-bottom: 1px solid black;
+
+}
+
+
+
+@media screen and (max-width: 1050px) {
+    main {
+      flex-direction: column;
+    }
+  }
+
+
+
+

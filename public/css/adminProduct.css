@@ -1,0 +1,37 @@
+img{
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.productMenu
+{
+    float: left;
+}
+
+table{
+    display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+align-content: center;
+text-align: Left;
+border-collapse: collapse;
+}
+main{
+    flex-direction: row;
+}
+
+table td, th {
+    padding: 10px 40px;
+}
+tr {
+    border-bottom: 1pt solid black;
+    }
+
+section.boxed{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}

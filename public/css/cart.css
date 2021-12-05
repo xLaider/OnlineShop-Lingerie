@@ -1,0 +1,110 @@
+.getBackDiv{
+    padding: 7px;
+    display: flex;
+    align-items: center;
+}
+.prev{
+    margin-left: 3em;
+    margin-right: 2em;
+    cursor: pointer;
+    width: auto;
+}
+
+.prev img{
+    width: 50%;
+}
+
+.getBack{
+    font-size: 25px;
+}
+
+section.boxed{
+    display: flex;
+    padding: 3%;
+}
+.tytul{
+    display: flex;
+    padding: 0 3%;
+    margin: 0 10px;
+}
+.product{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+img{
+    max-width: 198px;
+    max-height: 198px;
+}
+table{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    text-align: Left;
+    flex: 1 1 auto;
+}
+
+table td, th{
+    width:300px;
+    padding: 5px 15px;
+}
+
+.usun img{
+    border: 0px;
+    width: 20px;
+    height: 20px;
+}
+.usun{
+    align-content: right;
+    text-align: right;
+}
+
+.border-bottom {
+    text-decoration: underline;
+}
+
+.bold{
+    font-weight: bold;
+}
+th{
+    font-weight: bold;
+}
+
+.final a{
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.final a img{
+    width: 20px;
+}
+.cartSum{
+    float: right;
+    font-size: 20px;
+}
+a.cartbox {
+    font-size: 16px;
+    margin: 2px 6px;
+}
+.right{
+    float:right;
+}
+.proceedButton a {
+    padding: 4px 20px;
+    border: 1px solid black;
+    background: #81c784;
+    font-weight: bold;
+    font-size: 20px;
+}
