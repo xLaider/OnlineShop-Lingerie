@@ -4,7 +4,7 @@
     include "header.php";
 ?>
 
-<section class="boxed">
+<main>
     <?php if(count($orders)>0):?>
    <table>
         <tr>
@@ -47,4 +47,4 @@
    
 
     <?php endif;?>
-</section>
+    </main>
