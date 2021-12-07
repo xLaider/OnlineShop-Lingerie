@@ -12,6 +12,11 @@ class AdminProduct extends Controller
     }
     public function index()
     {
+        if (!isset($_SESSION['userData']->Permission)||($_SESSION['userData']->Permission!="admin")) 
+        {
+            header("Location: " . URLROOT );
+            exit();
+        }
         if(isset($_GET['sortType']))
         {
             $sortType=$_GET['sortType'];

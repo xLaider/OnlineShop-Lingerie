@@ -29,10 +29,10 @@
             <form id='".$formEmail."' method='post' action='".URLROOT."/adminUsers/updatePermission'>
                 <select name='permission' onchange='change".$formEmail."()'>
                     <option value='admin'";
-                    if ($user->permission=='admin') echo "selected";
+                    if ($user->Permission=='admin') echo "selected";
                     echo ">Admin</option>
                     <option value='user'";
-                    if ($user->permission=='user') echo "selected";
+                    if ($user->Permission=='user') echo "selected";
                     echo ">Uzytkownik</option>
                 </select></td>
                 <input type='hidden' name='email' value='".$user->email."'>
