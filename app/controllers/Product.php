@@ -18,7 +18,7 @@ class Product extends Controller {
         $arr=array();
         $_SESSION['currentProduct']=serialize($product);
         foreach ($images as $image){
-            array_push($arr,$image->link);
+            array_push($arr,$image->image);
         }
         $_SESSION['imageArray']=$arr;
         
