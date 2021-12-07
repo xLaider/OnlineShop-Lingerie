@@ -11,7 +11,6 @@ class AdminProfile extends Controller
             header("Location: " . URLROOT );
             exit();
         }
-        $this->productModel = $this->model('ProductModel');
     }
     public function index()
     {
