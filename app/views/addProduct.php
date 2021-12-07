@@ -51,8 +51,7 @@ include "header.php";
                 <label for="Description"><b>Opis</b></label>
                 <textarea id="Description" required name="Description" placeholder="Opis" rows="5" cols="33"><?php if ($product) {
                                                                                     echo $product->Description;
-                                                                                } ?> 
-                                                                                        </textarea>
+                                                                                } ?></textarea>
             </div>
         </div>
 
@@ -67,7 +66,7 @@ include "header.php";
                 foreach($images as $image){
                     echo "<div>
                     <label for='".$i."Img'>
-                    <img src='".$image->link."'>
+                    <img src='data:image/png;base64,". base64_encode($image->image)."'>
                     </label>
                     <input type='file' id='".$i."Img' name='".$i."Img' accept='mage/x-png,image/gif,image/jpeg'  >
                 </div>";
