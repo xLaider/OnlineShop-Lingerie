@@ -4,7 +4,7 @@
     include "header.php";
 ?>
 
-<section class="boxed">
+<main>
     <?php if(count($users)>0):?>
    <table>
         <tr>
@@ -51,4 +51,4 @@
    
 
     <?php endif;?>
-</section>
+    </main>
