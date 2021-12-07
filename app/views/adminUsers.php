@@ -3,6 +3,11 @@
 <?php
     include "header.php";
 ?>
+<div class="getBackDiv">
+    <!-- podmieniłam link do prfilu w cofnij -->
+    <a class="prev" href="<?php echo URLROOT . "/adminprofile" ?>"><img src="<?php echo URLROOT; ?>/assets/images/arrowleft.svg"><div>Powrót</div></a>
+    
+</div>
 
 <main>
     <?php if(count($users)>0):?>
