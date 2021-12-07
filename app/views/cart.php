@@ -7,8 +7,8 @@ include "header.php";
 
 <div class="getBackDiv">
     <!-- podmieniłam link do prfilu w cofnij -->
-    <a class="prev" href="<?php echo URLROOT . "/index" ?>"><img src="<?php echo URLROOT; ?>/assets/images/arrowleft.svg"></a>
-    <h1 class="getBack">Powrót</h1>
+    <a class="prev" href="<?php echo URLROOT . "/index" ?>"><img src="<?php echo URLROOT; ?>/assets/images/arrowleft.svg"><div>Powrót</div></a>
+    
 </div>
 <div class=tytul><h2 class=bold>KOSZYK ZAKUPÓW</h2></div>
 
@@ -28,7 +28,7 @@ include "header.php";
             foreach ($cartProducts as $item) {
                 echo "<tr id=\"product-" . $item->productID . "\">
             
-                <td><div class='product'><img src=\"$item->imageLink\" ></div></td>
+                <td><div class='product'><img src='data:image/png;base64,". base64_encode($item->imageLink)."' ></div></td>
                 <td>";
                 echo '<a href="' . URLROOT, '/product?productID=' . $item->productID . '"><h3 class="bold">' . $item->Name . "</h3></a>
                 <br>" . $item->Category . "</td>
