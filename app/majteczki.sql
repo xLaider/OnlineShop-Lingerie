@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 28 Lis 2021, 22:17
+-- Czas generowania: 05 Gru 2021, 23:34
 -- Wersja serwera: 10.4.21-MariaDB
 -- Wersja PHP: 8.0.12
 
@@ -42,7 +42,7 @@ CREATE TABLE `address` (
 
 INSERT INTO `address` (`AddressId`, `Country`, `City`, `Street`, `BuildingNumber/ApartmentNumber`, `PostCode`) VALUES
 (1, 'Polska', 'Warszawa', 'Rębkowska', '11', '03-375'),
-(2, 'Polska', 'Krzyś', 'Sienkiewicza', '10', '42-400');
+(2, '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -147,16 +147,18 @@ CREATE TABLE `user` (
   `DateOfBirth` date DEFAULT NULL,
   `DateOfRegistration` datetime NOT NULL,
   `DateOfLastLogin` datetime DEFAULT NULL,
-  `AddressId` int(11) DEFAULT NULL
+  `AddressId` int(11) DEFAULT NULL,
+  `Permission` enum('admin','user') COLLATE utf8_polish_ci NOT NULL DEFAULT 'user'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
 -- Zrzut danych tabeli `user`
 --
 
-INSERT INTO `user` (`email`, `FirstName`, `LastName`, `PhoneNumber`, `Password`, `DateOfBirth`, `DateOfRegistration`, `DateOfLastLogin`, `AddressId`) VALUES
-('mateuszblazkow1@gmail.com', NULL, NULL, NULL, '$2y$10$KR98N8N./XxZudICvv7tzeqaLLZr9NkZWF5qCIMdJXWfE0LjdhriW', NULL, '2021-11-23 06:44:17', NULL, NULL),
-('ewa@wp.pl', NULL, NULL, NULL, '$2y$10$s7.htAjjqgWP1zYvr6BrReJxVl0ZrHPuuuBU//IrkYoLnskWcU9Q.', NULL, '2021-11-24 11:30:21', NULL, 2);
+INSERT INTO `user` (`email`, `FirstName`, `LastName`, `PhoneNumber`, `Password`, `DateOfBirth`, `DateOfRegistration`, `DateOfLastLogin`, `AddressId`, `Permission`) VALUES
+('admin@wp.pl', NULL, NULL, NULL, '$2y$10$KrX0I5EOy9ItdiPUkVktx.r8XOOCUVyOxY/AlgTtzXSW7wGbyx3de', NULL, '2021-12-05 11:20:30', NULL, NULL, 'admin'),
+('ewa@wp.pl', NULL, NULL, NULL, '$2y$10$s7.htAjjqgWP1zYvr6BrReJxVl0ZrHPuuuBU//IrkYoLnskWcU9Q.', NULL, '2021-11-24 11:30:21', NULL, 2, 'user'),
+('mateuszblazkow1@gmail.com', NULL, NULL, NULL, '$2y$10$KR98N8N./XxZudICvv7tzeqaLLZr9NkZWF5qCIMdJXWfE0LjdhriW', NULL, '2021-11-23 06:44:17', NULL, NULL, 'user');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -191,6 +193,12 @@ ALTER TABLE `orders`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`productID`);
+
+--
+-- Indeksy dla tabeli `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`email`);
 
 --
 -- AUTO_INCREMENT dla zrzuconych tabel
