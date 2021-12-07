@@ -9,9 +9,7 @@ img{
 }
 
 table{
-    display: flex;
-flex-direction: row;
-flex-wrap: wrap;
+
 justify-content: center;
 align-items: center;
 flex-direction: column;
@@ -27,11 +25,24 @@ table td, th {
     padding: 10px 40px;
 }
 tr {
-    border-bottom: 1pt solid black;
-    }
+    border-bottom: 1px solid black;
+}
+th a{
+    font-weight: bold;
+}
 
-section.boxed{
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+main{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 10px;
+    max-width: 1500px;
+}
+.dodaj{
+    padding: 20px;
+}
+.dodaj a{
+    font-weight: bold;
+    float: right;
 }

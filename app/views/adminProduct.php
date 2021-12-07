@@ -4,10 +4,10 @@
     include "header.php";
 ?>
 
-<section class="boxed">
+<main>
     <?php if(count($products)>0):?>
 
-        <a href="<?php echo URLROOT . "/addProduct?productID=null" ?>">+ Dodaj nowy produkt</a>
+        
         
    <table>
         <tr>
@@ -33,8 +33,9 @@
        
 
    </table> 
-
+   <div class=dodaj><a href="<?php echo URLROOT . "/addProduct?productID=null" ?>">+ Dodaj nowy produkt</a></div>
+   
 
     <?php endif;?>
-</section>
+    </main>
 
