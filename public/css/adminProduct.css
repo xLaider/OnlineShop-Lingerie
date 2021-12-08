@@ -1,37 +1,78 @@
-img{
-    max-width: 200px;
-    max-height: 200px;
-}
 
-.productMenu
-{
-    float: left;
-}
-
-table{
+.prev{
     display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-align-content: center;
-text-align: Left;
-border-collapse: collapse;
+    font-size: 20px;
+    align-items: center;
+    margin-left: 1em;
+    margin-right: 2em;
+    cursor: pointer;
+    width: auto; 
+    padding: 1em 1em;
 }
-main{
-    flex-direction: row;
+
+.prev img{
+    width: 30px;
+    margin-right: 30px;
+}
+
+.prev a{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+img {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.productMenu {
+  float: left;
+}
+
+table {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-content: center;
+  text-align: Left;
+  border-collapse: collapse;
+}
+main {
+  flex-direction: row;
 }
 
 table td, th {
-    padding: 10px 40px;
+  padding: 10px 40px;
 }
 tr {
-    border-bottom: 1pt solid black;
-    }
+  border-bottom: 1px solid black;
+}
+th a {
+  font-weight: bold;
+}
+th {
+  font-weight: bold;
+}
 
-section.boxed{
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+main select{
+    height: 30px;
+    width: 160px;
+
+}
+
+main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 10px;
+  max-width: 1500px;
+}
+.dodaj {
+  padding: 20px;
+}
+.dodaj a {
+  font-weight: bold;
+  float: right;
 }

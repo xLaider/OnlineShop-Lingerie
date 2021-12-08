@@ -22,7 +22,7 @@ class Cart extends Controller
                     $product->Sizes = $cartItem->size;
                     $images = $this->productModel->getImageByID($cartItem->id);
                     if (isset($images[0]))
-                        $product->imageLink = $images[0]->link;
+                        $product->imageLink = $images[0]->image;
                     else
                         $product->imageLink = NULL;
                     array_push($cartProducts, $product);

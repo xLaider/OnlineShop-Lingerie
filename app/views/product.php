@@ -31,14 +31,14 @@
             
             <?php 
                 foreach($images as $image){
-                    echo "<div class='productRow'><img src='".$image->link."' ></div>";
+                    echo "<div class='productRow'><img src=data:image/png;base64,". base64_encode($image->image)." ></div>";
                 }
                 echo "<img src='./assets/images/arrowdown.svg' style='width:50%'>";
             ?>       
         </div>
         <div>
         
-            <div class="productHero"><img src="<?php echo $images[0]->link ?>" ></div>
+            <div class="productHero"><img src=data:image/png;base64,<?php echo base64_encode($images[0]->image) ?> ></div>
         </div>
         </div>
         

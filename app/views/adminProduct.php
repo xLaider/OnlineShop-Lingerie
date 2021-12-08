@@ -4,10 +4,16 @@
     include "header.php";
 ?>
 
-<section class="boxed">
+<div class="getBackDiv">
+    <!-- podmieniłam link do prfilu w cofnij -->
+    <a class="prev" href="<?php echo URLROOT . "/adminprofile" ?>"><img src="<?php echo URLROOT; ?>/assets/images/arrowleft.svg"><div>Powrót</div></a>
+    
+</div>
+
+<main>
     <?php if(count($products)>0):?>
 
-        <a href="<?php echo URLROOT . "/addProduct?productID=null" ?>">+ Dodaj nowy produkt</a>
+        
         
    <table>
         <tr>
@@ -33,8 +39,9 @@
        
 
    </table> 
-
+   <div class=dodaj><a href="<?php echo URLROOT . "/addProduct?productID=null" ?>">+ Dodaj nowy produkt</a></div>
+   
 
     <?php endif;?>
-</section>
+    </main>
 

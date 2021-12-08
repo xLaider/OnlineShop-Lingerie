@@ -10,7 +10,7 @@ class Product extends Controller {
         $images = $this->productModel->getImageByID($_GET['productID']);
         $arr=array();
         foreach ($images as $image){
-            array_push($arr,$image->link);
+            array_push($arr,$image->image);
         }
         $_SESSION['imageArray']=$arr;
         $sizes=array();

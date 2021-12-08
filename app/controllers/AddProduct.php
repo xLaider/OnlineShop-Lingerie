@@ -85,22 +85,20 @@ class AddProduct extends Controller {
 
         if(isset($_FILES['1Img']))
         {
-            $uploads_dir = './assets/images';
-            $tmp_name = $_FILES["1Img"]["tmp_name"];
-		    $name = basename($_FILES["1Img"]["name"]);
-		    move_uploaded_file($tmp_name,  "$uploads_dir/$name");
-            $link="./assets/images/$name";
-            $this->productModel->addImageByID($link,$productID);
+            $image = $_FILES["1Img"]["tmp_name"];
+            $imgContent = file_get_contents($image); 
+            $this->productModel->addImageByID($imgContent,$productID);
         }
         else
         {
             $blad=true;
         }
+        var_dump($_FILES['2Img']);
         if(isset($_FILES['2Img']))
         {
-            $tmp_name = $_FILES["2Img"]["tmp_name"];
-		    $name = basename($_FILES["2Img"]["name"]);
-		    move_uploaded_file($tmp_name,  "./assets/images/$name");
+            $image = $_FILES["2Img"]["tmp_name"];
+            $imgContent = file_get_contents($image); 
+            $this->productModel->addImageByID($imgContent,$productID);
         }
         
         if(isset($_FILES['3Img']))
@@ -147,7 +145,7 @@ class AddProduct extends Controller {
         }
 
 
-        $this->view('addProduct',array('product'=>$product,'blad'=>$blad, 'productID'=>$productID) );
+        $this->view('adminProduct',array('product'=>$product,'blad'=>$blad) );
     }
     
 }

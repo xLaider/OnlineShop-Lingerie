@@ -165,7 +165,7 @@
                         "
                         <a class='product' href='".URLROOT."/product?productID=".$product->productID."'>
                         
-                        <img src='".$product->link."'>
+                        <img src='data:image/png;base64,". base64_encode($product->image)."'>
 
                         <div class='hidden'>
                                 <span style='font-size:xx-large;'>".$product->Name."</span>
