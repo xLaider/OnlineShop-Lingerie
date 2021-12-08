@@ -53,7 +53,7 @@ include "header.php";
                     <div class="product"><img src="<?php echo URLROOT; ?>/assets/images/kobieta.svg"></div>
                 </td>
                 <td>
-                    <h3 class="bold">Placeholder na nazwe Przedmiotu</h3><br>Typ produktu
+                    <h3 class="bold"><?php echo $_SESSION[]  ?></h3><br>Typ produktu
                 </td>
 
                 <td class="border-bottom">4</td>

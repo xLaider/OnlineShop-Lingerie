@@ -3,9 +3,15 @@
 class OrderInProgress extends Controller {
     public function __construct()
     {
-        $this->userModel = $this->model('User');
+        $this->orderModel = $this->model('OrderModel');
     }
     public function index(){
-        $this->view('orderInProgress');
+        if (isset($_GET['orderID'])){
+            $order=$this->orderModel->getOrderProductsByOderNumber($_GET['orderID']);
+            $this->view('orderInProgress',compact('order'),$order);
+        }else{
+            $this->view('Error');
+        }
+        
     }
 }

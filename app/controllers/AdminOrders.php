@@ -24,8 +24,7 @@ class AdminOrders extends Controller
     {
         $status=$_POST['status'];
         $OrderNumber=$_POST['OrderNumber'];
-        var_dump($status);
-        var_dump($OrderNumber);
+
         $this->adminModel->updateStatus($status,$OrderNumber);
         header("Location: ".URLROOT."/adminOrders");
         exit();

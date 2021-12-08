@@ -24,7 +24,6 @@ include "header.php";
                 <th></th>
             </tr>
             <?php
-
             foreach ($cartProducts as $item) {
                 echo "<tr id=\"product-" . $item->productID . "\">
             
@@ -35,20 +34,20 @@ include "header.php";
                 
             <td>";
 
-                echo '<a href="' . URLROOT . '/cart/addToCart/' . $item->productID . '/-1/" title="Zmniejsz" class="cartbox plus">-</a>';
+                echo "<a href='" . URLROOT . "/cart/updateCart/?id=".$item->productID ."&quantity=-1&size=".$item->Sizes."' title='Zmniejsz' class='cartbox plus'>-</a>";
                 echo  $item->quantity;
-                echo '<a href="' . URLROOT . '/cart/addToCart/' . $item->productID . '/1/" title="Zwiększ" class="cartbox plus">+</a>';
+                echo "<a href='" . URLROOT . "/cart/updateCart/?id=".$item->productID ."&quantity=1&size=".$item->Sizes."' title='Zwieksz' class='cartbox plus'>+</a>";
 
                 echo "</td>
             <td class=border-bottom>" . $item->Sizes . "</td>
             <td class=border-bottom>" . $item->Price . "</td>
-            <td class=usun>";  echo '<a href="' . URLROOT . '/cart/addToCart/' . $item->productID . '/' . -1 * $item->quantity . '/">'; echo '<img src="' . URLROOT . '/assets/images/x.svg"</a>'; 
+            <td class=usun>";  echo '<a href="' . URLROOT . '/cart/deleteItemFromCart/?id='.$item->productID .'&quantity=1&size='.$item->Sizes.'/">'; echo '<img src="' . URLROOT . '/assets/images/x.svg"</a>'; 
             echo"</td></tr>";
             }
             ?>
             <tr>
                 <td></td> <td></td> <td></td><td class=bold>Suma:</td><td class=border-bottom> <?php echo $cartSum; ?></td> 
-                <td><div class="final"><a href="#">Finalizuj <img src="<?php echo URLROOT; ?>/assets/images/arrowright.svg"> </a></div></td>
+                <td><div class="final"><a href="<?php echo URLROOT.'/order' ?>">Finalizuj <img src="<?php echo URLROOT; ?>/assets/images/arrowright.svg"> </a></div></td>
             </tr>
 
         </table>

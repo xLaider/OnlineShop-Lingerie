@@ -19,9 +19,11 @@
         -->
 
 
-        <a class="getBackDiv" href="<?php echo URLROOT ?>">
-        <img src="<?php echo URLROOT;?>/assets/images/arrowleft.svg">
-        <h1 class="getBack">Powrót</h1>
+        <div class="getBackDiv">
+    <!-- podmieniłam link do prfilu w cofnij -->
+    <a class="prev" href="<?php echo URLROOT . "/index" ?>"><img src="<?php echo URLROOT; ?>/assets/images/arrowleft.svg"></a>
+    <h1 class="getBack">Powrót</h1>
+</div>
     </a>
     <div class="hero">
         <div class="flex-row">
@@ -54,19 +56,25 @@
                         Cena <span> <?php echo $product->Price ?></span>
                     </div> 
                     <div>
-                    Rozmiar<span> <select name="" id="">
-                            <option value="M">M</option>
-                            <option value="M">M</option>
-                            <option value="M">M</option>
-                        </select> <?php $product->Sizes ?></span>
+                    <form method="GET" action="<?php echo URLROOT."/cart/addToCart/".$product->productID."&"; ?>">
+                    
+                    Rozmiar<span> <select name="size" id="">
+                        <?php 
+                        foreach ($sizes as $size){
+                            echo "<option value=".$size.">".$size."</option>";
+                        }
+                        ?>
+                        </select> <?php $product->Sizes ?></span>   
                     </div>
+                    <input type="submit" value="Dodaj do koszyka +">
                 </div> 
+                </form> 
                 <div class="finalize">
                     <div>
-                        
+
                     </div>
                     <div>
-                        <a href="<?php echo URLROOT."/cart/addToCart/".$product->productID; ?>">Dodaj do koszyka +</a>
+                        
                     </div>
                 </div> 
                 
