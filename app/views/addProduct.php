@@ -31,22 +31,37 @@ include "header.php";
             <div class=box>
                 <label for="Sizes"><b>Rozmiar</b></label>
                 <select name="Sizes" id="Sizes" required>
-                    <option value="XS" <?php if ($product){if ($product->Sizes == "XS") echo "selected";} ?>>XS</option>
-                    <option value="S" <?php if ($product){if ($product->Sizes == "S") echo "selected";} ?>>S</option>
-                    <option value="M" <?php if ($product){if ($product->Sizes == "M") echo "selected";} ?>>M</option>
-                    <option value="L" <?php if ($product){if ($product->Sizes == "L") echo "selected";} ?>>L</option>
-                    <option value="XL" <?php if ($product){if ($product->Sizes == "XL") echo "selected";} ?>>XL</option>
+                    <?php
+                    $sizes = ["XS","S","M","L","XL"];
+                    foreach($sizes as $size){
+                        echo '<option value='.$size.' '.(($product && $product->Sizes == $size)?"selected":"").'>'.$size.'</option>';
+                    }
+                    ?>
                 </select>
             </div>
             <div class=box>
-                <label for="Sizes"><b>Kategoria</b></label>
-                <select name="Category" id="Category" required>
-                    <option value="Biustonosze">Biustonosze</option>
-                    <option value="Majtki">Majtki</option>
-                    <option value="Bokserki">Bokserki</option>
-                    <option value="Piżamy">Piżamy</option>
+                <label for="Group"><b>Grupa</b></label>
+                <select name="Group" id="Group" required>
+                <?php
+                    $groups = ["Unisex"=>"Dla obu płci","Woman"=>"Kobieta","Man"=>"Mężczyzna","Kids"=>"Dzieci"];
+                    foreach($groups as $group => $group_value){
+                        echo '<option value='.$group.' '.(($product && $product->ProductGroup == $group)?"selected":"").'>'.$group_value.'</option>';
+                    }
+                    ?>
                 </select>
             </div>
+            <div class=box>
+                <label for="Category"><b>Kategoria</b></label>
+                <select name="Category" id="Category" required>
+                    <?php
+                    $categories = ["Biustonosze","Majtki","Bokserki","Piżamy"];
+                    foreach($categories as $category){
+                        echo '<option value='.$category.' '.(($product && $product->Category == $category)?"selected":"").'>'.$category.'</option>';
+                    }
+                    ?>
+                </select>
+            </div>
+            
             <div class=box>
                 <label for="Description"><b>Opis</b></label>
                 <textarea id="Description" required name="Description" placeholder="Opis" rows="5" cols="33"><?php if ($product) {

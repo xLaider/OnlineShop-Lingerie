@@ -156,7 +156,7 @@
             </script>
             <div class="container">
                 <div>
-                    Wszystko
+                    <?php echo $group ?>
                 </div>
                 <?php
                    
@@ -165,7 +165,7 @@
                         "
                         <a class='product' href='".URLROOT."/product?productID=".$product->productID."'>
                         
-                        <img src='data:image/png;base64,". base64_encode($product->image)."'>
+                        <img src='data:image/png;base64,". base64_encode($product->image)."' onerror='this.onerror=null;this.src=`http://example.com/existent-image.jpg`;'>
 
                         <div class='hidden'>
                                 <span style='font-size:xx-large;'>".$product->Name."</span>

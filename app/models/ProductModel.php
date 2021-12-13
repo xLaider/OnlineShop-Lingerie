@@ -22,8 +22,19 @@
         }
 
         public function getAllProducts(){
-            $query='SELECT product.productID, Name, Price, image FROM product INNER JOIN images ON product.productID=images.productID GROUP BY product.productID';
+            $query='SELECT product.productID, Name, Price, image FROM product LEFT JOIN images ON product.productID=images.productID GROUP BY product.productID';
             $this->db->query($query);
+            $result=$this->db->resultSet();
+            return $result;
+        }
+
+        public function getGroupedProducts($group){
+            $query=
+                ($group=="Kids")
+                ?'SELECT product.productID, Name, Price, image FROM product LEFT JOIN images ON product.productID=images.productID WHERE ProductGroup LIKE :group GROUP BY product.productID'
+                :'SELECT product.productID, Name, Price, image FROM product LEFT JOIN images ON product.productID=images.productID WHERE ProductGroup LIKE :group OR ProductGroup LIKE "Unisex" GROUP BY product.productID';
+                $this->db->query($query);
+                    $this->db->bind(':group',$group);
             $result=$this->db->resultSet();
             return $result;
         }

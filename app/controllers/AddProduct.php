@@ -63,14 +63,14 @@ class AddProduct extends Controller {
             $frProduct->Description="";
         }
     
-        if(isset($_POST['Category']))
+        if(isset($_POST['Group']))
         {
-            $frProduct->Category=$_POST['Category'];
+            $frProduct->Group=$_POST['Group'];
         }
         else
         {
             $blad=true;
-            $frProduct->Category="";
+            $frProduct->Group="";
         }
 
         if(isset($_POST['Category']))
@@ -82,7 +82,7 @@ class AddProduct extends Controller {
             $blad=true;
             $frProduct->Category="";
         }
-
+/*
         if(isset($_FILES['1Img']))
         {
             $image = $_FILES["1Img"]["tmp_name"];
@@ -121,7 +121,7 @@ class AddProduct extends Controller {
 		    $name = basename($_FILES["5Img"]["name"]);
 		    move_uploaded_file($tmp_name,  "./assets/images/$name");
         }
-        
+*/        
 
         if(!$blad)//ustawiono wszystkie pola
         {
@@ -145,7 +145,7 @@ class AddProduct extends Controller {
         }
 
 
-        $this->view('adminProduct',array('product'=>$product,'blad'=>$blad) );
+        header('location:'.URLROOT.'/adminProduct' );
     }
     
 }
