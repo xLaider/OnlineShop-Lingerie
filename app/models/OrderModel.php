@@ -49,7 +49,6 @@
             $cartItems=unserialize($_SESSION['cartItems']);
 
             $id=$this->db->lastInsertId();
-
             foreach ($cartItems as $item ){
                 $query="INSERT INTO orderproduct (Quantity, Size, ProductId, OrderNumber)
                 VALUES (:Quantity, :Size, :ProductId, :OrderNumber);";

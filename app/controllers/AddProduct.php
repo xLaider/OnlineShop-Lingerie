@@ -18,6 +18,8 @@ class AddProduct extends Controller {
     }
     public function AddProduct($productID)
     {
+        
+        $images = $this->productModel->getImageByID($productID);
         $blad=false;
 
         //isset dla selecta
@@ -63,14 +65,14 @@ class AddProduct extends Controller {
             $frProduct->Description="";
         }
     
-        if(isset($_POST['Category']))
+        if(isset($_POST['Group']))
         {
-            $frProduct->Category=$_POST['Category'];
+            $frProduct->Group=$_POST['Group'];
         }
         else
         {
             $blad=true;
-            $frProduct->Category="";
+            $frProduct->Group="";
         }
 
         if(isset($_POST['Category']))
@@ -82,12 +84,15 @@ class AddProduct extends Controller {
             $blad=true;
             $frProduct->Category="";
         }
-
-        if(isset($_FILES['1Img']))
-        {
-            $image = $_FILES["1Img"]["tmp_name"];
+        $i=1;
+        while(isset($_FILES['File_'.$i])){
+            $image = $_FILES["File_".$i]["tmp_name"];
+            
+            if($image){
             $imgContent = file_get_contents($image); 
-            $this->productModel->addImageByID($imgContent,$productID);
+            $this->productModel->addImageByID($imgContent,$productID,$images[$i-1]->ImageID??null);
+            }
+            $i++;
         }
         else
         {
@@ -144,7 +149,7 @@ class AddProduct extends Controller {
         }
 
 
-        $this->view('adminProduct',array('product'=>$product,'blad'=>$blad) );
+        header('location:'.URLROOT.'/adminProduct' );
     }
     
 }
