@@ -18,6 +18,8 @@ class AddProduct extends Controller {
     }
     public function AddProduct($productID)
     {
+        
+        $images = $this->productModel->getImageByID($productID);
         $blad=false;
 
         //isset dla selecta
@@ -82,46 +84,16 @@ class AddProduct extends Controller {
             $blad=true;
             $frProduct->Category="";
         }
-/*
-        if(isset($_FILES['1Img']))
-        {
-            $image = $_FILES["1Img"]["tmp_name"];
+        $i=1;
+        while(isset($_FILES['File_'.$i])){
+            $image = $_FILES["File_".$i]["tmp_name"];
+            
+            if($image){
             $imgContent = file_get_contents($image); 
-            $this->productModel->addImageByID($imgContent,$productID);
+            $this->productModel->addImageByID($imgContent,$productID,$images[$i-1]->ImageID??null);
+            }
+            $i++;
         }
-        else
-        {
-            $blad=true;
-        }
-        var_dump($_FILES['2Img']);
-        if(isset($_FILES['2Img']))
-        {
-            $image = $_FILES["2Img"]["tmp_name"];
-            $imgContent = file_get_contents($image); 
-            $this->productModel->addImageByID($imgContent,$productID);
-        }
-        
-        if(isset($_FILES['3Img']))
-        {
-            $tmp_name = $_FILES["3Img"]["tmp_name"];
-		    $name = basename($_FILES["3Img"]["name"]);
-		    move_uploaded_file($tmp_name,  "./assets/images/$name");
-        }
-        
-        if(isset($_FILES['4Img']))
-        {
-            $tmp_name = $_FILES["4Img"]["tmp_name"];
-		    $name = basename($_FILES["4Img"]["name"]);
-		    move_uploaded_file($tmp_name,  "./assets/images/$name");
-        }
-        
-        if(isset($_FILES['5Img']))
-        {
-            $tmp_name = $_FILES["5Img"]["tmp_name"];
-		    $name = basename($_FILES["5Img"]["name"]);
-		    move_uploaded_file($tmp_name,  "./assets/images/$name");
-        }
-*/        
 
         if(!$blad)//ustawiono wszystkie pola
         {

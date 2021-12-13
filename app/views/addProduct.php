@@ -76,23 +76,22 @@ include "header.php";
             <div class="container">
                 
             <?php 
-                $i=1;
+                $i=0;
                 if($product){
                 foreach($images as $image){
+                    $i++;
                     echo "<div>
-                    <label for='".$i."Img'>
-                    <img src='data:image/png;base64,". base64_encode($image->image)."'>
+                    <label for='File_".$i."'>
+                    <img id='Img_".$i."' src='data:image/png;base64,". base64_encode($image->image)."'>
                     </label>
-                    <input type='file' id='".$i."Img' name='".$i."Img' accept='mage/x-png,image/gif,image/jpeg'  >
+                    <input type='file' id='File_".$i."' name='File_".$i."' accept='mage/x-png,image/gif,image/jpeg'  onchange='loadFile(event)' onclick='onClick(event)' >
                 </div>";
-                $i++;
             }
-                for($i;$i<=5;$i++){
+            $i++;
                     echo "<div>
-                    <label for='".$i."Img'><img src='". URLROOT."/assets/images/plus.svg'></label>
-                    <input type='file' id='".$i."Img' name='".$i."Img' accept='image/x-png,image/gif,image/jpeg'  >
+                    <label for='File_".$i."'><img id='Img_".$i."' src='". URLROOT."/assets/images/plus.svg'></label>
+                    <input type='file' id='File_".$i."' name='File_".$i."' accept='image/x-png,image/gif,image/jpeg'  onchange='loadFile(event)' onclick='onClick(event)' >
                 </div>";
-                }
 
                 
                 }else{
@@ -100,26 +99,12 @@ include "header.php";
 
                                                     
                 <div>
-                    <label for="1Img"><img src="<?php echo URLROOT; ?>/assets/images/plus.svg"></label>
-                    <input type="file" id="1Img" name="1Img"accept="image/x-png,image/gif,image/jpeg"  >
+                    <label for="File_<?php echo $i?>"><img id="Img_<?php echo $i?>" src="<?php echo URLROOT; ?>/assets/images/plus.svg"></label>
+                    <input type="file" id="File_<?php echo $i?>" name="File_<?php echo $i?>"accept="image/x-png,image/gif,image/jpeg" onchange="loadFile(event)" >
                 </div>
-                <div>
-                    <label for="2Img"><img src="<?php echo URLROOT; ?>/assets/images/plus.svg"></label>
-                    <input type="file" id="2Img" name="2Img" accept="image/x-png,image/gif,image/jpeg"  >
-                </div>
-                <div>
-                    <label for="3Img"><img src="<?php echo URLROOT; ?>/assets/images/plus.svg"></label>
-                    <input type="file" id="3Img" name="3Img" accept="image/x-png,image/gif,image/jpeg"  >
-                </div>
-                <div>
-                    <label for="4Img"><img src="<?php echo URLROOT; ?>/assets/images/plus.svg"></label>
-                    <input type="file" id="4Img" name="4Img" accept="image/x-png,image/gif,image/jpeg"  >
-                </div>
-                <div>
-                    <label for="5Img"><img src="<?php echo URLROOT; ?>/assets/images/plus.svg"></label>
-                    <input type="file" id="5Img" name="5Img" accept="image/x-png,image/gif,image/jpeg"  >
-                </div>
-               <?php } ?>
+                
+               <?php } 
+               ?>
 
             </div>
 
@@ -134,3 +119,28 @@ include "header.php";
     ?>
     </div>
 </form>
+
+<script>
+function htmlToElements(html) {
+    var template = document.createElement('template');
+    template.innerHTML = html;
+    return template.content.childNodes;
+}
+
+    var onClick = function(event){
+        console.log(event);
+    }
+    var loadFile = function(event){
+        var id = event.srcElement.id;
+        var index = parseInt(id.split('_')[1]);
+        var image = document.getElementById('Img_'+index);
+        image.src = URL.createObjectURL(event.target.files[0]);
+        if(index == document.querySelectorAll('[id^="Img_"]')[document.querySelectorAll('[id^="Img_"]').length-1].id.split('_')[1]){
+        var container = document.getElementsByClassName("container")[0];
+        var test = htmlToElements(`<div><label for="File_`+(index+1)+`"><img id="Img_`+(index+1)+`" src="<?php echo URLROOT; ?>/assets/images/plus.svg"></label><input type="file" id="File_`+(index+1)+`" name="File_`+(index+1)+`"accept="image/x-png,image/gif,image/jpeg" onchange="loadFile(event)" ></div>`);
+                console.log(test);
+        container.appendChild(test[0]);
+        }
+    }
+
+    </script>
