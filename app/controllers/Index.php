@@ -12,7 +12,13 @@ class Index extends Controller {
         }else{
             $products=$this->productModel->getAllProducts();
         }
+
         $group = $this->getGroup();
+        var_dump($_SESSION);
+        unset($_SESSION['filterSizes']);
+        unset($_SESSION['filterTypes']);
+        unset($_SESSION['filterMinPrice']);
+        unset($_SESSION['filterMaxPrice']);
         $this->view('index',compact('products','group'));
 
     }
@@ -135,7 +141,7 @@ class Index extends Controller {
             
         }
 
-        $this->view('index',compact('filteredProducts', $filteredProducts));
+        $this->view('index',compact('filteredProducts'));
     }
 
 }

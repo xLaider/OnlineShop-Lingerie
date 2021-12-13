@@ -81,7 +81,10 @@
                             <h3>ROZMIAR</h3>
                             <label class="box">XS
                                 <input type="checkbox" id="XS" name="XS" <?php
-                                if (in_array("XS", $_SESSION['filterSizes'])) echo "checked";
+                                if (isset($_SESSION['filterSizes'])){
+                                    if (in_array("XS", $_SESSION['filterSizes'])) echo "checked";
+                                }
+                                
                                 ?>>
                                 <span class="checkmark" ></span>
                             </label>
@@ -89,7 +92,10 @@
                             <label class="box">S
                                 <input type="checkbox" id="S" name="S"
                                 <?php
-                                if (in_array("S", $_SESSION['filterSizes'])) echo "checked";
+                                if (isset($_SESSION['filterSizes'])){
+                                    if (in_array("S", $_SESSION['filterSizes'])) echo "checked";
+                                }
+                                
                                 ?>>
                                 <span class="checkmark"></span>
                             </label>
@@ -97,7 +103,10 @@
                             <label class="box">M
                                 <input type="checkbox" id="M" name="M"
                                 <?php
-                                if (in_array("M", $_SESSION['filterSizes'])) echo "checked";
+                                if (isset($_SESSION['filterSizes'])){
+                                    if (in_array("M", $_SESSION['filterSizes'])) echo "checked";
+                                }
+                                
                                 ?>>
                                 <span class="checkmark"></span>
                             </label>
@@ -105,14 +114,20 @@
                             <label class="box">L
                                 <input type="checkbox" id="L" name="L"
                                 <?php
-                                if (in_array("L", $_SESSION['filterSizes'])) echo "checked";
+                                if (isset($_SESSION['filterSizes'])){
+                                    if (in_array("L", $_SESSION['filterSizes'])) echo "checked";
+                                }
+                                
                                 ?>>
                                 <span class="checkmark"></span>
                             </label>
                             <label class="box">XL
                                 <input type="checkbox" id="XL" name="XL"
                                 <?php
-                                if (in_array("XL", $_SESSION['filterSizes'])) echo "checked";
+                                if (isset($_SESSION['filterSizes'])){
+                                    if (in_array("XL", $_SESSION['filterSizes'])) echo "checked";
+                                }
+                                
                                 ?>>
                                 <span class="checkmark"></span>
                             </label>
@@ -122,14 +137,20 @@
                             <label class="box">Biustonosze
                                 <input type="checkbox" id="Biustonosze" name="Biustonosze"
                                 <?php
-                                if (in_array("Biustonosze", $_SESSION['filterTypes'])) echo "checked";
+                                if (isset($_SESSION['filterTypes'])){
+                                    if (in_array("Biustonosze", $_SESSION['filterTypes'])) echo "checked";
+                                }
+                               
                                 ?>>
                                 <span class="checkmark"></span>
                             </label>
 
                             <label class="box">Majtki
                                 <input type="checkbox" id="Majtki" name="Majtki"<?php
-                                if (in_array("Majtki", $_SESSION['filterTypes'])) echo "checked";
+                                if (isset($_SESSION['filterTypes'])){
+                                    if (in_array("Majtki", $_SESSION['filterTypes'])) echo "checked";
+                                }
+                                
                                 ?>>
                                 <span class="checkmark"></span>
                             </label>
@@ -137,14 +158,20 @@
                             <label class="box">Bokserki
                                 <input type="checkbox" id="Bokserki" name="Bokserki"
                                 <?php
-                                if (in_array("Bokserki", $_SESSION['filterTypes'])) echo "checked";
+                                if (isset($_SESSION['filterTypes'])){
+                                    if (in_array("Bokserki", $_SESSION['filterTypes'])) echo "checked";
+                                }
+                               
                                 ?>> 
                                 <span class="checkmark"></span>
                             </label>
 
                             <label class="box">Piżamy
                                 <input type="checkbox" id="Piżamy" name="Piżamy"<?php
-                                if (in_array("Piżamy", $_SESSION['filterTypes'])) echo "checked";
+                                if (isset($_SESSION['filterTypes'])){
+                                    if (in_array("Piżamy", $_SESSION['filterTypes'])) echo "checked";
+                                }
+                                
                                 ?>>
                                 <span class="checkmark"></span>
                             </label>
@@ -178,17 +205,7 @@
                 </div>
             </div>
 
-            
-            <script>
-                //Sidebar
-                function openFiltr() {
-                    document.getElementById("filter").style.width = "250px";
-                }
 
-                function closeFiltr() {
-                    document.getElementById("filter").style.width = "0";
-                }
-            </script>
             <div class="container">
                 <div>
                     <?php echo $group ?>
@@ -211,6 +228,7 @@
                     }
 
                    }else{
+                       
                     foreach ($products as $product){
 
                         echo 
@@ -270,3 +288,13 @@
         dots[slideIndex - 1].className += " active";
     }
 </script>
+<script>
+                //Sidebar
+                function openFiltr() {
+                    document.getElementById("filter").style.width = "250px";
+                }
+
+                function closeFiltr() {
+                    document.getElementById("filter").style.width = "0";
+                }
+            </script>

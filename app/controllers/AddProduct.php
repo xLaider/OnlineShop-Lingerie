@@ -94,10 +94,6 @@ class AddProduct extends Controller {
             }
             $i++;
         }
-        else
-        {
-            $blad=true;
-        }
         if(isset($_FILES['2Img']))
         {
             $image = $_FILES["2Img"]["tmp_name"];
