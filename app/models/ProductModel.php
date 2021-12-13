@@ -22,7 +22,7 @@
         }
 
         public function getAllProducts(){
-            $query='SELECT product.productID, Name, Price, image FROM product INNER JOIN images ON product.productID=images.productID GROUP BY product.productID';
+            $query='SELECT product.productID, Name, Price, Sizes, Category, image FROM product INNER JOIN images ON product.productID=images.productID GROUP BY product.productID';
             $this->db->query($query);
             $result=$this->db->resultSet();
             return $result;
