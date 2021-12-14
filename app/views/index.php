@@ -8,6 +8,7 @@
 <main>
 <?php
     include "header.php";
+
 ?>
     <script>
         //Sidebar
@@ -57,60 +58,121 @@
             <div id="filter" class="filterSidenav">
                 <div><a href="javascript:void(0)" class="closebtn" onclick="closeFiltr()"><img src="<?php echo URLROOT;?>/assets/images/arrowleft.svg" style="width:50%"></a></div>
                 <div>
-                    <form>
+                    <form action="<?php echo URLROOT."/index/applyFilter"; ?>" method="POST">
                         <section>
                             <h3>CENA</h3>
                             <div class="price0">
-                                <input class="price" type="number" id="minPrice" name="minPrice" placeholder="OD">
+                                <input class="price" type="number" id="minPrice" name="minPrice" <?php 
+                                    if (isset($_SESSION['filterMinPrice'])){
+                                        echo "value='".$_SESSION['filterMinPrice']."'";
+                                    }
+                                ?> placeholder="OD">
                                 <div style="font-size: large;">-</div>
-                                <input class="price" type="number" id="maxPrice" name="maxPrice" placeholder="DO">
+                                <input class="price" type="number" id="maxPrice" name="maxPrice" 
+                                <?php 
+                                    if (isset($_SESSION['filterMaxPrice'])){
+                                        echo "value='".$_SESSION['filterMaxPrice']."'";
+                                    }
+                                ?> placeholder="DO">
                             </div>
                         </section>
                         <section>
+
                             <h3>ROZMIAR</h3>
                             <label class="box">XS
-                                <input type="checkbox" >
-                                <span class="checkmark"></span>
+                                <input type="checkbox" id="XS" name="XS" <?php
+                                if (isset($_SESSION['filterSizes'])){
+                                    if (in_array("XS", $_SESSION['filterSizes'])) echo "checked";
+                                }
+                                
+                                ?>>
+                                <span class="checkmark" ></span>
                             </label>
 
                             <label class="box">S
-                                <input type="checkbox">
+                                <input type="checkbox" id="S" name="S"
+                                <?php
+                                if (isset($_SESSION['filterSizes'])){
+                                    if (in_array("S", $_SESSION['filterSizes'])) echo "checked";
+                                }
+                                
+                                ?>>
                                 <span class="checkmark"></span>
                             </label>
 
                             <label class="box">M
-                                <input type="checkbox">
+                                <input type="checkbox" id="M" name="M"
+                                <?php
+                                if (isset($_SESSION['filterSizes'])){
+                                    if (in_array("M", $_SESSION['filterSizes'])) echo "checked";
+                                }
+                                
+                                ?>>
                                 <span class="checkmark"></span>
                             </label>
 
                             <label class="box">L
-                                <input type="checkbox">
+                                <input type="checkbox" id="L" name="L"
+                                <?php
+                                if (isset($_SESSION['filterSizes'])){
+                                    if (in_array("L", $_SESSION['filterSizes'])) echo "checked";
+                                }
+                                
+                                ?>>
                                 <span class="checkmark"></span>
                             </label>
                             <label class="box">XL
-                                <input type="checkbox">
+                                <input type="checkbox" id="XL" name="XL"
+                                <?php
+                                if (isset($_SESSION['filterSizes'])){
+                                    if (in_array("XL", $_SESSION['filterSizes'])) echo "checked";
+                                }
+                                
+                                ?>>
                                 <span class="checkmark"></span>
                             </label>
                         </section>
                         <section>
                             <h3>RODZAJ</h3>
                             <label class="box">Biustonosze
-                                <input type="checkbox" >
+                                <input type="checkbox" id="Biustonosze" name="Biustonosze"
+                                <?php
+                                if (isset($_SESSION['filterTypes'])){
+                                    if (in_array("Biustonosze", $_SESSION['filterTypes'])) echo "checked";
+                                }
+                               
+                                ?>>
                                 <span class="checkmark"></span>
                             </label>
 
                             <label class="box">Majtki
-                                <input type="checkbox">
+                                <input type="checkbox" id="Majtki" name="Majtki"<?php
+                                if (isset($_SESSION['filterTypes'])){
+                                    if (in_array("Majtki", $_SESSION['filterTypes'])) echo "checked";
+                                }
+                                
+                                ?>>
                                 <span class="checkmark"></span>
                             </label>
 
                             <label class="box">Bokserki
-                                <input type="checkbox">
+                                <input type="checkbox" id="Bokserki" name="Bokserki"
+                                <?php
+                                if (isset($_SESSION['filterTypes'])){
+                                    if (in_array("Bokserki", $_SESSION['filterTypes'])) echo "checked";
+                                }
+                               
+                                ?>> 
                                 <span class="checkmark"></span>
                             </label>
 
                             <label class="box">Piżamy
-                                <input type="checkbox">
+                                <input type="checkbox" id="Piżamy" name="Piżamy"<?php
+                                if (isset($_SESSION['filterTypes'])){
+                                    if (in_array("Piżamy", $_SESSION['filterTypes'])) echo "checked";
+                                }
+                                
+                                ?>>
                                 <span class="checkmark"></span>
                             </label>
                         </section>
@@ -144,23 +206,15 @@
             </div>
 
 
-            <script>
-                //Sidebar
-                function openFiltr() {
-                    document.getElementById("filter").style.width = "250px";
-                }
-
-                function closeFiltr() {
-                    document.getElementById("filter").style.width = "0";
-                }
-            </script>
             <div class="container">
                 <div>
                     <?php echo $group ?>
                 </div>
                 <?php
-                   
-                    foreach ($products as $product){
+                
+                   if (isset($filteredProducts)){
+                    foreach ($filteredProducts as $product){
+
                         echo 
                         "
                         <a class='product' href='".URLROOT."/product?productID=".$product->productID."'>
@@ -172,6 +226,24 @@
                                 <span style='font-size: large;'>Cena: ".$product->Price."</span>
                             </div></a>";
                     }
+
+                   }else{
+                       
+                    foreach ($products as $product){
+
+                        echo 
+                        "
+                        <a class='product' href='".URLROOT."/product?productID=".$product->productID."'>
+                        
+                        <img src='data:image/png;base64,". base64_encode($product->image)."'>
+
+                        <div class='hidden'>
+                                <span style='font-size:xx-large;'>".$product->Name."</span>
+                                <span style='font-size: large;'>Cena: ".$product->Price."</span>
+                            </div></a>";
+                    }
+                   }
+                    
                     
                 ?>
 
@@ -216,3 +288,13 @@
         dots[slideIndex - 1].className += " active";
     }
 </script>
+<script>
+                //Sidebar
+                function openFiltr() {
+                    document.getElementById("filter").style.width = "250px";
+                }
+
+                function closeFiltr() {
+                    document.getElementById("filter").style.width = "0";
+                }
+            </script>

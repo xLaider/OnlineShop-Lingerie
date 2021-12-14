@@ -94,6 +94,34 @@ class AddProduct extends Controller {
             }
             $i++;
         }
+        if(isset($_FILES['2Img']))
+        {
+            $image = $_FILES["2Img"]["tmp_name"];
+            $imgContent = file_get_contents($image); 
+            $this->productModel->addImageByID($imgContent,$productID);
+        }
+        
+        if(isset($_FILES['3Img']))
+        {
+            $tmp_name = $_FILES["3Img"]["tmp_name"];
+		    $name = basename($_FILES["3Img"]["name"]);
+		    move_uploaded_file($tmp_name,  "./assets/images/$name");
+        }
+        
+        if(isset($_FILES['4Img']))
+        {
+            $tmp_name = $_FILES["4Img"]["tmp_name"];
+		    $name = basename($_FILES["4Img"]["name"]);
+		    move_uploaded_file($tmp_name,  "./assets/images/$name");
+        }
+        
+        if(isset($_FILES['5Img']))
+        {
+            $tmp_name = $_FILES["5Img"]["tmp_name"];
+		    $name = basename($_FILES["5Img"]["name"]);
+		    move_uploaded_file($tmp_name,  "./assets/images/$name");
+        }
+        
 
         if(!$blad)//ustawiono wszystkie pola
         {
