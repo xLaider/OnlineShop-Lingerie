@@ -58,7 +58,12 @@
             <div id="filter" class="filterSidenav">
                 <div><a href="javascript:void(0)" class="closebtn" onclick="closeFiltr()"><img src="<?php echo URLROOT;?>/assets/images/arrowleft.svg" style="width:50%"></a></div>
                 <div>
-                    <form action="<?php echo URLROOT."/index/applyFilter"; ?>" method="POST">
+                    <form action="<?php if (isset($_GET['group'])){
+                        echo URLROOT."/index/applyFilter?group=".$_GET['group'];
+                    }else{
+                        echo URLROOT."/index/applyFilter";
+                    }
+                     ?>" method="POST">
                         <section>
                             <h3>CENA</h3>
                             <div class="price0">

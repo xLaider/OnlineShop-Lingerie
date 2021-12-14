@@ -26,8 +26,8 @@
                 echo $_SESSION['address']->Street;
             } ?>" placeholder="Ulica"><br>
             <input type="text" id="number" name="number" value="<?php
-            if (isset($_SESSION['address']->{"BuildingNumber/ApartmentNumber"})) {
-                echo $_SESSION['address']->{"BuildingNumber/ApartmentNumber"};
+            if (isset($_SESSION['address']->{"BuildingNumberApartmentNumber"})) {
+                echo $_SESSION['address']->{"BuildingNumberApartmentNumber"};
             }
             ?>" placeholder="Nr budynku/ nr mieszkania"><br>
             <input type="text" id="postCode" name="postCode" value="<?php

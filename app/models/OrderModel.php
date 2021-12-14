@@ -24,23 +24,23 @@
        }
        public function addOrder()
         {
-            $query="INSERT INTO address (Country, City, Street, BuildingNumber, PostCode)
-            VALUES (:Country, :City, :Street, :BuildingNumber, :PostCode)";
+            $query="INSERT INTO address (Country, City, Street, BuildingNumberApartmentNumber, PostCode)
+            VALUES (:Country, :City, :Street, :BuildingNumberApartmentNumber, :PostCode)";
             $this->db->query($query);
             $this->db->bind(':Country',$_POST['Country']);
             $this->db->bind(':City',$_POST['City']);
             $this->db->bind(':Street',$_POST['Street']);
-            $this->db->bind(':BuildingNumber',$_POST['Number']);
+            $this->db->bind(':BuildingNumberApartmentNumber',$_POST['Number']);
             $this->db->bind(':PostCode',$_POST['PostCode']);
             $this->db->execute();
             
             $id=$this->db->lastInsertId();
 
-            $query="INSERT INTO orders (addressID, DateOfOrder, Status, email)
-            VALUES (:addressID, :DateOfOrder, :Status, :email)";
+            $query="INSERT INTO orders (AddressId, DateOfOrder, Status, email)
+            VALUES (:AddressId, :DateOfOrder, :Status, :email)";
             $today = date("m.d.y"); 
             $this->db->query($query);
-            $this->db->bind(':addressID',$id);
+            $this->db->bind(':AddressId',$id);
             $this->db->bind(':DateOfOrder',$today);
             $this->db->bind(':Status',0);
             $this->db->bind(':email',$_POST['Email']);

@@ -12,9 +12,7 @@ class Index extends Controller {
         }else{
             $products=$this->productModel->getAllProducts();
         }
-
-        $group = $this->getGroup();
-        var_dump($_SESSION);
+        $group=$this->getGroup();
         unset($_SESSION['filterSizes']);
         unset($_SESSION['filterTypes']);
         unset($_SESSION['filterMinPrice']);
@@ -43,6 +41,7 @@ class Index extends Controller {
         exit();
     }
     public function applyFilter(){
+        $group = $this->getGroup();
         $products=$this->productModel->getAllProducts();
         if (isset($_SESSION['filterSizes'])){
             unset($_SESSION['filterSizes']);
@@ -97,6 +96,7 @@ class Index extends Controller {
             $minPricePass=false;
             $maxPricePass=false;
             $typeRight = false;
+            $groupRight=false;
             $sizes=explode(",",$product->Sizes);
             if (!empty($_SESSION['filterSizes'])){
                 foreach($_SESSION['filterSizes'] as $filterSize){
@@ -133,15 +133,21 @@ class Index extends Controller {
             }else{
                 $typeRight=true;
             }
-
-            if ($typeRight AND $minPricePass AND $maxPricePass AND $sizeRight){
+            if (isset($_GET['group'])){
+                if ($_GET['group']==$product->ProductGroup){
+                    $groupRight=true;
+                }
+            }else{
+                $groupRight=true;
+            }
+            if ($typeRight AND $minPricePass AND $maxPricePass AND $sizeRight AND $groupRight){
                 array_push($filteredProducts, $product);
             }
 
             
         }
 
-        $this->view('index',compact('filteredProducts'));
+        $this->view('index',compact('filteredProducts','group'));
     }
 
 }

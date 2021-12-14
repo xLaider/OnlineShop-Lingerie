@@ -14,7 +14,7 @@
         }
 
         public function createAddress($country,$city,$street,$number,$postCode,$email){
-            $query="INSERT INTO address (Country,City,Street,`BuildingNumber/ApartmentNumber`,PostCode)
+            $query="INSERT INTO address (Country,City,Street,`BuildingNumberApartmentNumber`,PostCode)
             VALUES (:Country, :City, :Street, :BuildingNumber, :PostCode);";
             $this->db->query($query);
             $this->db->bind(':Country',$country);
@@ -42,7 +42,7 @@
         public function updateAddress($country,$city,$street,$number,$postCode,$addressId){
             
             //na podstawie $addressId aktualizowanie całego wiersza 
-            $query="UPDATE address SET Country=:Country, City = :City,Street=:Street,`BuildingNumber/ApartmentNumber`=:BuildingNumber,PostCode=:PostCode WHERE AddressId=:AddressId;";
+            $query="UPDATE address SET Country=:Country, City = :City,Street=:Street,BuildingNumberApartmentNumber=:BuildingNumber,PostCode=:PostCode WHERE AddressId=:AddressId;";
             $this->db->query($query);
             $this->db->bind(':Country',$country);
             $this->db->bind(':City',$city);

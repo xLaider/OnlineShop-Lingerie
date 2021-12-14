@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 14 Gru 2021, 18:21
+-- Czas generowania: 14 Gru 2021, 19:52
 -- Wersja serwera: 10.4.21-MariaDB
 -- Wersja PHP: 8.0.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Baza danych: `majteczki1`
+-- Baza danych: `majteczki`
 --
 
 -- --------------------------------------------------------
@@ -32,7 +32,7 @@ CREATE TABLE `address` (
   `Country` varchar(255) COLLATE utf8_polish_ci DEFAULT NULL,
   `City` varchar(255) COLLATE utf8_polish_ci DEFAULT NULL,
   `Street` varchar(255) COLLATE utf8_polish_ci DEFAULT NULL,
-  `BuildingNumber/ApartmentNumber` varchar(45) COLLATE utf8_polish_ci DEFAULT NULL,
+  `BuildingNumberApartmentNumber` varchar(45) COLLATE utf8_polish_ci DEFAULT NULL,
   `PostCode` varchar(45) COLLATE utf8_polish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
@@ -40,9 +40,15 @@ CREATE TABLE `address` (
 -- Zrzut danych tabeli `address`
 --
 
-INSERT INTO `address` (`AddressId`, `Country`, `City`, `Street`, `BuildingNumber/ApartmentNumber`, `PostCode`) VALUES
+INSERT INTO `address` (`AddressId`, `Country`, `City`, `Street`, `BuildingNumberApartmentNumber`, `PostCode`) VALUES
 (1, 'Polska', 'Warszawa', 'Rębkowska', '11', '03-375'),
-(2, '', '', '', '', '');
+(2, '', '', '', '', ''),
+(3, 'Polska', 'Racibórz', 'Raciborska', '420', '33-333'),
+(4, 'Polska', 'Racibórz', 'Raciborska', '420', '33-333'),
+(5, 'Polska', 'Racibórz', 'Raciborska', '420', '33-333'),
+(6, 'Polska', 'Racibórz', 'Raciborska', '420', '33-333'),
+(7, 'Polska', 'Racibórz', 'Raciborska', '420', '33-333'),
+(8, 'Polska', 'Racibórz', 'Raciborska', '420', '33-333');
 
 -- --------------------------------------------------------
 
@@ -94,7 +100,9 @@ CREATE TABLE `orderproduct` (
 INSERT INTO `orderproduct` (`OrderProductId`, `Quantity`, `Size`, `ProductId`, `OrderNumber`) VALUES
 (1, 2, '', 1, 1),
 (2, 4, '', 2, 1),
-(3, 5, '', 1, 2);
+(3, 5, '', 1, 2),
+(4, 3, 'XS', 1, 3),
+(5, 1, 'M', 2, 4);
 
 -- --------------------------------------------------------
 
@@ -104,6 +112,7 @@ INSERT INTO `orderproduct` (`OrderProductId`, `Quantity`, `Size`, `ProductId`, `
 
 CREATE TABLE `orders` (
   `OrderNumber` int(11) NOT NULL,
+  `AddressId` int(11) NOT NULL,
   `DateOfOrder` date NOT NULL,
   `Status` tinyint(4) NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_general_nopad_ci NOT NULL
@@ -113,9 +122,11 @@ CREATE TABLE `orders` (
 -- Zrzut danych tabeli `orders`
 --
 
-INSERT INTO `orders` (`OrderNumber`, `DateOfOrder`, `Status`, `email`) VALUES
-(1, '2021-11-28', 0, 'ewa@wp.pl'),
-(2, '2021-11-15', 1, 'ewa@wp.pl');
+INSERT INTO `orders` (`OrderNumber`, `AddressId`, `DateOfOrder`, `Status`, `email`) VALUES
+(1, 0, '2021-11-28', 1, 'ewa@wp.pl'),
+(2, 0, '2021-11-15', 1, 'ewa@wp.pl'),
+(3, 7, '0000-00-00', 0, 'biedas@gmail.com'),
+(4, 8, '0000-00-00', 0, 'biedas@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -167,6 +178,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`email`, `FirstName`, `LastName`, `PhoneNumber`, `Password`, `DateOfBirth`, `DateOfRegistration`, `DateOfLastLogin`, `AddressId`, `Permission`) VALUES
 ('admin@wp.pl', NULL, NULL, NULL, '$2y$10$KrX0I5EOy9ItdiPUkVktx.r8XOOCUVyOxY/AlgTtzXSW7wGbyx3de', NULL, '2021-12-05 11:20:30', NULL, NULL, 'admin'),
+('biedas@gmail.com', NULL, NULL, NULL, '$2y$10$bec.yw0hZwqdzkqmJTcyMeKQIUkrgXOjPGD./xYJuYYi6Db/LWVfi', NULL, '2021-12-14 07:08:33', NULL, 3, 'user'),
 ('ewa@wp.pl', NULL, NULL, NULL, '$2y$10$s7.htAjjqgWP1zYvr6BrReJxVl0ZrHPuuuBU//IrkYoLnskWcU9Q.', NULL, '2021-11-24 11:30:21', NULL, 2, 'user'),
 ('mateuszblazkow1@gmail.com', NULL, NULL, NULL, '$2y$10$KR98N8N./XxZudICvv7tzeqaLLZr9NkZWF5qCIMdJXWfE0LjdhriW', NULL, '2021-11-23 06:44:17', NULL, NULL, 'user'),
 ('patrycjamlynarska2@gmail.com', NULL, NULL, NULL, '$2y$10$k6sHO19slhPDfLCRWIEwCe0kdXiBtQiKnyv4gVZ3IODOWXwvxkdC2', NULL, '2021-12-07 11:19:19', NULL, NULL, 'user');
@@ -220,7 +232,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT dla tabeli `address`
 --
 ALTER TABLE `address`
-  MODIFY `AddressId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `AddressId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT dla tabeli `images`
@@ -232,13 +244,13 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT dla tabeli `orderproduct`
 --
 ALTER TABLE `orderproduct`
-  MODIFY `OrderProductId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `OrderProductId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT dla tabeli `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `OrderNumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT dla tabeli `product`
