@@ -65,5 +65,14 @@
             }
             
         }
+        public function deleteImageByID($imageID){
+
+            $imageObject = $this->getImageByImageID($imageID)[0];
+                $query='DELETE FROM images WHERE ImageID=:imageID';
+                $this->db->query($query);
+                $this->db->bind(':imageID',$imageObject->ImageID);
+                $this->db->execute();
+            
+            
+        }
     }
-?>

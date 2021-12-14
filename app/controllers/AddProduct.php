@@ -119,5 +119,11 @@ class AddProduct extends Controller {
 
         header('location:'.URLROOT.'/adminProduct' );
     }
+
+    public function DeleteImage($productID,$imageID){
+        $images = $this->productModel->getImageByID($productID);
+        $this->productModel->deleteImageByID($images[$imageID-1]);
+        echo "usunieto";
+    }
     
 }
