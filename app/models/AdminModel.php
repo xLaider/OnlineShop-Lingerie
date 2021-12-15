@@ -28,6 +28,7 @@
             $this->db->bind(':Group',$product->Group);
             $this->db->bind(':Category',$product->Category);
             $this->db->execute();
+            return $this->db->lastInsertId();
         }
 
         public function updateProduct($product){

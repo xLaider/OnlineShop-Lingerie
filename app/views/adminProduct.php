@@ -39,7 +39,7 @@
        
 
    </table> 
-   <div class=dodaj><a href="<?php echo URLROOT . "/addProduct?productID=null" ?>">+ Dodaj nowy produkt</a></div>
+   <div class=dodaj><a href="<?php echo URLROOT . "/addProduct?productID=0" ?>">+ Dodaj nowy produkt</a></div>
    
 
     <?php endif;?>

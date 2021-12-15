@@ -47,7 +47,12 @@ class AddProduct extends Controller {
 
         if(isset($_POST['Sizes']))
         {
-            $frProduct->Sizes=$_POST['Sizes'];
+            $sizes="";
+            var_dump($_POST['Sizes']);
+            foreach ($_POST['Sizes'] as $selectedOption)
+            $sizes.=$selectedOption.",";
+            $frProduct->Sizes= rtrim($sizes,',');
+            
         }
         else
         {
@@ -84,52 +89,13 @@ class AddProduct extends Controller {
             $blad=true;
             $frProduct->Category="";
         }
-        $i=1;
-        while(isset($_FILES['File_'.$i])){
-            $image = $_FILES["File_".$i]["tmp_name"];
-            
-            if($image){
-            $imgContent = file_get_contents($image); 
-            $this->productModel->addImageByID($imgContent,$productID,$images[$i-1]->ImageID??null);
-            }
-            $i++;
-        }
-        if(isset($_FILES['2Img']))
-        {
-            $image = $_FILES["2Img"]["tmp_name"];
-            $imgContent = file_get_contents($image); 
-            $this->productModel->addImageByID($imgContent,$productID);
-        }
-        
-        if(isset($_FILES['3Img']))
-        {
-            $tmp_name = $_FILES["3Img"]["tmp_name"];
-		    $name = basename($_FILES["3Img"]["name"]);
-		    move_uploaded_file($tmp_name,  "./assets/images/$name");
-        }
-        
-        if(isset($_FILES['4Img']))
-        {
-            $tmp_name = $_FILES["4Img"]["tmp_name"];
-		    $name = basename($_FILES["4Img"]["name"]);
-		    move_uploaded_file($tmp_name,  "./assets/images/$name");
-        }
-        
-        if(isset($_FILES['5Img']))
-        {
-            $tmp_name = $_FILES["5Img"]["tmp_name"];
-		    $name = basename($_FILES["5Img"]["name"]);
-		    move_uploaded_file($tmp_name,  "./assets/images/$name");
-        }
-        
-
+       
         if(!$blad)//ustawiono wszystkie pola
         {
-           
-            if($productID==null)
+            if($productID==0)
             {
-               
-                $this->adminModel->saveProduct($frProduct);
+                $productID=$this->adminModel->saveProduct($frProduct);
+                echo "dodano produkt";
             }
             else
             {
@@ -143,9 +109,17 @@ class AddProduct extends Controller {
         {
             $product=$frProduct;
         }
-
-
-        header('location:'.URLROOT.'/adminProduct' );
+        $i=0;
+        while(isset($_FILES['File_'.$i])){
+            $image = $_FILES["File_".$i]["tmp_name"];
+            
+            if($image){
+            $imgContent = file_get_contents($image); 
+            $this->productModel->addImageByID($imgContent,$productID,$images[$i-1]->ImageID??null);
+            }
+            $i++;
+        }
+      // header('location:'.URLROOT.'/adminProduct' );
     }
 
     public function DeleteImage($productID,$imageID){

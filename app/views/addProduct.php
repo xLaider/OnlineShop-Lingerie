@@ -30,11 +30,11 @@ include "header.php";
             </div>
             <div class=box>
                 <label for="Sizes"><b>Rozmiar</b></label>
-                <select name="Sizes" id="Sizes" required>
+                <select name="Sizes[]" id="Sizes" multiple required>
                     <?php
                     $sizes = ["XS","S","M","L","XL"];
                     foreach($sizes as $size){
-                        echo '<option value='.$size.' '.(($product && $product->Sizes == $size)?"selected":"").'>'.$size.'</option>';
+                        echo '<option value='.$size.' '.(($product &&  preg_match("/(^|\,)".$size."/",$product->Sizes))?"selected":"").'>'.$size.'</option>';
                     }
                     ?>
                 </select>
