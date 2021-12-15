@@ -28,6 +28,14 @@ class AdminProduct extends Controller
         $products=$this->adminModel->getAllProducts($sortType);
         $this->view('adminProduct',array('products'=> $products));
     }
+    public function updateStatus()
+    {
+        $status=$_POST['status'];
+        $productID=$_POST['ProductID'];
+        $this->adminModel->updateStatusProduct($status,$productID);
+        header("Location: ".URLROOT."/adminProduct");
+        exit();
+    }
 
 
     

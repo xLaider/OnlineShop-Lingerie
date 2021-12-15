@@ -68,5 +68,12 @@
             $this->db->query($query);
             $this->db->execute();
         }
+
+        public function updateStatusProduct($status, $productID){
+            $query="UPDATE product SET Status='$status' WHERE productID=$productID";
+            $this->db->query($query);
+            $this->db->execute();
+        }
+        
     }
 ?>

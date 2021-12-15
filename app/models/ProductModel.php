@@ -30,7 +30,7 @@
         }
 
         public function getAllProducts(){
-            $query='SELECT product.productID, Name, Price, Sizes, Category, ProductGroup, image FROM product INNER JOIN images ON product.productID=images.productID GROUP BY product.productID';
+            $query='SELECT product.productID, Name, Price, Sizes, Category, ProductGroup, image FROM product INNER JOIN images ON product.productID=images.productID WHERE product.Status=1 GROUP BY product.productID';
             $this->db->query($query);
             $result=$this->db->resultSet();
             return $result;
@@ -48,7 +48,6 @@
         }
 
         public function addImageByID($image,$productID,$imageID){
-
             $imageObject = $this->getImageByImageID($imageID)[0];
             if(empty($imageObject)){
                 $query='INSERT INTO images( image, ProductID) VALUES (:image,:productID)';
