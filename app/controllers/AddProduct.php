@@ -48,7 +48,6 @@ class AddProduct extends Controller {
         if(isset($_POST['Sizes']))
         {
             $sizes="";
-            var_dump($_POST['Sizes']);
             foreach ($_POST['Sizes'] as $selectedOption)
             $sizes.=$selectedOption.",";
             $frProduct->Sizes= rtrim($sizes,',');
@@ -105,21 +104,17 @@ class AddProduct extends Controller {
             }
             $product=$this->productModel->getProductByID($productID);
         }
-        else //blad w jakims polu
-        {
-            $product=$frProduct;
-        }
+        
         $i=0;
         while(isset($_FILES['File_'.$i])){
             $image = $_FILES["File_".$i]["tmp_name"];
-            
             if($image){
             $imgContent = file_get_contents($image); 
             $this->productModel->addImageByID($imgContent,$productID,$images[$i-1]->ImageID??null);
             }
             $i++;
         }
-      // header('location:'.URLROOT.'/adminProduct' );
+      header('location:'.URLROOT.'/adminProduct' );
     }
 
     public function DeleteImage($productID,$imageID){

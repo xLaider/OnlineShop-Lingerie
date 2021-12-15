@@ -79,7 +79,7 @@ include "header.php";
                 $i=0;
                 if($product){
                 foreach($images as $image){
-                    $i++;
+                    
                     echo "<div class=zdjecia>
                     <label for='File_".$i."'>
                     <img id='Img_".$i."' src='data:image/png;base64,". base64_encode($image->image)."'>
@@ -87,12 +87,14 @@ include "header.php";
                     <input type='file' id='File_".$i."' name='File_".$i."' accept='mage/x-png,image/gif,image/jpeg'  onchange='loadFile(event)' onclick='onClick(event)' >
                     <a href=". URLROOT."/addProduct/DeleteImage(".$_GET['productID'].",".$i.")><div class=hidden ><img src=".URLROOT."/assets/images/delete.svg> </div></a>
                     </div>";
+                    $i++;
             }
-            $i++;
+            
                     echo "<div>
                     <label for='File_".$i."'><img id='Img_".$i."' src='". URLROOT."/assets/images/plus.svg'></label>
                     <input type='file' id='File_".$i."' name='File_".$i."' accept='image/x-png,image/gif,image/jpeg'  onchange='loadFile(event)' onclick='onClick(event)' >
                 </div>";
+                $i++;
 
                 
                 }else{

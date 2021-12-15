@@ -29,13 +29,13 @@
                 <a class="prev" onclick="plusSlides(-1)"><img src="<?php echo URLROOT;?>/assets/images/arrowleft.svg"></a>
                 <div class="slideshow-container">
                     <div class="mySlides fade">
-                        <img src="<?php echo URLROOT;?>/assets/images/img.svg" style="width:100%">
+                        <img src="<?php echo URLROOT;?>/assets/images/img.jpg" style="width:100%">
                     </div>
                     <div class="mySlides fade">
-                        <img src="<?php echo URLROOT;?>/assets/images/img.svg" style="width:100%">
+                        <img src="<?php echo URLROOT;?>/assets/images/2.jpg" style="width:100%">
                     </div>
                     <div class="mySlides fade">
-                        <img src="<?php echo URLROOT;?>/assets/images/img.svg" style="width:100%">
+                        <img src="<?php echo URLROOT;?>/assets/images/3.jpg" style="width:100%">
                     </div>
                 </div>
                 <a class="next" onclick="plusSlides(1)"><img src="<?php echo URLROOT;?>/assets/images/arrowright.svg"></a>

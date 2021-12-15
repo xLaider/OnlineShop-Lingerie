@@ -148,7 +148,7 @@
                         <td>
                             <div class="product"><label for="DiscountValue">Zniżka</label></div>
                         </td>
-                        <td><input type="text" name="DiscountValue" readonly value="15zł"></td>
+                        <td><input type="text" name="DiscountValue" readonly value="n/d"></td>
                     </tr>
                     <tr>
                         <td>

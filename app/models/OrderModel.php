@@ -38,7 +38,7 @@
 
             $query="INSERT INTO orders (AddressId, DateOfOrder, Status, email)
             VALUES (:AddressId, :DateOfOrder, :Status, :email)";
-            $today = date("m.d.y"); 
+            $today=date("Y-m-d h:i:s");
             $this->db->query($query);
             $this->db->bind(':AddressId',$id);
             $this->db->bind(':DateOfOrder',$today);
