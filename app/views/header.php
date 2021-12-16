@@ -26,9 +26,10 @@
                 </div>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">Kobieta</a>
-        <a href="#">Mężczyzna</a>
-        <a href="#">Dzieci</a>
+        <a href="<?php echo URLROOT?>">Wszystko</a>
+        <a href="<?php echo URLROOT.'?group=Woman';?>">Kobieta</a>
+        <a href="<?php echo URLROOT.'?group=Man';?>">Mężczyzna</a>
+        <a href="<?php echo URLROOT.'?group=Kids';?>">Dzieci</a>
     </div>
 </nav>
 <script>

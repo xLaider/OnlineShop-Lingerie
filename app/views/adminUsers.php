@@ -3,8 +3,15 @@
 <?php
     include "header.php";
 ?>
+<div class="main">
+<div class="flex-row">
+        <a class="flex-row" href="<?php echo URLROOT . "/profile" ?>">
+            <img src="<?php echo URLROOT; ?>/assets/images/arrowleft.svg">
+            <h1 class="getBack">Powrót</h1>
+        </a>
+</div>
 
-<section class="boxed">
+<main>
     <?php if(count($users)>0):?>
    <table>
         <tr>
@@ -29,10 +36,10 @@
             <form id='".$formEmail."' method='post' action='".URLROOT."/adminUsers/updatePermission'>
                 <select name='permission' onchange='change".$formEmail."()'>
                     <option value='admin'";
-                    if ($user->permission=='admin') echo "selected";
+                    if ($user->Permission=='admin') echo "selected";
                     echo ">Admin</option>
                     <option value='user'";
-                    if ($user->permission=='user') echo "selected";
+                    if ($user->Permission=='user') echo "selected";
                     echo ">Uzytkownik</option>
                 </select></td>
                 <input type='hidden' name='email' value='".$user->email."'>
@@ -51,4 +58,5 @@
    
 
     <?php endif;?>
-</section>
+    </main>
+    </div>

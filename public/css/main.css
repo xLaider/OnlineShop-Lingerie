@@ -1,42 +1,48 @@
 @import "./variables.css";
 
-.flex-row{
-    display:flex;
+.flex-row {
+    display: flex;
     flex-direction: row;
-    
+    justify-content: space-between;
+    align-items: center;
 }
-.flex-column{
+.flex-column {
     display: flex;
     flex-direction: column;
 }
 
-*{
+* {
     box-sizing: border-box;
-    color: var(--main-text-color);
+    color: var(--primary);
 }
 
-a{
+a,
+.menu-icon {
     text-decoration: none;
-    color: var(--main-text-color);
+    color: var(--primary);
     cursor: pointer;
 }
 
-html,body{
-    margin:0;
+html,
+body {
+    margin: 0;
 }
 
-select{
-
-    width: 400px;
-    height: 75px;
+select {
+    padding: 1rem;
     left: 0px;
     top: 0px;
-
 }
 
-input{
-   
-    width: 400px;
+select[multiple] {
+    height: 6rem;
+}
+
+option {
+    padding: 0.3rem;
+}
+
+input {
     height: 75px;
     left: 0px;
     top: 0px;
@@ -50,79 +56,107 @@ input{
     align-items: center;
     text-align: center;
     letter-spacing: 0.16em;
-    color: var(--main-text-color);
+    color: var(--primary);
 
-    transition : background-color 500ms ease-out;
+    transition: background-color 500ms ease-out;
 }
 
-input, input:focus, input:focus-visible, select{
+input,
+input:focus,
+input:focus-visible,
+select {
     border-top: 0;
     border-left: 0;
     border-right: 0;
     outline: none;
-    
 }
-input:not([type="submit"]):focus, input:not([type="submit"]):focus-visible{
-    border-bottom: 3px black solid;
+input:not([type="submit"]):focus,
+input:not([type="submit"]):focus-visible {
+    border-bottom: 3px var(--primary) solid;
     background-color: #f5f5f5;
 }
 
-
-input[type="submit"]{
-    border: 2px solid black;
+input[type="submit"] {
+    border: 2px solid var(--primary);
     text-align: center;
     display: block;
     background-color: transparent;
 }
 
-input[type="submit"]:hover{
+input[type="submit"]:hover {
     cursor: pointer;
-    background-color: black;
-    color: white;
+    background-color: var(--primary);
+    color: var(--secondary);
 }
 
-
-.error{
+.error {
     border-bottom: 3px red solid;
 }
 
+.prev {
+    cursor: pointer;
+    width: auto;
+}
+
+.prev img {
+    width: 50%;
+}
+
+.getBackDiv {
+    display: flex;
+    align-items: center;
+}
+
+.getBack {
+    font-size: 25px;
+    margin-left: 1rem;
+}
+
+a img {
+    max-height: 30px;
+}
+
+form {
+    margin: 0;
+}
+
+.main {
+    padding: 3rem;
+}
+input[type="submit"] {
+    padding: 1rem;
+}
 @font-face {
-    font-family: 'Gant';
-    src: 
-         url('../assets/fonts/gant-regular-webfont.ttf') format('truetype');
+    font-family: "Gant";
+    src: url("../assets/fonts/gant-regular-webfont.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
-    font-family: 'Montserrat';
-    src: 
-         url('../assets/fonts/Montserrat-Regular.ttf') format('truetype');
+    font-family: "Montserrat";
+    src: url("../assets/fonts/Montserrat-Regular.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Montserrat';
-    src: 
-         url('../assets/fonts/Montserrat-Bold.ttf') format('truetype');
+    font-family: "Montserrat";
+    src: url("../assets/fonts/Montserrat-Bold.ttf") format("truetype");
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Montserrat';
-    src: 
-         url('./assets/fonts/Montserrat-BoldItalic.ttf') format('truetype');
+    font-family: "Montserrat";
+    src: url("./assets/fonts/Montserrat-BoldItalic.ttf") format("truetype");
     font-weight: bold;
     font-style: italic;
 }
 
 @font-face {
-    font-family: 'Montserrat';
-    src: 
-         url('./assets/fonts/Montserrat-Italic.ttf') format('truetype');
+    font-family: "Montserrat";
+    src: url("./assets/fonts/Montserrat-Italic.ttf") format("truetype");
     font-weight: normal;
     font-style: italic;
 }

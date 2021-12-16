@@ -29,40 +29,45 @@ main {
 .product {
   grid-row: span 4;
   display: flex;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 .product > a {
   width: 100%;
   height: 100%;
-  position:absolute;
+  position: absolute;
 }
 .product:hover .hidden {
-  opacity:1;
+  opacity: 1;
 }
 
 .hidden {
   height: 150px;
   background: linear-gradient(
-    0deg
-    , rgba(0,0,0,1) -20%, rgba(14,14,14,0.5382528011204482) 45%, rgba(0,212,255,0) 97%, rgba(0,212,255,0) 100%);
-  position:absolute;
-  left:0;
-  bottom:0;
-  width:100%;
-  padding:1rem;
-  box-sizing:border-box;
-  transition:.8s ease;
-  opacity:0;
-  display:flex;
+    0deg,
+    rgba(0, 0, 0, 1) -20%,
+    rgba(14, 14, 14, 0.5382528011204482) 45%,
+    rgba(0, 212, 255, 0) 97%,
+    rgba(0, 212, 255, 0) 100%
+  );
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  transition: 0.8s ease;
+  opacity: 0;
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content:center;
-  text-align:center;
+  justify-content: center;
+  text-align: center;
 }
 
-.hidden *{
-  color:white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+.hidden * {
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .container > div {
@@ -70,10 +75,10 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.5s; 
+  transition: 0.5s;
 }
 
-.container > div:hover{
+.container > div:hover {
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
@@ -82,7 +87,7 @@ main {
   position: relative;
 }
 
-.product img {    
+.product img {
   max-height: 100%;
   max-width: 100%;
 }
@@ -125,8 +130,6 @@ article {
   flex-direction: column;
 }
 
-
-
 @media screen and (max-width: 1000px) {
   .container {
     grid-auto-rows: 100px;
@@ -166,22 +169,6 @@ img {
 
 .slideshow-container > * {
   margin: 20px;
-}
-
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  width: auto;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
 }
 
 /* The dots/bullets/indicators */
@@ -227,64 +214,69 @@ img {
   }
 }
 
-  /* The side navigation menu */
-  .filterSidenav { 
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 85px; /* Stay at the top */
-    left: 0;
-    height: 100%;
-    background-color: rgb(255, 255, 255); /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
+/* The side navigation menu */
+.filterSidenav {
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  height: 100%;
+  background-color: var(--secondary);
+  overflow-x: hidden; /* Disable horizontal scroll */
 
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-    
-  }
-  
-  /* The navigation menu links */
-  .filterSidenav h3 {
-    padding: 8px 8px 8px 32px;
-    font-size: 20px;
-    color: #000000;
-    
-  }
-  
-  /* When you mouse over the navigation links, change their color */
-  .filterSidenav a:hover {
-    color: #adadad;
-  }
-  
-  /* Position and style the close button (top right corner) */
-  .filterSidenav .closebtn {
-    position: absolute;
-    top: 45%;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
-  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
 
-  
-  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-  
-  
-  @media screen and (max-height: 450px) {
-    .filterSidenav {
-      padding-top: 15px;
-    }
-    .filterSidenav a {
-      font-size: 18px;
-    }
+/* The navigation menu links */
+.filterSidenav h3 {
+  padding: 8px 8px 8px 32px;
+  font-size: 20px;
+  color: var(--primary);
+}
+
+/* When you mouse over the navigation links, change their color */
+.filterSidenav a:hover {
+  color: #adadad;
+}
+
+/* Position and style the close button (top right corner) */
+.filterSidenav .closebtn {
+  position: absolute;
+  top: 45%;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.close-button {
+  height: 100%;
+  padding: 1rem;
+}
+
+.close-buttom img {
+  max-height: 60px !important;
+  height: 60px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
+@media screen and (max-height: 450px) {
+  .filterSidenav {
+    padding-top: 15px;
   }
-
-
-  /*FILTER KATEGORIE*/
-  .price0 {
-    margin-left: 10px;
-    display: inline-flex;
-
+  .filterSidenav a {
+    font-size: 18px;
   }
+}
+
+/*FILTER KATEGORIE*/
+.price0 {
+  margin-left: 10px;
+  display: inline-flex;
+}
 .price {
   width: 70px;
   height: 30px;
@@ -295,11 +287,11 @@ img {
 .buttonFiltr {
   padding: 10px 0;
 }
-.buttonFiltr input[type=submit] {
+.buttonFiltr input[type="submit"] {
   width: 200px;
   height: 60px;
-  background-color: #000000;
-  color: white;
+  background-color: var(--primary);
+  color: var(--secondary);
   padding: 14px 20px;
   margin: 10px;
   border: none;
@@ -307,12 +299,12 @@ img {
   cursor: pointer;
 }
 
-.buttonFiltr input[type=submit]:hover {
+.buttonFiltr input[type="submit"]:hover {
   background-color: #ccc;
-  color: black;
+  color: var(--primary);
 }
 
-  /* Customize the label (the container) */
+/* Customize the label (the container) */
 .box {
   display: block;
   position: relative;
@@ -355,7 +347,7 @@ img {
 
 /* When the checkbox is checked, add a blue background */
 .box input:checked ~ .checkmark {
-  background-color: #000000;
+  background-color: var(--primary);
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -376,12 +368,9 @@ img {
   top: 5px;
   width: 5px;
   height: 10px;
-  border: solid white;
+  border: solid var(--secondary);
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-
-
-  

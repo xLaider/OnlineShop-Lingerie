@@ -2,10 +2,7 @@
 
 <link rel="stylesheet" href="<?php echo URLROOT;?>/css/navBar.css" />
 <link rel="stylesheet" href="<?php echo URLROOT;?>/css/product.css" /></head>
-<?php
-    include "header.php";
-?>
-    
+
     
     <!-- End of navbar -->
 
@@ -19,24 +16,29 @@
         -->
 
 
-        <a class="getBackDiv" href="<?php echo URLROOT ?>">
-        <img src="<?php echo URLROOT;?>/assets/images/arrowleft.svg">
-        <h1 class="getBack">Powrót</h1>
-    </a>
+<?php
+    include "header.php";
+?>
+<div class="main">
+<div class="flex-row">
+        <a class="flex-row" href="<?php echo URLROOT . "/index" ?>">
+            <img src="<?php echo URLROOT; ?>/assets/images/arrowleft.svg">
+            <h1 class="getBack">Powrót</h1>
+        </a>
+</div>
     <div class="hero">
         <div class="flex-row">
         <div class="column">
             
             <?php 
                 foreach($images as $image){
-                    echo "<div class='productRow'><img src='".$image->link."' ></div>";
+                    echo "<div class='productRow' onclick='changePicture(event)'><img src=data:image/png;base64,". base64_encode($image->image)."></div>";
                 }
-                echo "<img src='./assets/images/arrowdown.svg' style='width:50%'>";
             ?>       
         </div>
         <div>
         
-            <div class="productHero"><img src="<?php echo $images[0]->link ?>" ></div>
+            <div id="productHero"><img src=data:image/png;base64,<?php echo base64_encode($images[0]->image) ?> ></div>
         </div>
         </div>
         
@@ -54,25 +56,40 @@
                         Cena <span> <?php echo $product->Price ?></span>
                     </div> 
                     <div>
-                    Rozmiar<span> <select name="" id="">
-                            <option value="M">M</option>
-                            <option value="M">M</option>
-                            <option value="M">M</option>
-                        </select> <?php $product->Sizes ?></span>
+                    <form method="GET" action="<?php echo URLROOT."/cart/addToCart/".$product->productID."&"; ?>">
+                    
+                    Rozmiar<span> <select name="size" id="">
+                        <?php 
+                        foreach ($sizes as $size){
+                            echo "<option value=".$size.">".$size."</option>";
+                        }
+                        ?>
+                        </select> <?php $product->Sizes ?></span>   
                     </div>
+                    <input type="submit" value="Dodaj do koszyka +">
                 </div> 
+                </form> 
                 <div class="finalize">
                     <div>
-                        
+
                     </div>
                     <div>
-                        <a href="<?php echo URLROOT."/cart/addToCart/".$product->productID; ?>">Dodaj do koszyka +</a>
+                        
                     </div>
                 </div> 
                 
             </div>
         </div>
     </div>
+</div>
+    <script>
+
+        var changePicture = function(event){
+            event.stopPropagation();
+            document.getElementById("productHero").innerHTML=event.path[0].innerHTML;
+        }
+
+        </script>
     
     
 

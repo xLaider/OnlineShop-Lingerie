@@ -12,6 +12,11 @@ class AdminOrders extends Controller
     }
     public function index()
     {
+        if (!isset($_SESSION['userData']->Permission)||($_SESSION['userData']->Permission!="admin")) 
+        {
+            header("Location: " . URLROOT );
+            exit();
+        }
         $orders=$this->adminModel->getAllOrders();
         $this->view('adminOrders',compact('orders', $orders));
     }
@@ -19,8 +24,7 @@ class AdminOrders extends Controller
     {
         $status=$_POST['status'];
         $OrderNumber=$_POST['OrderNumber'];
-        var_dump($status);
-        var_dump($OrderNumber);
+
         $this->adminModel->updateStatus($status,$OrderNumber);
         header("Location: ".URLROOT."/adminOrders");
         exit();

@@ -22,6 +22,13 @@
             $this->db->execute();
             //Zbindowac zmienne do zapytania.
         }
+        public function getUserAddress(){
+            $query="SELECT Country, City, Street, BuildingNumberApartmentNumber, PostCode, FirstName, LastName, PhoneNumber, FirstName, LastName, email, PhoneNumber
+            FROM user u INNER JOIN address a ON a.AddressId=u.AddressId WHERE u.AddressId=:AddressId";
+            $this->db->query($query);
+            $this->db->bind(':AddressId',$_SESSION['userData']->AddressId);
+            return $result=$this->db->single();
+        }
 
     }
 ?>

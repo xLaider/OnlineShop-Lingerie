@@ -9,7 +9,7 @@
 <?php
 include "address.php";
 ?>
-
+    <div class="main">
    <div class="flex-row"><h1> Moje zamówienia </h1>
         <a class="flex-row" id="show-address-form">
             <img height=18px src="<?php echo URLROOT;?>/assets/images/options_icon.svg"> Ustawienia konta
@@ -61,6 +61,7 @@ include "address.php";
      endif;
     ?>
 </section>
+    </div>
 
 <script>
 var SHOW_FORM_BUTTON = document.querySelector("#show-address-form"),

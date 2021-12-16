@@ -1,3 +1,5 @@
-:root{
-    --main-text-color: #000000;
+:root {
+    --primary: #000000;
+    --secondary: #ffffff;
+    --accent: #2e2e2e;
 }

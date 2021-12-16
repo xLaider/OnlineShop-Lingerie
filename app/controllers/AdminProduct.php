@@ -12,6 +12,11 @@ class AdminProduct extends Controller
     }
     public function index()
     {
+        if (!isset($_SESSION['userData']->Permission)||($_SESSION['userData']->Permission!="admin")) 
+        {
+            header("Location: " . URLROOT );
+            exit();
+        }
         if(isset($_GET['sortType']))
         {
             $sortType=$_GET['sortType'];
@@ -22,6 +27,14 @@ class AdminProduct extends Controller
         }
         $products=$this->adminModel->getAllProducts($sortType);
         $this->view('adminProduct',array('products'=> $products));
+    }
+    public function updateStatus()
+    {
+        $status=$_POST['status'];
+        $productID=$_POST['ProductID'];
+        $this->adminModel->updateStatusProduct($status,$productID);
+        header("Location: ".URLROOT."/adminProduct");
+        exit();
     }
 
 

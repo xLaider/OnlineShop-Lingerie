@@ -5,17 +5,6 @@
 <?php
 include "header.php";
 ?>
-<script>
-    //Sidebar
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-    }
-
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-    }
-</script>
-
 <div class="getBackDiv">
     <!-- podmieniłam link do prfilu w cofnij -->
     <a class="prev" href="<?php echo URLROOT . "/profile" ?>"><img src="<?php echo URLROOT; ?>/assets/images/arrowleft.svg"></a>
@@ -53,7 +42,7 @@ include "header.php";
                     <div class="product"><img src="<?php echo URLROOT; ?>/assets/images/kobieta.svg"></div>
                 </td>
                 <td>
-                    <h3 class="bold">Placeholder na nazwe Przedmiotu</h3><br>Typ produktu
+                    <h3 class="bold"><?php echo $_SESSION[]  ?></h3><br>Typ produktu
                 </td>
 
                 <td class="border-bottom">4</td>

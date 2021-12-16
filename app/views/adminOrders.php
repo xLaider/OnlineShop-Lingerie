@@ -3,8 +3,15 @@
 <?php
     include "header.php";
 ?>
+<div class="main">
+<div class="flex-row">
+        <a class="flex-row" href="<?php echo URLROOT . "/profile" ?>">
+            <img src="<?php echo URLROOT; ?>/assets/images/arrowleft.svg">
+            <h1 class="getBack">Powrót</h1>
+        </a>
+</div>
 
-<section class="boxed">
+<main>
     <?php if(count($orders)>0):?>
    <table>
         <tr>
@@ -47,4 +54,5 @@
    
 
     <?php endif;?>
-</section>
+    </main>
+    </div>
