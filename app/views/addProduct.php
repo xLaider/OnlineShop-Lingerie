@@ -4,31 +4,36 @@
 <?php
 include "header.php";
 ?>
-
+<form action="<?php echo URLROOT."/addProduct/AddProduct/".$_GET['productID'].""?>" method="post" enctype="multipart/form-data">
+<div class="flex-row">
 <div class="getBackDiv">
     <!-- podmieniłam link do prfilu w cofnij -->
     <a class="prev" href="<?php echo URLROOT . "/adminProduct" ?>"><img src="<?php echo URLROOT; ?>/assets/images/arrowleft.svg"></a>
     <h1 class="getBack">Powrót</h1>
 </div>
+<div class="button">
+    <input type="submit" value="Zapisz">
+    <?php
+    if (isset($blad))
+        echo "Uzupelnij wszytskie pola";
+    ?>
+    </div>
+</div>
 
-<form action="<?php echo URLROOT."/addProduct/AddProduct/".$_GET['productID'].""?>" method="post" enctype="multipart/form-data">
     <main>
-
-        <div class="daneProduktu">
-            <h1>Dane produktu</h1>
-            <div class=box>
+    <div class="flex-column">
+    <h1>Dane produktu</h1>
+        <div class="productData">
                 <label for="Name"><b>Nazwa</b></label>
                 <input type="text" id="Name" required name="Name" value="<?php if ($product) {
                                                                                 echo $product->Name;
                                                                             } ?>" placeholder="Nazwa">
-            </div>
-            <div class=box>
+            
                 <label for="Price"><b>Cena</b></label>
                 <input type="number" id="Price" required name="Price" min="0" value="<?php if ($product) {
                                                                                             echo $product->Price;
                                                                                         }  ?>" placeholder="Cena">
-            </div>
-            <div class=box>
+        
                 <label for="Sizes"><b>Rozmiar</b></label>
                 <select name="Sizes[]" id="Sizes" multiple required>
                     <?php
@@ -38,8 +43,6 @@ include "header.php";
                     }
                     ?>
                 </select>
-            </div>
-            <div class=box>
                 <label for="Group"><b>Grupa</b></label>
                 <select name="Group" id="Group" required>
                 <?php
@@ -49,8 +52,6 @@ include "header.php";
                     }
                     ?>
                 </select>
-            </div>
-            <div class=box>
                 <label for="Category"><b>Kategoria</b></label>
                 <select name="Category" id="Category" required>
                     <?php
@@ -60,18 +61,16 @@ include "header.php";
                     }
                     ?>
                 </select>
-            </div>
             
-            <div class=box>
                 <label for="Description"><b>Opis</b></label>
                 <textarea id="Description" required name="Description" placeholder="Opis" rows="5" cols="33"><?php if ($product) {
                                                                                     echo $product->Description;
                                                                                 } ?></textarea>
-            </div>
+           
         </div>
+                                                                            </div>
 
-
-        <div class="zdjeciaProduktu">
+        <div class="productImages">
             <h1>Zdjęcia</h1>
             <div class="container">
                 
@@ -114,13 +113,7 @@ include "header.php";
         </div>
 
     </main>
-    <div class="button">
-    <input type="submit" value="Zapisz">
-    <?php
-    if (isset($blad))
-        echo "Uzupelnij wszytskie pola";
-    ?>
-    </div>
+   
 </form>
 
 <script>

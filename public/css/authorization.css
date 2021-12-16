@@ -1,5 +1,9 @@
 @import "../main.css";
 
+input {
+    width: 400px;
+}
+
 .registerArea,
 .loginArea {
     height: 100%;

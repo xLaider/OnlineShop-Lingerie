@@ -2,7 +2,6 @@ input[type="text"],
 input[type="password"],
 input[type="number"] {
   height: 30px;
-  width: 250px;
   font-size: small;
   padding: 5px 20px;
   margin: 2px 0;
@@ -10,6 +9,10 @@ input[type="number"] {
   border-bottom: 1px solid var(--primary);
   box-sizing: border-box;
   float: right;
+}
+
+select {
+  width: auto;
 }
 
 input[type="file"] {
@@ -17,9 +20,12 @@ input[type="file"] {
   visibility: none;
 }
 
-.daneProduktu select {
+form {
+  padding: 50px;
+}
+
+.productData select {
   height: 30px;
-  width: 250px;
   font-size: small;
   padding: 5px 20px;
   margin: 2px 0;
@@ -29,9 +35,8 @@ input[type="file"] {
   float: right;
 }
 
-.daneProduktu textarea {
+.productData textarea {
   height: 150px;
-  width: 250px;
   font-size: small;
   padding: 5px 20px;
   margin: 2px 0;
@@ -41,26 +46,26 @@ input[type="file"] {
   float: right;
 }
 
-.zdjeciaProduktu {
-  padding: 0 3%;
-  flex: 1 1 auto;
+.productImages {
 }
 
-.daneProduktu {
-  padding: 0 3%;
-  flex: 1 1 auto;
+.flex-row {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.productData {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 1rem;
 }
 
 .container {
-  width: -webkit-fill-available;
   display: grid;
   grid-template-columns: 150px 150px 150px;
   grid-auto-rows: 150px;
   gap: 15px 15px;
   grid-auto-flow: row;
-  height: auto;
-  margin-left: 10%;
-  margin-right: 5%;
 }
 
 .container > div {
@@ -81,7 +86,6 @@ input[type="file"] {
 }
 
 .button {
-  padding: 7px 20px;
   display: flex;
   align-items: flex-end;
   flex-direction: column;
@@ -93,7 +97,6 @@ input[type="file"] {
   background-color: var(--primary);
   color: var(--secondary);
   padding: 14px 20px;
-  margin: 10px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -105,12 +108,10 @@ input[type="file"] {
 }
 
 .getBackDiv {
-  padding: 7px;
   display: flex;
   align-items: center;
 }
 .prev {
-  margin-left: 3em;
   margin-right: 2em;
   cursor: pointer;
   width: auto;
@@ -126,7 +127,7 @@ input[type="file"] {
 
 main {
   display: flex;
-  padding: 3%;
+  justify-content: space-around;
 }
 
 img {
@@ -173,5 +174,14 @@ img {
 @media screen and (max-width: 1050px) {
   main {
     flex-direction: column;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .container div {
+    width: 150px;
+    height: 150px;
   }
 }

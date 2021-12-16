@@ -104,6 +104,9 @@ img {
 .flex-column > div > span {
     border-bottom: 1px solid var(--primary);
 }
+input {
+    width: 400px;
+}
 
 @media screen and (max-width: 1280px) {
     .hero {

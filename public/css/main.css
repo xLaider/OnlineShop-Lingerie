@@ -27,17 +27,20 @@ body {
 }
 
 select {
-    width: 400px;
     padding: 1rem;
     left: 0px;
     top: 0px;
 }
+
+select[multiple] {
+    height: 6rem;
+}
+
 option {
-    padding: 1rem;
+    padding: 0.3rem;
 }
 
 input {
-    width: 400px;
     height: 75px;
     left: 0px;
     top: 0px;
