@@ -11,16 +11,7 @@
     <div class="registerArea">
         
         <form class="register" action="<?php echo URLROOT . "/Address/AddressHandler" ?>" method="post">
-        <input type="text" id="firstName" name="firstName" value="<?php
-            if (isset($_SESSION['firstName']->Country)) {
-                echo $_SESSION['firstName']->Country;
-            }
-            ?>" placeholder="Kraj"><br>
-             <input type="text" id="lastName" name="lastName" value="<?php
-            if (isset($_SESSION['lastName']->Country)) {
-                echo $_SESSION['lastName']->Country;
-            }
-            ?>" placeholder="Kraj"><br>
+       
             <input type="text" id="country" name="country" value="<?php
             if (isset($_SESSION['address']->Country)) {
                 echo $_SESSION['address']->Country;
