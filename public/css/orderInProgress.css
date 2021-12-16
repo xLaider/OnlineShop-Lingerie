@@ -3,16 +3,6 @@
     display: flex;
     align-items: center;
 }
-.prev {
-    margin-left: 3em;
-    margin-right: 2em;
-    cursor: pointer;
-    width: auto;
-}
-
-.prev img {
-    width: 50%;
-}
 
 .getBack {
     font-size: 25px;

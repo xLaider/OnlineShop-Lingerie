@@ -6,17 +6,16 @@ include "header.php";
 ?>
 <form action="<?php echo URLROOT."/addProduct/AddProduct/".$_GET['productID'].""?>" method="post" enctype="multipart/form-data">
 <div class="flex-row">
-<div class="getBackDiv">
-    <!-- podmieniłam link do prfilu w cofnij -->
-    <a class="prev" href="<?php echo URLROOT . "/adminProduct" ?>"><img src="<?php echo URLROOT; ?>/assets/images/arrowleft.svg"></a>
-    <h1 class="getBack">Powrót</h1>
-</div>
-<div class="button">
-    <input type="submit" value="Zapisz">
-    <?php
-    if (isset($blad))
-        echo "Uzupelnij wszytskie pola";
-    ?>
+        <a class="flex-row" href="<?php echo URLROOT . "/adminProduct" ?>">
+            <img src="<?php echo URLROOT; ?>/assets/images/arrowleft.svg">
+            <h1 class="getBack">Powrót</h1>
+        </a>
+    <div class="button">
+        <input type="submit" value="Zapisz">
+        <?php
+        if (isset($blad))
+            echo "Uzupelnij wszytskie pola";
+        ?>
     </div>
 </div>
 

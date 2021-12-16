@@ -1,33 +1,32 @@
-h2{
+h2 {
     width: 291px;
-height: 71px;
-left: 146px;
-top: 109px;
+    height: 71px;
+    left: 146px;
+    top: 109px;
 
-font-family: Montserrat;
-font-style: normal;
-font-weight: normal;
-font-size: 32px;
-line-height: 39px;
-display: flex;
-align-items: center;
-
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 39px;
+    display: flex;
+    align-items: center;
 }
-.arrowLeft{
+.arrowLeft {
     margin: 1em;
 }
 
-.personalData{
+.personalData {
     display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-justify-content: center;
-align-items: center;
-align-content: center;
-font-size: 22px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-size: 22px;
 }
 
-label{
+label {
     margin: 1em;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -35,11 +34,7 @@ label{
     gap: 1em;
 }
 
-input{
-    height:30px;
-    width: 300px;
-}
-table{
+table {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -50,22 +45,40 @@ table{
     text-align: Left;
     padding: 5%;
     font-size: 20px;
-
 }
-table td, th{
+table td,
+th {
     padding: 0 10px;
 }
-label{
+label {
     font-weight: bold;
 }
-.hero{
+.hero {
     display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-justify-content: space-between;
-align-items: flex-start;
-align-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: center;
 }
-.gap{
-    margin-top: 4em;
+
+.userData,
+.orderData {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 1rem;
+}
+
+main.flex-row {
+    align-items: flex-start;
+}
+
+@media screen and (max-width: 1280px) {
+    main.flex-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .flex-column {
+        width: 100%;
+    }
 }

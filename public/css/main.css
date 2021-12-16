@@ -3,6 +3,8 @@
 .flex-row {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 .flex-column {
     display: flex;
@@ -91,6 +93,39 @@ input[type="submit"]:hover {
     border-bottom: 3px red solid;
 }
 
+.prev {
+    cursor: pointer;
+    width: auto;
+}
+
+.prev img {
+    width: 50%;
+}
+
+.getBackDiv {
+    display: flex;
+    align-items: center;
+}
+
+.getBack {
+    font-size: 25px;
+    margin-left: 1rem;
+}
+
+a img {
+    max-height: 30px;
+}
+
+form {
+    margin: 0;
+}
+
+.main {
+    padding: 3rem;
+}
+input[type="submit"] {
+    padding: 1rem;
+}
 @font-face {
     font-family: "Gant";
     src: url("../assets/fonts/gant-regular-webfont.ttf") format("truetype");

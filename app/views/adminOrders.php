@@ -3,10 +3,12 @@
 <?php
     include "header.php";
 ?>
-<div class="getBackDiv">
-    <!-- podmieniłam link do prfilu w cofnij -->
-    <a class="prev" href="<?php echo URLROOT . "/adminprofile" ?>"><img src="<?php echo URLROOT; ?>/assets/images/arrowleft.svg"><div>Powrót</div></a>
-    
+<div class="main">
+<div class="flex-row">
+        <a class="flex-row" href="<?php echo URLROOT . "/profile" ?>">
+            <img src="<?php echo URLROOT; ?>/assets/images/arrowleft.svg">
+            <h1 class="getBack">Powrót</h1>
+        </a>
 </div>
 
 <main>
@@ -53,3 +55,4 @@
 
     <?php endif;?>
     </main>
+    </div>

@@ -46,14 +46,6 @@ form {
   float: right;
 }
 
-.productImages {
-}
-
-.flex-row {
-  justify-content: space-between;
-  align-items: center;
-}
-
 .productData {
   display: grid;
   grid-template-columns: 2fr 3fr;
@@ -96,7 +88,6 @@ form {
   height: 60px;
   background-color: var(--primary);
   color: var(--secondary);
-  padding: 14px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -110,15 +101,6 @@ form {
 .getBackDiv {
   display: flex;
   align-items: center;
-}
-.prev {
-  margin-right: 2em;
-  cursor: pointer;
-  width: auto;
-}
-
-.prev img {
-  width: 50%;
 }
 
 .getBack {

@@ -2,10 +2,7 @@
 
 <link rel="stylesheet" href="<?php echo URLROOT;?>/css/navBar.css" />
 <link rel="stylesheet" href="<?php echo URLROOT;?>/css/product.css" /></head>
-<?php
-    include "header.php";
-?>
-    
+
     
     <!-- End of navbar -->
 
@@ -19,10 +16,15 @@
         -->
 
 
-        <div class="getBackDiv">
-    <!-- podmieniłam link do prfilu w cofnij -->
-    <a class="prev" href="<?php echo URLROOT . "/index" ?>"><img src="<?php echo URLROOT; ?>/assets/images/arrowleft.svg"></a>
-    <a class="prev" href="<?php echo URLROOT . "/index" ?>"><h1 class="getBack">Powrót</h1></a>
+<?php
+    include "header.php";
+?>
+<div class="main">
+<div class="flex-row">
+        <a class="flex-row" href="<?php echo URLROOT . "/index" ?>">
+            <img src="<?php echo URLROOT; ?>/assets/images/arrowleft.svg">
+            <h1 class="getBack">Powrót</h1>
+        </a>
 </div>
     <div class="hero">
         <div class="flex-row">
@@ -30,13 +32,13 @@
             
             <?php 
                 foreach($images as $image){
-                    echo "<div class='productRow'><img src=data:image/png;base64,". base64_encode($image->image)." ></div>";
+                    echo "<div class='productRow' onclick='changePicture(event)'><img src=data:image/png;base64,". base64_encode($image->image)."></div>";
                 }
             ?>       
         </div>
         <div>
         
-            <div class="productHero"><img src=data:image/png;base64,<?php echo base64_encode($images[0]->image) ?> ></div>
+            <div id="productHero"><img src=data:image/png;base64,<?php echo base64_encode($images[0]->image) ?> ></div>
         </div>
         </div>
         
@@ -79,6 +81,15 @@
             </div>
         </div>
     </div>
+</div>
+    <script>
+
+        var changePicture = function(event){
+            event.stopPropagation();
+            document.getElementById("productHero").innerHTML=event.path[0].innerHTML;
+        }
+
+        </script>
     
     
 
