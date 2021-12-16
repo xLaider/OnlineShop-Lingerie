@@ -22,9 +22,8 @@
         <div class="getBackDiv">
     <!-- podmieniłam link do prfilu w cofnij -->
     <a class="prev" href="<?php echo URLROOT . "/index" ?>"><img src="<?php echo URLROOT; ?>/assets/images/arrowleft.svg"></a>
-    <h1 class="getBack">Powrót</h1>
+    <a class="prev" href="<?php echo URLROOT . "/index" ?>"><h1 class="getBack">Powrót</h1></a>
 </div>
-    </a>
     <div class="hero">
         <div class="flex-row">
         <div class="column">
@@ -33,7 +32,6 @@
                 foreach($images as $image){
                     echo "<div class='productRow'><img src=data:image/png;base64,". base64_encode($image->image)." ></div>";
                 }
-                echo "<img src='./assets/images/arrowdown.svg' style='width:50%'>";
             ?>       
         </div>
         <div>
