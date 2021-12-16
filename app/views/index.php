@@ -10,23 +10,12 @@
     include "header.php";
 
 ?>
-    <script>
-        //Sidebar
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-        }
-    </script>
-        
-    <!-- End of navbar -->
+  
 
     <section>
         <article id="banner">
             <div class="slideshow-container">
-                <a class="prev" onclick="plusSlides(-1)"><img src="<?php echo URLROOT;?>/assets/images/arrowleft.svg"></a>
+                <a onclick="plusSlides(-1)"><img src="<?php echo URLROOT;?>/assets/images/arrowleft.svg"></a>
                 <div class="slideshow-container">
                     <div class="mySlides fade">
                         <img src="<?php echo URLROOT;?>/assets/images/img.jpg" style="width:100%">
@@ -38,7 +27,7 @@
                         <img src="<?php echo URLROOT;?>/assets/images/3.jpg" style="width:100%">
                     </div>
                 </div>
-                <a class="next" onclick="plusSlides(1)"><img src="<?php echo URLROOT;?>/assets/images/arrowright.svg"></a>
+                <a onclick="plusSlides(1)"><img src="<?php echo URLROOT;?>/assets/images/arrowright.svg"></a>
             </div>
 
             <div style="text-align:center">
@@ -52,11 +41,10 @@
         </article>
         <article id="products">
             <div class="filterButton">
-                <div>FILTRUJ</div>
+                <div onclick="openFiltr()">FILTRUJ</div>
                 <div onclick="openFiltr()"><img src="<?php echo URLROOT;?>/assets/images/filter.svg" style="width:100%"></div>
             </div>
-            <div id="filter" class="filterSidenav">
-                <div><a href="javascript:void(0)" class="closebtn" onclick="closeFiltr()"><img src="<?php echo URLROOT;?>/assets/images/arrowleft.svg" style="width:50%"></a></div>
+            <div id="filter" class="filterSidenav flex-row">
                 <div>
                     <form action="<?php if (isset($_GET['group'])){
                         echo URLROOT."/index/applyFilter?group=".$_GET['group'];
@@ -208,6 +196,7 @@
                         </div>
                     </form>
                 </div>
+                <a class="close-button flex-row" href="javascript:void(0)" onclick="closeFiltr()"><img src="<?php echo URLROOT;?>/assets/images/arrowleft.svg"></a>
             </div>
 
 
@@ -296,7 +285,7 @@
 <script>
                 //Sidebar
                 function openFiltr() {
-                    document.getElementById("filter").style.width = "250px";
+                    document.getElementById("filter").style.width = "300px";
                 }
 
                 function closeFiltr() {

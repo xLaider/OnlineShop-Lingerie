@@ -7,18 +7,6 @@
     <?php
     include "header.php";
     ?>
-    <script>
-        //Sidebar
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-        }
-    </script>
-
-    <!-- End of navbar -->
 
     <div class="main">
         <form action="<?php echo URLROOT . '/order/addOrder' ?>" method="POST">

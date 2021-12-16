@@ -5,17 +5,6 @@
 <?php
 include "header.php";
 ?>
-<script>
-    //Sidebar
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-    }
-
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-    }
-</script>
-
 <div class="getBackDiv">
     <!-- podmieniłam link do prfilu w cofnij -->
     <a class="prev" href="<?php echo URLROOT . "/profile" ?>"><img src="<?php echo URLROOT; ?>/assets/images/arrowleft.svg"></a>

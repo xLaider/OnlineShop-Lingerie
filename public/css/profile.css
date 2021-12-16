@@ -1,45 +1,50 @@
-
-table{
+table {
     display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-align-content: center;
-text-align: Left;
-
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    text-align: Left;
 }
 
-.flex-row{
+.flex-row {
     align-items: center;
     justify-content: space-between;
 }
 
-#show-address-form{
-    gap:1rem;
+#show-address-form {
+    gap: 1rem;
 }
 
-main{
+main {
     flex-direction: row;
 }
 
-table td, th{
+table td,
+th {
     padding: 0 10px;
 }
 
-section.boxed{
+section.boxed {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
 
-th
-{
+th {
     font-weight: bold;
 }
 
+.right {
+    float: right;
+}
 
-.right{
-    float:right;
+dialog {
+    width: 500px;
+}
+
+dialog input {
+    width: 100%;
 }

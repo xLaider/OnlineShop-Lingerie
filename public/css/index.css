@@ -171,22 +171,6 @@ img {
   margin: 20px;
 }
 
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  width: auto;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
 /* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
@@ -235,7 +219,7 @@ img {
   width: 0; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
-  top: 85px; /* Stay at the top */
+  top: 0; /* Stay at the top */
   left: 0;
   height: 100%;
   background-color: var(--secondary);
@@ -264,6 +248,17 @@ img {
   font-size: 36px;
   margin-left: 50px;
 }
+
+.close-button {
+  height: 100%;
+  padding: 1rem;
+}
+
+.close-buttom img {
+  max-height: 60px !important;
+  height: 60px;
+}
+
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
