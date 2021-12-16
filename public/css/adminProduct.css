@@ -1,24 +1,23 @@
-
-.prev{
-    display: flex;
-    font-size: 20px;
-    align-items: center;
-    margin-left: 1em;
-    margin-right: 2em;
-    cursor: pointer;
-    width: auto; 
-    padding: 1em 1em;
+.prev {
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+  margin-left: 1em;
+  margin-right: 2em;
+  cursor: pointer;
+  width: auto;
+  padding: 1em 1em;
 }
 
-.prev img{
-    width: 30px;
-    margin-right: 30px;
+.prev img {
+  width: 30px;
+  margin-right: 30px;
 }
 
-.prev a{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+.prev a {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 img {
@@ -42,11 +41,12 @@ main {
   flex-direction: row;
 }
 
-table td, th {
+table td,
+th {
   padding: 10px 40px;
 }
 tr {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--primary);
 }
 th a {
   font-weight: bold;
@@ -55,10 +55,9 @@ th {
   font-weight: bold;
 }
 
-main select{
-    height: 30px;
-    width: 160px;
-
+main select {
+  height: 30px;
+  width: 160px;
 }
 
 main {

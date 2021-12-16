@@ -1,51 +1,48 @@
-
-.prev{
+.prev {
     display: flex;
     font-size: 20px;
     align-items: center;
     margin-left: 1em;
     margin-right: 2em;
     cursor: pointer;
-    width: auto; 
+    width: auto;
     padding: 1em 1em;
 }
 
-.prev img{
+.prev img {
     width: 30px;
     margin-right: 30px;
 }
 
-.prev a{
+.prev a {
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
-
-
-section.boxed{
+section.boxed {
     display: flex;
     padding: 3%;
 }
-.tytul{
+.tytul {
     display: flex;
     padding: 0 3%;
     margin: 0 10px;
 }
-.product{
+.product {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 200px;
     height: 200px;
-    border: 1px solid black;
+    border: 1px solid var(--primary);
 }
 
-img{
+img {
     max-width: 198px;
     max-height: 198px;
 }
-table{
+table {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -57,17 +54,18 @@ table{
     flex: 1 1 auto;
 }
 
-table td, th{
-    width:300px;
+table td,
+th {
+    width: 300px;
     padding: 5px 15px;
 }
 
-.usun img{
+.usun img {
     border: 0px;
     width: 20px;
     height: 20px;
 }
-.usun{
+.usun {
     align-content: right;
     text-align: right;
 }
@@ -76,14 +74,14 @@ table td, th{
     text-decoration: underline;
 }
 
-.bold{
+.bold {
     font-weight: bold;
 }
-th{
+th {
     font-weight: bold;
 }
 
-.final a{
+.final a {
     padding: 7px;
     display: flex;
     align-items: center;
@@ -92,10 +90,10 @@ th{
     font-weight: bold;
 }
 
-.final a img{
+.final a img {
     width: 20px;
 }
-.cartSum{
+.cartSum {
     float: right;
     font-size: 20px;
 }
@@ -103,12 +101,12 @@ a.cartbox {
     font-size: 16px;
     margin: 2px 6px;
 }
-.right{
-    float:right;
+.right {
+    float: right;
 }
 .proceedButton a {
     padding: 4px 20px;
-    border: 1px solid black;
+    border: 1px solid var(--primary);
     background: #81c784;
     font-weight: bold;
     font-size: 20px;
