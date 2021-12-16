@@ -59,6 +59,8 @@
                 $this->db->bind(':OrderNumber',$id);
                 $this->db->execute();
             }
+            
+            unset($_SESSION['cartItems']);
             header("Location: ".URLROOT);
             exit();
         }

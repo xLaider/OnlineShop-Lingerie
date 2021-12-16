@@ -10,12 +10,14 @@ include "header.php";
                 <img src="<?php echo URLROOT; ?>/assets/images/arrowleft.svg">
                 <h1 class="getBack">Powrót</h1>
             </a>
+            <?php if(isset($_SESSION['cartItems'])){?>
             <div class="final">
             <form action="<?php echo URLROOT . '/order' ?>" method="POST">
                 <input type="hidden" name="price" value="<?php echo $cartSum ?>">
                 <input type="submit" value="Finalizuj">
             </form>
         </div>
+        <?php } ?>
     </div>
 
     <div class=tytul>
